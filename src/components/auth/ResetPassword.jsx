@@ -9,7 +9,6 @@ import { useResetPassword } from '../../api/auth'
 import toast from 'react-hot-toast'
 import { useLocation } from 'react-router-dom'
 import { useState } from 'react'
-import { useLocation } from 'react-router-dom'
 
 export default function ResetPassword() {
   const {
@@ -33,13 +32,10 @@ export default function ResetPassword() {
   const new_password = watch('new_password')
   const confirm_password = watch('confirm_password')
   const validatePassword = (value) => {
-    const hasNumber = /[0-9]/.test(value);
-    const hasSpecialChar = /[!@#$%^&*(),.?":{}_-|<>]/.test(value);
-    return (
-      hasNumber && hasSpecialChar || 
-      ''
-    );
-  };
+    const hasNumber = /[0-9]/.test(value)
+    const hasSpecialChar = /[!@#$%^&*(),.?":{}_-|<>]/.test(value)
+    return (hasNumber && hasSpecialChar) || ''
+  }
 
   const onSubmit = async (data) => {
     try {
@@ -170,7 +166,7 @@ export default function ResetPassword() {
                       message: '( Min 8characters with a letter and a number)',
                     },
                     required: true,
-                    validate: validatePassword
+                    validate: validatePassword,
                   }}
                 />
                 <Controller
@@ -247,7 +243,7 @@ export default function ResetPassword() {
                       message: '( Min 8characters with a letter and a number)',
                     },
                     required: true,
-                    validate: validatePassword
+                    validate: validatePassword,
                   }}
                 />
                 <Button
