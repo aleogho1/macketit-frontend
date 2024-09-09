@@ -1,0 +1,22 @@
+#root {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.countdown-icon {
+  transition: transform 0.5s ease-in-out;
+}
+
+.shake-animation {
+  animation: shake 0.5s infinite alternate;
+}
+
+@keyframes shake {
+  from {
+    transform: rotate(-10deg);
+  }
+  to {
+    transform: rotate(10deg);
+  }
+}
