@@ -7,32 +7,42 @@ export default defineConfig({
   plugins: [
     react(),
     VitePWA({
+      workbox: {
+        maximumFileSizeToCacheInBytes: 5000000, // Example: Set to 5MB
+      },
       registerType: 'autoUpdate',
-      includeAssets: ['favicon.svg', 'favicon.ico', 'robots.txt', 'apple-touch-icon.png', 'android-chrome-192x192.png', 'android-chrome-512x512.png'],
+      includeAssets: [
+        'favicon.svg',
+        'favicon.ico',
+        'robots.txt',
+        'apple-touch-icon.png',
+        'android-chrome-192x192.png',
+        'android-chrome-512x512.png',
+      ],
       manifest: {
         name: 'Trendit³',
         short_name: 'Trendit³',
         description: 'Get paid for your engagements',
-        display: "standalone",
+        display: 'standalone',
         theme_color: '#ffffff',
         icons: [
           {
             src: 'android-chrome-192x192.png',
             sizes: '192x192',
-            type: 'image/png'
+            type: 'image/png',
           },
           {
             src: 'android-chrome-512x512.png',
             sizes: '512x512',
-            type: 'image/png'
+            type: 'image/png',
           },
           {
             src: 'apple-touch-icon.png',
             sizes: '180x180',
-            type: 'image/png'
-          }
-        ]
-      }
+            type: 'image/png',
+          },
+        ],
+      },
     }),
     createHtmlPlugin({
       inject: {
