@@ -36,17 +36,15 @@ export default function GenerateTiktokTask() {
   const [active, setActive] = useState()
   const socialAccount = useContext(SocialAccountContext)
   const getSocial = () => {
-    if(socialAccount){
+    if (socialAccount) {
       for (const item of socialAccount) {
-        item?.platform === 'tiktok' ? setActive(item)
-        : ''     
-      } 
+        item?.platform === 'tiktok' ? setActive(item) : ''
+      }
     } else {
       for (const item of profileDeatils?.social_profiles) {
-        item?.platform === 'tiktok' ? setActive(item)
-        : ''     
+        item?.platform === 'tiktok' ? setActive(item) : ''
       }
-   }   
+    }
   }
   useEffect(() => {
     getSocial()
@@ -67,7 +65,7 @@ export default function GenerateTiktokTask() {
     }
     queryClient.invalidateQueries({ queryKey: ['get_profile'] })
   }
-  const { data: advertTask} = useGetAdvertTask('TikTok')
+  const { data: advertTask } = useGetAdvertTask('TikTok')
 
   return (
     <>
@@ -132,105 +130,115 @@ export default function GenerateTiktokTask() {
               <div className='justify-center items-start gap-2 inline-flex'>
                 <div className='max-w-[484px] flex-col justify-start items-center gap-3 inline-flex'>
                   <div className="text-white dark:text-black text-sm font-medium text-center font-['Manrope']">
-                    Post Advert  on your TikTok Accounts
+                    Post Advert on your TikTok Accounts
                   </div>
                   <div className="self-stretch dark:text-black text-center text-white text-xs w-11/12 m-auto  font-normal font-['Manrope']">
-                  Promote advertisements for different businesses and top brands on your Tiktok page and earn ₦110 for each post. The more you share, the more you earn. 
+                    Promote advertisements for different businesses and top
+                    brands on your Tiktok page and earn ₦110 for each post. The
+                    more you share, the more you earn.
                   </div>
                   <div className='p-1 dark:bg-[#3793FF21] bg-white rounded justify-start items-start gap-3 inline-flex'>
                     <div className="text-center text-blue-600 text-[12.83px] font-normal font-['Manrope']">
-                    {
-                        advertTask?.length ? `${advertTask?.length} Task available` : 'No task available'
-                      }
+                      {advertTask?.length
+                        ? `${advertTask?.length} Task available`
+                        : 'No task available'}
                     </div>
                   </div>
                 </div>
               </div>
             </div>
-            {
-              active?.status  
-            ? 
-            (
+            {active?.status ? (
               <div className='w-full pl-4 md:pl-8 mt-6 flex flex-col gap-y-2'>
-              <h2 className='text-zinc-700 dark:text-white font-bold text-[16px]'>Your Tiktok Profile Account</h2>
-              {
-                active?.status === 'verified' ? 
-                <p className='text-blue-300 dark:text-white font-semibold text-[12px] w-11/12'>
-                Your Tiktok task must be done from the below Tiktok profile which has been linked to your Trendit³ account
-                </p> : ''
-               }
-              <div className='flex items-center gap-x-2'>
+                <h2 className='text-zinc-700 dark:text-white font-bold text-[16px]'>
+                  Your Tiktok Profile Account
+                </h2>
+                {active?.status === 'verified' ? (
+                  <p className='text-blue-300 dark:text-white font-semibold text-[12px] w-11/12'>
+                    Your Tiktok task must be done from the below Tiktok profile
+                    which has been linked to your MacketIT³ account
+                  </p>
+                ) : (
+                  ''
+                )}
+                <div className='flex items-center gap-x-2'>
                   <div className='bg-zinc-700 dark:bg-white flex items-center justify-between text-black bg-opacity-50 py-2 w-11/12 md:w-12/12 px-4 rounded'>
-                      {active?.link?.length > 30 ? active?.link?.substring(0, 30) + '(...)': active?.link}
-                      <div className={`${active?.status === 'verified' && 'text-green-800' || active?.status === 'pending' && 'text-yellow-700' || active?.status === 'idle' && 'text[#FF3D00]' || active?.status === 'rejected' && 'text-[#FF3D00]'} py-[6px] px-[6px] text-center rounded-full font-semibold`}>
-                        {active?.status.charAt(0).toUpperCase()+active?.status?.slice(1)}
-                      </div>
-                  </div>
-              </div>
-              </div> 
-             )
-            : (
-             ''
-            )}
-          </div>
-            {
-              active?.status !== 'verified' && (
-                <div className='self-stretch p-6 dark:bg-black bg-zinc-400 bg-opacity-30 justify-start items-start gap-[29px] inline-flex'>
-                <div className='grow shrink basis-0 flex-col justify-start items-start gap-2.5 inline-flex'>
-                  <div className="text-center  text-base font-bold font-['Manrope']">
-                    Link your TikTok Accounts
-                  </div>
-                  <div className="self-stretch dark:text-gray-400 text-stone-900 text-xs font-normal font-['Manrope']">
-                    You need to link your TicTok Accounts to Trendit before you
-                    can start earning with your TikTok Accounts . Click the
-                    button below to link your  TikTok Accounts now.
-                  </div>
-                  <div
-                    onClick={handOpenSocialModal}
-                    className='p-2 dark:bg-stone-900 cursor-pointer bg-white border border-violet-500 border-opacity-25 justify-center items-center gap-1 inline-flex'
-                  >
-                    <svg
-                      xmlns='http://www.w3.org/2000/svg'
-                      width='24'
-                      height='24'
-                      viewBox='0 0 47 47'
-                      fill='none'
+                    {active?.link?.length > 30
+                      ? active?.link?.substring(0, 30) + '(...)'
+                      : active?.link}
+                    <div
+                      className={`${
+                        (active?.status === 'verified' && 'text-green-800') ||
+                        (active?.status === 'pending' && 'text-yellow-700') ||
+                        (active?.status === 'idle' && 'text[#FF3D00]') ||
+                        (active?.status === 'rejected' && 'text-[#FF3D00]')
+                      } py-[6px] px-[6px] text-center rounded-full font-semibold`}
                     >
-                      <path
-                        d='M34.8307 16.9236C38.2597 19.0864 42.4604 20.359 46.9973 20.359V12.6558C46.1386 12.656 45.2822 12.5769 44.4422 12.4199V18.4833C39.9057 18.4833 35.7055 17.2109 32.2758 15.0483V30.7683C32.2758 38.6324 25.0507 45.0069 16.1389 45.0069C12.8137 45.0069 9.72286 44.1199 7.15546 42.5986C10.0858 45.2424 14.1723 46.8824 18.6933 46.8824C27.6058 46.8824 34.8311 40.5079 34.8311 32.6435V16.9236H34.8307ZM37.9828 9.15206C36.2303 7.46282 35.0796 5.27975 34.8307 2.86622V1.87549H32.4094C33.0189 4.94297 35.098 7.56362 37.9828 9.15206ZM12.7922 36.5641C11.8131 35.4315 11.2839 34.0457 11.2862 32.6209C11.2862 29.0243 14.5909 26.108 18.6681 26.108C19.4278 26.1077 20.183 26.2106 20.9073 26.4132V18.5378C20.0609 18.4355 19.2069 18.3919 18.3533 18.408V24.5378C17.6287 24.335 16.8731 24.2321 16.113 24.2327C12.036 24.2327 8.73151 27.1487 8.73151 30.7458C8.73151 33.2893 10.3832 35.4913 12.7922 36.5641Z'
-                        fill='#FF004F'
-                      />
-                      <path
-                        d='M32.2758 15.0481C35.7057 17.2108 39.9055 18.4832 44.4422 18.4832V12.4197C41.9098 11.9437 39.6681 10.7762 37.9826 9.15206C35.0976 7.56346 33.0189 4.94281 32.4094 1.87549H26.0496V32.6431C26.0351 36.2301 22.7361 39.1343 18.6677 39.1343C16.2705 39.1343 14.1406 38.1261 12.7918 36.5639C10.3832 35.4913 8.73132 33.2891 8.73132 30.746C8.73132 27.1492 12.0358 24.2329 16.1128 24.2329C16.894 24.2329 17.6468 24.3402 18.3531 24.5379V18.4081C9.59764 18.5678 2.55634 24.88 2.55634 32.6433C2.55634 36.5187 4.30973 40.0319 7.15563 42.5989C9.72303 44.1199 12.8136 45.0072 16.1391 45.0072C25.0511 45.0072 32.276 38.6322 32.276 30.7683L32.2758 15.0481Z'
-                        fill='black'
-                      />
-                      <path
-                        d='M44.4423 12.4193V10.7802C42.1587 10.7832 39.9203 10.219 37.9828 9.15187C39.6978 10.8086 41.9561 11.951 44.4423 12.4197M32.4094 1.87514C32.3513 1.58205 32.3067 1.28701 32.2758 0.990728V0H23.4943V30.768C23.4803 34.3546 20.1813 37.2588 16.1128 37.2588C14.9594 37.2604 13.8218 37.0224 12.7918 36.5641C14.1406 38.1259 16.2705 39.134 18.6677 39.134C22.7359 39.134 26.0352 36.23 26.0496 32.6431V1.8753L32.4094 1.87514ZM18.3536 18.4078V16.6625C17.6198 16.5739 16.88 16.5296 16.1394 16.5299C7.22648 16.5299 0.00158691 22.9047 0.00158691 30.768C0.00158691 35.698 2.84106 40.0427 7.15598 42.5984C4.31009 40.0315 2.55669 36.5182 2.55669 32.643C2.55669 24.8799 9.59781 18.5674 18.3536 18.4078Z'
-                        fill='#00F2EA'
-                      />
-                    </svg>
-                    <div className="text-center text-[12.83px] font-bold font-['Manrope']">
-                      Link TikTok account
+                      {active?.status.charAt(0).toUpperCase() +
+                        active?.status?.slice(1)}
                     </div>
                   </div>
                 </div>
-                <svg
-                  xmlns='http://www.w3.org/2000/svg'
-                  width='24'
-                  height='24'
-                  viewBox='0 0 24 24'
-                  fill='none'
-                >
-                  <path
-                    d='M18 6L6 18M18 18L6 6.00001'
-                    strokeWidth='2'
-                    strokeLinecap='round'
-                    className='dark:stroke-white stroke-[#B1B1B1] '
-                  />
-                </svg>
               </div>
-              )
-            }
+            ) : (
+              ''
+            )}
+          </div>
+          {active?.status !== 'verified' && (
+            <div className='self-stretch p-6 dark:bg-black bg-zinc-400 bg-opacity-30 justify-start items-start gap-[29px] inline-flex'>
+              <div className='grow shrink basis-0 flex-col justify-start items-start gap-2.5 inline-flex'>
+                <div className="text-center  text-base font-bold font-['Manrope']">
+                  Link your TikTok Accounts
+                </div>
+                <div className="self-stretch dark:text-gray-400 text-stone-900 text-xs font-normal font-['Manrope']">
+                  You need to link your TicTok Accounts to MacketIT before you
+                  can start earning with your TikTok Accounts . Click the button
+                  below to link your  TikTok Accounts now.
+                </div>
+                <div
+                  onClick={handOpenSocialModal}
+                  className='p-2 dark:bg-stone-900 cursor-pointer bg-white border border-violet-500 border-opacity-25 justify-center items-center gap-1 inline-flex'
+                >
+                  <svg
+                    xmlns='http://www.w3.org/2000/svg'
+                    width='24'
+                    height='24'
+                    viewBox='0 0 47 47'
+                    fill='none'
+                  >
+                    <path
+                      d='M34.8307 16.9236C38.2597 19.0864 42.4604 20.359 46.9973 20.359V12.6558C46.1386 12.656 45.2822 12.5769 44.4422 12.4199V18.4833C39.9057 18.4833 35.7055 17.2109 32.2758 15.0483V30.7683C32.2758 38.6324 25.0507 45.0069 16.1389 45.0069C12.8137 45.0069 9.72286 44.1199 7.15546 42.5986C10.0858 45.2424 14.1723 46.8824 18.6933 46.8824C27.6058 46.8824 34.8311 40.5079 34.8311 32.6435V16.9236H34.8307ZM37.9828 9.15206C36.2303 7.46282 35.0796 5.27975 34.8307 2.86622V1.87549H32.4094C33.0189 4.94297 35.098 7.56362 37.9828 9.15206ZM12.7922 36.5641C11.8131 35.4315 11.2839 34.0457 11.2862 32.6209C11.2862 29.0243 14.5909 26.108 18.6681 26.108C19.4278 26.1077 20.183 26.2106 20.9073 26.4132V18.5378C20.0609 18.4355 19.2069 18.3919 18.3533 18.408V24.5378C17.6287 24.335 16.8731 24.2321 16.113 24.2327C12.036 24.2327 8.73151 27.1487 8.73151 30.7458C8.73151 33.2893 10.3832 35.4913 12.7922 36.5641Z'
+                      fill='#FF004F'
+                    />
+                    <path
+                      d='M32.2758 15.0481C35.7057 17.2108 39.9055 18.4832 44.4422 18.4832V12.4197C41.9098 11.9437 39.6681 10.7762 37.9826 9.15206C35.0976 7.56346 33.0189 4.94281 32.4094 1.87549H26.0496V32.6431C26.0351 36.2301 22.7361 39.1343 18.6677 39.1343C16.2705 39.1343 14.1406 38.1261 12.7918 36.5639C10.3832 35.4913 8.73132 33.2891 8.73132 30.746C8.73132 27.1492 12.0358 24.2329 16.1128 24.2329C16.894 24.2329 17.6468 24.3402 18.3531 24.5379V18.4081C9.59764 18.5678 2.55634 24.88 2.55634 32.6433C2.55634 36.5187 4.30973 40.0319 7.15563 42.5989C9.72303 44.1199 12.8136 45.0072 16.1391 45.0072C25.0511 45.0072 32.276 38.6322 32.276 30.7683L32.2758 15.0481Z'
+                      fill='black'
+                    />
+                    <path
+                      d='M44.4423 12.4193V10.7802C42.1587 10.7832 39.9203 10.219 37.9828 9.15187C39.6978 10.8086 41.9561 11.951 44.4423 12.4197M32.4094 1.87514C32.3513 1.58205 32.3067 1.28701 32.2758 0.990728V0H23.4943V30.768C23.4803 34.3546 20.1813 37.2588 16.1128 37.2588C14.9594 37.2604 13.8218 37.0224 12.7918 36.5641C14.1406 38.1259 16.2705 39.134 18.6677 39.134C22.7359 39.134 26.0352 36.23 26.0496 32.6431V1.8753L32.4094 1.87514ZM18.3536 18.4078V16.6625C17.6198 16.5739 16.88 16.5296 16.1394 16.5299C7.22648 16.5299 0.00158691 22.9047 0.00158691 30.768C0.00158691 35.698 2.84106 40.0427 7.15598 42.5984C4.31009 40.0315 2.55669 36.5182 2.55669 32.643C2.55669 24.8799 9.59781 18.5674 18.3536 18.4078Z'
+                      fill='#00F2EA'
+                    />
+                  </svg>
+                  <div className="text-center text-[12.83px] font-bold font-['Manrope']">
+                    Link TikTok account
+                  </div>
+                </div>
+              </div>
+              <svg
+                xmlns='http://www.w3.org/2000/svg'
+                width='24'
+                height='24'
+                viewBox='0 0 24 24'
+                fill='none'
+              >
+                <path
+                  d='M18 6L6 18M18 18L6 6.00001'
+                  strokeWidth='2'
+                  strokeLinecap='round'
+                  className='dark:stroke-white stroke-[#B1B1B1] '
+                />
+              </svg>
+            </div>
+          )}
           {active?.status === 'verified' && (
             <>
               <div className='self-stretch flex-col justify-start items-start gap-3 flex '>
@@ -376,7 +384,7 @@ export default function GenerateTiktokTask() {
                           goal={task?.task?.goal}
                           when={format(
                             new Date(task?.task?.date_created),
-                             'yyyy-MM-dd HH:mm:ss'
+                            'yyyy-MM-dd HH:mm:ss'
                           )}
                         />
                       </div>
@@ -404,11 +412,12 @@ export default function GenerateTiktokTask() {
                           platform={task?.task?.platform}
                           task_id={task?.key}
                           task_type={task?.task?.task_type}
-                          goal={task?.task?.goal}      
+                          goal={task?.task?.goal}
                           when={format(
                             new Date(task?.task?.date_created),
-                             'yyyy-MM-dd HH:mm:ss'
-                          )}                  />
+                            'yyyy-MM-dd HH:mm:ss'
+                          )}
+                        />
                       </div>
                     ))}
                   </div>
@@ -437,7 +446,7 @@ export default function GenerateTiktokTask() {
                           goal={task?.task?.goal}
                           when={format(
                             new Date(task?.task?.date_created),
-                             'yyyy-MM-dd HH:mm:ss'
+                            'yyyy-MM-dd HH:mm:ss'
                           )}
                         />
                       </div>
@@ -468,7 +477,7 @@ export default function GenerateTiktokTask() {
                           goal={task?.task?.goal}
                           when={format(
                             new Date(task?.task?.date_created),
-                             'yyyy-MM-dd HH:mm:ss'
+                            'yyyy-MM-dd HH:mm:ss'
                           )}
                         />
                       </div>
@@ -499,7 +508,7 @@ export default function GenerateTiktokTask() {
                           goal={task?.task?.goal}
                           when={format(
                             new Date(task?.task?.date_created),
-                             'yyyy-MM-dd HH:mm:ss'
+                            'yyyy-MM-dd HH:mm:ss'
                           )}
                         />
                       </div>
@@ -537,7 +546,11 @@ export default function GenerateTiktokTask() {
                     </div>
                   </div>
                   <div
-                    onClick={() => advertTask?.length !== 0 ? onOpen() : toast.error('No task is available')}
+                    onClick={() =>
+                      advertTask?.length !== 0
+                        ? onOpen()
+                        : toast.error('No task is available')
+                    }
                     className='w-[290px] px-6 cursor-pointer py-3.5 dark:bg-white bg-fuchsia-400 rounded-[100px] justify-center items-center gap-2 inline-flex'
                   >
                     <svg
@@ -559,8 +572,9 @@ export default function GenerateTiktokTask() {
                   </div>
                   <div className="dark:text-[#B1B1B1] text-center w-8/12 self-center text-center text-black text-xs font-normal font-['Manrope']">
                     To receive your next Tiktok advert task, click the Above.
-                    You'll get one task at a time, and you must complete the current task before a new one is generated.
-                    </div>
+                    You'll get one task at a time, and you must complete the
+                    current task before a new one is generated.
+                  </div>
                 </div>
               )}
             </>
@@ -577,7 +591,7 @@ export default function GenerateTiktokTask() {
       {isOpenVerify && (
         <SocialLinkModal
           type='tiktok'
-           platform='tiktok'
+          platform='tiktok'
           icon='tik-tok'
           LogoBand={
             <svg

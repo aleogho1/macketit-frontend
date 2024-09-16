@@ -61,7 +61,7 @@ export default function LearnMoreModal({ isOpen, onClose }) {
                 Do you know you can earn daily income by performing social media
                 task such as likes, follows, comments, subscribe, share, retweet
                 and others. that is one of the so many benefit of becoming a
-                member of Trendit³
+                member of MacketIT³
               </div>
               <div className=" text-zinc-400 text-sm font-normal font-['Manrope']">
                 When you activate your account with a one-time membership fee of
@@ -74,14 +74,15 @@ export default function LearnMoreModal({ isOpen, onClose }) {
                   <br />
                 </span>
                 <ul className='list-disc flex flex-col gap-y-2'>
-                <li className="text-zinc-400 text-sm font-normal font-['Manrope']"> 
-                  Short & Simple Tasks: Unlike time-consuming gigs, our tasks
-                  are quick and easy to complete – perfect for fitting into your
-                  busy schedule. Like posts, follow accounts, share content –
-                  it's that simple!
+                  <li className="text-zinc-400 text-sm font-normal font-['Manrope']">
+                    Short & Simple Tasks: Unlike time-consuming gigs, our tasks
+                    are quick and easy to complete – perfect for fitting into
+                    your busy schedule. Like posts, follow accounts, share
+                    content – it's that simple!
                   </li>
-                  <li className="text-zinc-400 text-sm font-normal font-['Manrope']">Earn real money for your completed tasks. Redeem your
-                  earnings through convenient payment methods.
+                  <li className="text-zinc-400 text-sm font-normal font-['Manrope']">
+                    Earn real money for your completed tasks. Redeem your
+                    earnings through convenient payment methods.
                   </li>
                   <br />
                 </ul>
@@ -94,20 +95,20 @@ export default function LearnMoreModal({ isOpen, onClose }) {
                   <br />
                 </span>
                 <ul className='list-disc flex flex-col gap-y-2'>
-                <li className="text-zinc-400 text-sm font-normal font-['Manrope']">
-                  Expand your social circle and explore engaging content by
-                  following recommended accounts.
-                </li>
-                <li className="text-zinc-400 text-sm font-normal font-['Manrope']">
-                  Increase Brand Awareness: By completing tasks like liking
-                  posts, you can subtly promote your own social media profiles
-                  or favorite brands.
-                </li>
-                <li className="text-zinc-400 text-sm font-normal font-['Manrope']">
-                  Stay Current with Trends: Engaging with the latest viral
-                  content keeps you in the loop and helps you build a more
-                  relevant online presence.
-                </li>
+                  <li className="text-zinc-400 text-sm font-normal font-['Manrope']">
+                    Expand your social circle and explore engaging content by
+                    following recommended accounts.
+                  </li>
+                  <li className="text-zinc-400 text-sm font-normal font-['Manrope']">
+                    Increase Brand Awareness: By completing tasks like liking
+                    posts, you can subtly promote your own social media profiles
+                    or favorite brands.
+                  </li>
+                  <li className="text-zinc-400 text-sm font-normal font-['Manrope']">
+                    Stay Current with Trends: Engaging with the latest viral
+                    content keeps you in the loop and helps you build a more
+                    relevant online presence.
+                  </li>
                 </ul>
                 <span className="text-zinc-400 text-sm font-normal font-['Manrope']">
                   <br />
@@ -118,19 +119,19 @@ export default function LearnMoreModal({ isOpen, onClose }) {
                   <br />
                 </span>
                 <ul className='list-disc flex flex-col gap-y-2'>
-                <li className="text-zinc-400 text-sm font-normal font-['Manrope']">
-                  Interactive Community: Connect with other app users, share
-                  experiences, and learn from each other.
-                </li>
-                <li className="text-zinc-400 text-sm font-normal font-['Manrope']">
-                  Safe & Secure Environment: We prioritize user safety and
-                  security. All tasks comply with social media platform
-                  guidelines.
-                </li>
-                <li className="text-zinc-400 text-sm font-normal font-['Manrope']">
-                  Fun & Rewarding: Make money while enjoying the social media
-                  experience – it's a win-win!
-                </li>
+                  <li className="text-zinc-400 text-sm font-normal font-['Manrope']">
+                    Interactive Community: Connect with other app users, share
+                    experiences, and learn from each other.
+                  </li>
+                  <li className="text-zinc-400 text-sm font-normal font-['Manrope']">
+                    Safe & Secure Environment: We prioritize user safety and
+                    security. All tasks comply with social media platform
+                    guidelines.
+                  </li>
+                  <li className="text-zinc-400 text-sm font-normal font-['Manrope']">
+                    Fun & Rewarding: Make money while enjoying the social media
+                    experience – it's a win-win!
+                  </li>
                 </ul>
               </div>
               <div className=" text-zinc-400 text-sm font-semibold font-['Manrope']">

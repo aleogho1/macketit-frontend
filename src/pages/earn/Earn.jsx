@@ -27,18 +27,23 @@ export default function Earn() {
   const location = useLocation()
   const setEarningTab = (tab) => {
     setSelected(tab)
-    {tab === EarningTabs[0] && (
-      location.search = '?tab=post-advert',
-      navigate('/dashboard/earn/?tab=post-advert')
-    )}
-    {tab === EarningTabs[1] && (
-      location.search = '?tab=engagement-tasks',
-      navigate('/dashboard/earn/?tab=engagement-tasks')
-    )}
+    {
+      tab === EarningTabs[0] &&
+        ((location.search = '?tab=post-advert'),
+        navigate('/dashboard/earn/?tab=post-advert'))
+    }
+    {
+      tab === EarningTabs[1] &&
+        ((location.search = '?tab=engagement-tasks'),
+        navigate('/dashboard/earn/?tab=engagement-tasks'))
+    }
   }
   useEffect(() => {
-    location.search === '?tab=engagement-tasks' ? setSelected('Engagement Tasks') : ''
-  }), []
+    location.search === '?tab=engagement-tasks'
+      ? setSelected('Engagement Tasks')
+      : ''
+  }),
+    []
 
   return (
     <>
@@ -49,9 +54,9 @@ export default function Earn() {
               <div className='self-stretch p-3 bg-rose-100 justify-start items-start gap-[29px] inline-flex'>
                 <div className='grow shrink basis-0 justify-start items-center gap-2.5 flex'>
                   <div className="grow shrink basis-0 text-orange-600 text-xs font-normal font-['Manrope']">
-                    You must NOT UNLIKE or UNFOLLOW the page after you
-                    have like and followed the page. Your Trendit³ account will
-                    be suspended once you UNLIKE or UNFOLLOW the Page.
+                    You must NOT UNLIKE or UNFOLLOW the page after you have like
+                    and followed the page. Your MacketIT³ account will be
+                    suspended once you UNLIKE or UNFOLLOW the Page.
                   </div>
                   <div
                     className='cursor-pointer'
@@ -168,7 +173,7 @@ export default function Earn() {
 
                 <div className=' flex-col justify-start items-center gap-3 flex'>
                   <div className="text-blck dark:text-white text-sm font-bold font-['Manrope']">
-                    Earn on Trendit³ just got easier
+                    Earn on MacketIT³ just got easier
                   </div>
                   <div className="self-stretch md:w-[30rem] text-center text-black dark:text-zinc-400 text-xs font-normal font-['Manrope']">
                     Earn steady income by posting advertisements for
@@ -360,20 +365,20 @@ export default function Earn() {
                   <div className="self-stretch md:w-[30rem] text-center text-black dark:text-zinc-400 text-xs font-normal font-['Manrope']">
                     Now that you have activated your account learn on how to
                     earn daily on our adverts task learn on hoe to to engage in
-                    our daily task and earn steadily. Click the button to learn More
-                    now
+                    our daily task and earn steadily. Click the button to learn
+                    More now
                   </div>
-                    <Button
-                       onClick={onLearnOpen}
-                       className=' w-80 px-6 py-3.5 bg-[#FF6DFB] dark:bg-white rounded-[100px] justify-center items-center gap-2 inline-flex'
-                     >
-                       <div className="text-center text-white dark:text-black text-[12.83px] font-medium font-['Manrope']">
-                         Learn More
-                       </div>
-                     </Button>
+                  <Button
+                    onClick={onLearnOpen}
+                    className=' w-80 px-6 py-3.5 bg-[#FF6DFB] dark:bg-white rounded-[100px] justify-center items-center gap-2 inline-flex'
+                  >
+                    <div className="text-center text-white dark:text-black text-[12.83px] font-medium font-['Manrope']">
+                      Learn More
+                    </div>
+                  </Button>
                 </div>
               </div>
-             )} 
+            )}
           </div>
           <div className='self-stretch py-3 justify-start items-start gap-2 inline-flex'>
             <div className="text-white text-2xl font-medium font-['Manrope']">
@@ -385,21 +390,21 @@ export default function Earn() {
               <div className='justify-start items-center gap-[11px] flex'>
                 <AnimatePresence mode='wait'>
                   <div className='flex flex-col w-full'>
-                  <div className="flex flex-row items-center gap-x-8 text-center text-fuchsia-400 text-xs font-bold font-['Manrope']">
-                    {EarningTabs.map((tab, index) => (
-                      <p
-                        key={index}
-                        onClick={() => setEarningTab(tab)}
-                        className={`text-zinc-400 text-[12.83px] cursor-pointer font-bold font-['Manrope'] pb-2 ${
-                          selected === tab
-                            ? 'border-b-2 border-border border-solid text-[#E879F9] font-bold'
-                            : ''
-                        }`}
-                      >
-                        {tab}
-                      </p>
-                    ))}
-                  </div>
+                    <div className="flex flex-row items-center gap-x-8 text-center text-fuchsia-400 text-xs font-bold font-['Manrope']">
+                      {EarningTabs.map((tab, index) => (
+                        <p
+                          key={index}
+                          onClick={() => setEarningTab(tab)}
+                          className={`text-zinc-400 text-[12.83px] cursor-pointer font-bold font-['Manrope'] pb-2 ${
+                            selected === tab
+                              ? 'border-b-2 border-border border-solid text-[#E879F9] font-bold'
+                              : ''
+                          }`}
+                        >
+                          {tab}
+                        </p>
+                      ))}
+                    </div>
                   </div>
                 </AnimatePresence>
               </div>

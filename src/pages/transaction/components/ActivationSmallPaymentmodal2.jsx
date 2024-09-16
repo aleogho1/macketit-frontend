@@ -113,7 +113,7 @@ export default function ActivationSmallPaymentmodal2({ isOpen, onClose }) {
                   Do you know you can earn daily income by performing social
                   media task such as likes, follows, comments, subscribe, share,
                   retweet and others. that is one of the so many benefit of
-                  becoming a member of Trendit³
+                  becoming a member of MacketIT³
                 </div>
 
                 <div className=''>
@@ -134,7 +134,7 @@ export default function ActivationSmallPaymentmodal2({ isOpen, onClose }) {
                   </span>
                 </div>
                 <div onClick={onOpenMore} className='cursor-pointer'>
-                  Click here to read more about Trendit³
+                  Click here to read more about MacketIT³
                 </div>
               </div>
               <div className='w-full px-3 py-6 bg-zinc-400 bg-opacity-30 rounded justify-between itemscenter flex flex-col'>

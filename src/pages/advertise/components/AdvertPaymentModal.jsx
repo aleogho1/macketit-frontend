@@ -18,17 +18,17 @@ export default function AdvertPaymentModal({
   setPaymentError,
   isPending,
   isLoading,
-  successView
+  successView,
 }) {
   const [view, setView] = useState('')
   const [loading, setLoading] = useState()
   const { data: walletBalance } = useFetchBallance()
   const navigate = useNavigate()
-  const directBalance = parseInt(walletBalance?.balance?.replace(/,/g, '')) 
+  const directBalance = parseInt(walletBalance?.balance?.replace(/,/g, ''))
   const balanceAfterPayment = directBalance - amount
 
   useEffect(() => {
-    if(amount > directBalance) {
+    if (amount > directBalance) {
       setPaymentError('Error creating new Task: Insufficient balance.')
     } else {
       setPaymentError('')
@@ -64,7 +64,7 @@ export default function AdvertPaymentModal({
           <ModalContent className='  md:w-[28rem] overflow-visible'>
             <div className=' p-12 rounded flex-col justify-center items-center gap-12 inline-flex'>
               <div
-                onClick={() => (onClose())}
+                onClick={() => onClose()}
                 className='p-2 bg-fuchsia-400 top-[-20px] -right-4 absolute z-40 cursor-pointer rounded-[100px] '
               >
                 <AiOutlineClose size={20} color='#fff' />
@@ -75,60 +75,59 @@ export default function AdvertPaymentModal({
                 </div>
               </div>
               <div className='self-stretch flex-col justify-start items-start gap-4 flex'>
-                {
-                  isLoading ? 
-                  <div  className="w-full flex items-center justify-center">
-                    <Loader /> 
+                {isLoading ? (
+                  <div className='w-full flex items-center justify-center'>
+                    <Loader />
                   </div>
-                  :
+                ) : (
                   <div
-                  onClick={onSuccess}
-                  className='self-stretch cursor-pointer p-6 dark:bg-[#1A1A1A] bg-zinc-400 bg-opacity-30 rounded-lg justify-start items-start gap-2 inline-flex'
-                >    
-                    <svg
-                    xmlns='http://www.w3.org/2000/svg'
-                    width='24'
-                    height='24'
-                    viewBox='0 0 24 24'
-                    fill='none'
+                    onClick={onSuccess}
+                    className='self-stretch cursor-pointer p-6 dark:bg-[#1A1A1A] bg-zinc-400 bg-opacity-30 rounded-lg justify-start items-start gap-2 inline-flex'
                   >
-                    <path
-                      d='M8 9V7C8 4.79086 9.79086 3 12 3C14.2091 3 16 4.79086 16 7V9M8.2 21H15.8C16.9201 21 17.4802 21 17.908 20.782C18.2843 20.5903 18.5903 20.2843 18.782 19.908C19 19.4802 19 18.9201 19 17.8V12.2C19 11.0799 19 10.5198 18.782 10.092C18.5903 9.71569 18.2843 9.40973 17.908 9.21799C17.4802 9 16.9201 9 15.8 9H8.2C7.0799 9 6.51984 9 6.09202 9.21799C5.71569 9.40973 5.40973 9.71569 5.21799 10.092C5 10.5198 5 11.0799 5 12.2V17.8C5 18.9201 5 19.4802 5.21799 19.908C5.40973 20.2843 5.71569 20.5903 6.09202 20.782C6.51984 21 7.07989 21 8.2 21Z'
-                      stroke='#FF6DFB'
-                      strokeWidth='2'
-                      strokeLinecap='round'
-                    />
-                  </svg>
-               
-                  <div className='grow shrink basis-0 justify-start items-start gap-2 flex'>
-                    <div className='grow shrink basis-0 flex-col justify-start items-start gap-3 inline-flex'>
-                      <div className="self-stretch text-sm font-medium font-['Manrope']">
-                        100% Secure payment
-                      </div>
-                      <div className="self-stretch text-zinc-400 text-xs font-normal font-['Manrope']">
-                        Pay through our highly secured online payment partner
-                        using your VISA/Mastercard/Verve card. Or Bank transfer
-                        via USSD or internet Bank Transfer.
+                    <svg
+                      xmlns='http://www.w3.org/2000/svg'
+                      width='24'
+                      height='24'
+                      viewBox='0 0 24 24'
+                      fill='none'
+                    >
+                      <path
+                        d='M8 9V7C8 4.79086 9.79086 3 12 3C14.2091 3 16 4.79086 16 7V9M8.2 21H15.8C16.9201 21 17.4802 21 17.908 20.782C18.2843 20.5903 18.5903 20.2843 18.782 19.908C19 19.4802 19 18.9201 19 17.8V12.2C19 11.0799 19 10.5198 18.782 10.092C18.5903 9.71569 18.2843 9.40973 17.908 9.21799C17.4802 9 16.9201 9 15.8 9H8.2C7.0799 9 6.51984 9 6.09202 9.21799C5.71569 9.40973 5.40973 9.71569 5.21799 10.092C5 10.5198 5 11.0799 5 12.2V17.8C5 18.9201 5 19.4802 5.21799 19.908C5.40973 20.2843 5.71569 20.5903 6.09202 20.782C6.51984 21 7.07989 21 8.2 21Z'
+                        stroke='#FF6DFB'
+                        strokeWidth='2'
+                        strokeLinecap='round'
+                      />
+                    </svg>
+
+                    <div className='grow shrink basis-0 justify-start items-start gap-2 flex'>
+                      <div className='grow shrink basis-0 flex-col justify-start items-start gap-3 inline-flex'>
+                        <div className="self-stretch text-sm font-medium font-['Manrope']">
+                          100% Secure payment
+                        </div>
+                        <div className="self-stretch text-zinc-400 text-xs font-normal font-['Manrope']">
+                          Pay through our highly secured online payment partner
+                          using your VISA/Mastercard/Verve card. Or Bank
+                          transfer via USSD or internet Bank Transfer.
+                        </div>
                       </div>
                     </div>
-                  </div>
                     <svg
-                    xmlns='http://www.w3.org/2000/svg'
-                    width='24'
-                    height='24'
-                    viewBox='0 0 24 24'
-                    fill='none'
-                  >
-                    <path
-                      d='M5 12H18M13 6L18.2929 11.2929C18.6834 11.6834 18.6834 12.3166 18.2929 12.7071L13 18'
-                      stroke='#FF6DFB'
-                      strokeWidth='2'
-                      strokeLinecap='round'
-                    />
-                  </svg>
-                </div> 
-                }
-               
+                      xmlns='http://www.w3.org/2000/svg'
+                      width='24'
+                      height='24'
+                      viewBox='0 0 24 24'
+                      fill='none'
+                    >
+                      <path
+                        d='M5 12H18M13 6L18.2929 11.2929C18.6834 11.6834 18.6834 12.3166 18.2929 12.7071L13 18'
+                        stroke='#FF6DFB'
+                        strokeWidth='2'
+                        strokeLinecap='round'
+                      />
+                    </svg>
+                  </div>
+                )}
+
                 <div
                   onClick={() => {
                     setView('confirmPayment')
@@ -150,7 +149,7 @@ export default function AdvertPaymentModal({
                   <div className='grow shrink basis-0 justify-start items-start gap-2 flex'>
                     <div className='grow shrink basis-0 flex-col justify-start items-start gap-3 inline-flex'>
                       <div className="self-stretch text-sm font-medium font-['Manrope']">
-                        Pay from your Trendit³ Wallet
+                        Pay from your MacketIT³ Wallet
                       </div>
                       <div className="self-stretch text-zinc-400 text-xs font-normal font-['Manrope']">
                         Wallet Balance: {walletBalance?.currency_symbol}{' '}
@@ -181,7 +180,7 @@ export default function AdvertPaymentModal({
             <ModalContent className='md:w-[35rem] overflow-visible'>
               <div className='p-12 rounded flex-col justify-center items-center gap-12 inline-flex'>
                 <div
-                  onClick={() => (onClose())}
+                  onClick={() => onClose()}
                   className='p-2 bg-fuchsia-400 top-[-20px] -right-4 absolute z-40 cursor-pointer rounded-[100px] '
                 >
                   <AiOutlineClose size={20} color='#fff' />
@@ -198,7 +197,8 @@ export default function AdvertPaymentModal({
                         Total Pay
                       </div>
                       <div className=" text-3xl font-medium font-['Manrope']">
-                        {walletBalance?.currency_symbol} {''} {amount.toLocaleString()}
+                        {walletBalance?.currency_symbol} {''}{' '}
+                        {amount.toLocaleString()}
                       </div>
                     </div>
                     <div className='self-stretch justify-between items-center inline-flex'>
@@ -206,14 +206,22 @@ export default function AdvertPaymentModal({
                         Amount to be debited
                       </div>
                       <div className="text-zinc-400 text-[12.83px] font-normal font-['Manrope']">
-                        {walletBalance?.currency_symbol} {''} {amount.toLocaleString()}
+                        {walletBalance?.currency_symbol} {''}{' '}
+                        {amount.toLocaleString()}
                       </div>
                     </div>
                     <div className='self-stretch justify-between items-center inline-flex'>
                       <div className="text-zinc-400 text-[12.83px] font-normal font-['Manrope']">
                         Wallet balance after this payment
                       </div>
-                      <div className={`${paymentError === 'Error creating new Task: Insufficient balance.' ? 'text-red-500' : 'text-zinc-400'} text-[12.83px] font-normal font-['Manrope']`}>
+                      <div
+                        className={`${
+                          paymentError ===
+                          'Error creating new Task: Insufficient balance.'
+                            ? 'text-red-500'
+                            : 'text-zinc-400'
+                        } text-[12.83px] font-normal font-['Manrope']`}
+                      >
                         {walletBalance?.currency_symbol} {''}
                         {balanceAfterPayment.toLocaleString()}
                       </div>
@@ -222,10 +230,9 @@ export default function AdvertPaymentModal({
                   <div className='self-stretch hidden p-3 bg-sky-100 justify-start items-start gap-[29px] inlineflex'>
                     <div className='grow shrink basis-0 justify-start items-center gap-2.5 flex'>
                       <div className="grow shrink basis-0 text-blue-600 text-xs font-normal font-['Manrope']">
-                        You must NOT UNLIKE or UNFOLLOW the page after
-                        you have like and followed the page. Your Trendit³
-                        account will be suspended once you UNLIKE or UNFOLLOW
-                        the Page.
+                        You must NOT UNLIKE or UNFOLLOW the page after you have
+                        like and followed the page. Your MacketIT³ account will
+                        be suspended once you UNLIKE or UNFOLLOW the Page.
                       </div>
                       <svg
                         xmlns='http://www.w3.org/2000/svg'
@@ -245,17 +252,23 @@ export default function AdvertPaymentModal({
                   </div>
                 </div>
                 <div className='text-[14px] text-red-500 font-semibold -mb-8'>
-                      {paymentError === 'Error creating new Task: Insufficient balance.' && <div>
-                          {paymentError} <br />
-                           <a href='/dashboard/home' className='text-fuchsia-600'>Click here to fund your account </a>
-                        </div>   ||
-                          paymentError && `${paymentError}`
-                        }
-                  </div>
+                  {(paymentError ===
+                    'Error creating new Task: Insufficient balance.' && (
+                    <div>
+                      {paymentError} <br />
+                      <a href='/dashboard/home' className='text-fuchsia-600'>
+                        Click here to fund your account{' '}
+                      </a>
+                    </div>
+                  )) ||
+                    (paymentError && `${paymentError}`)}
+                </div>
                 <Button
                   onClick={handleFinalPayment}
                   isDisabled={isPending || paymentError}
-                  className={`w-[290px] cursor-pointer px-6 py-3.5 bg-fuchsia-600 ${paymentError ? 'bg-opacity-50' : ''} rounded-[100px] justify-center items-center gap-2 inline-flex`}
+                  className={`w-[290px] cursor-pointer px-6 py-3.5 bg-fuchsia-600 ${
+                    paymentError ? 'bg-opacity-50' : ''
+                  } rounded-[100px] justify-center items-center gap-2 inline-flex`}
                 >
                   <div className="text-center text-white text-[12.83px] font-medium font-['Manrope']">
                     {loading ? <Loader /> : 'Proceed'}
@@ -268,7 +281,7 @@ export default function AdvertPaymentModal({
             <ModalContent className='md:w-[35rem] overflow-visible '>
               <div className='p-12 rounded flex-col justify-start items-start gap-12 inline-flex'>
                 <div
-                  onClick={() => (handleHome())}
+                  onClick={() => handleHome()}
                   className='p-2 bg-fuchsia-400 top-[-20px] -right-4 absolute z-40 cursor-pointer rounded-[100px] '
                 >
                   <AiOutlineClose size={20} color='#fff' />
@@ -399,7 +412,7 @@ export default function AdvertPaymentModal({
             <ModalContent className='md:w-[35rem] overflow-visible '>
               <div className='p-12 rounded flex-col justify-start items-start gap-12 inline-flex'>
                 <div
-                  onClick={() => (handleHome())}
+                  onClick={() => handleHome()}
                   className='p-2 bg-fuchsia-400 top-[-20px] -right-4 absolute z-40 cursor-pointer rounded-[100px] '
                 >
                   <AiOutlineClose size={20} color='#fff' />
@@ -511,7 +524,7 @@ export default function AdvertPaymentModal({
                       Payment Initialized
                     </div>
                     <div className="w-[253px] text-center text-zinc-400 text-xs font-normal font-['Manrope']">
-                      Your payment has been initialized successfully. 
+                      Your payment has been initialized successfully.
                     </div>
                     <div
                       onClick={handleHome}

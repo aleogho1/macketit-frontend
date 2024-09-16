@@ -110,7 +110,7 @@ export default function GenerateShareEngageTask() {
                   Link your Sportyfy Account
                 </div>
                 <div className="self-stretch dark:text-gray-400 text-stone-900 text-xs font-normal font-['Manrope']">
-                  You need to link your  Sportyfy  Account to Trendit before you
+                  You need to link your  Sportyfy  Account to MacketIT before you
                   can start earning with your  Sportyfy  Account. Click the
                   button below to link your  Sportyfy  account now.
                 </div>

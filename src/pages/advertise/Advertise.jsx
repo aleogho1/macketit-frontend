@@ -15,19 +15,24 @@ export default function Advertise() {
   const location = useLocation()
   const setEarningTab = (tab) => {
     setSelected(tab)
-    {tab === AdvertTabs[0] && (
-      location.search = '?tab=advert-task',
-      navigate('/dashboard/advertise/?tab=advert-task')
-    )}
-    {tab === AdvertTabs[1] && (
-      location.search = '?tab=engagement-tasks',
-      navigate('/dashboard/advertise/?tab=engagement-tasks')
-    )}
+    {
+      tab === AdvertTabs[0] &&
+        ((location.search = '?tab=advert-task'),
+        navigate('/dashboard/advertise/?tab=advert-task'))
+    }
+    {
+      tab === AdvertTabs[1] &&
+        ((location.search = '?tab=engagement-tasks'),
+        navigate('/dashboard/advertise/?tab=engagement-tasks'))
+    }
   }
 
   useEffect(() => {
-    location.search === '?tab=engagement-tasks' ? setSelected('Engagement Tasks') : ''
-  }), []
+    location.search === '?tab=engagement-tasks'
+      ? setSelected('Engagement Tasks')
+      : ''
+  }),
+    []
 
   return (
     <div>
@@ -105,7 +110,7 @@ export default function Advertise() {
           </div>
           <div className=' flex-col justify-start items-center gap-3 flex'>
             <div className="text-black dark:text-white text-sm font-bold font-['Manrope']">
-              Earn on Trendit³ just got easier
+              Earn on MacketIT³ just got easier
             </div>
             <div className="self-stretch md:w-[30rem] text-center text-zinc-400 text-xs font-normal font-['Manrope']">
               Get people with atleast 500 active followers to repost your
@@ -125,8 +130,8 @@ export default function Advertise() {
             <div className='justify-start items-center gap-[11px] flex'>
               <AnimatePresence mode='wait'>
                 <div className='flex flex-col w-full'>
-                <div className="flex flex-row items-center gap-x-8 text-center text-fuchsia-400 text-xs font-bold font-['Manrope']">
-                {AdvertTabs.map((tab, index) => (
+                  <div className="flex flex-row items-center gap-x-8 text-center text-fuchsia-400 text-xs font-bold font-['Manrope']">
+                    {AdvertTabs.map((tab, index) => (
                       <p
                         key={index}
                         onClick={() => setEarningTab(tab)}
@@ -139,7 +144,7 @@ export default function Advertise() {
                         {tab}
                       </p>
                     ))}
-                </div>
+                  </div>
                 </div>
               </AnimatePresence>
             </div>

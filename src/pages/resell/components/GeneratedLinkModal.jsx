@@ -61,7 +61,7 @@ export default function GeneratedLinkModal({ isOpen, onClose }) {
                           </svg>
                         }
                       >
-                        https://trendit-web.vercel.app/7839
+                        https://MacketIT-web.vercel.app/7839
                       </Snippet>
                     </div>
                     <svg

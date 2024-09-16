@@ -62,10 +62,6 @@ export default function ResetPassword() {
       <div>
         <form onSubmit={handleSubmit(onSubmit)}>
           <div className=' min-h-screen md:h-[1024px] py-6 relative '>
-            <div className='hidden xl:block left-0 top-0 absolute'>
-              <div className='w-40 h-40 md:w-unit-8xl md:h-unit-8xl left-0 top-0 absolute opacity-30 md:opacity-10 bg-violet-500 rounded-full blur-3xl z-10 ' />
-              <div className='w-40 h-40 md:w-unit-8xl md:h-unit-8xl left-[13rem] md:left-[942.84px] top-[30rem] md:top-[427.55px] absolute opacity-20 md:opacity-10 bg-fuchsia-600 rounded-full blur-3xl z-10' />
-            </div>
             <div className='w-[96%]  md:w-[90%] mx-auto max-h-[6rem] flex justify-between items-center'>
               <Logo />
 

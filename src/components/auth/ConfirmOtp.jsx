@@ -83,10 +83,6 @@ export default function ConfirmOtp() {
     <div>
       <form onSubmit={handleSubmit(onSubmit)}>
         <div className=' min-h-screen md:h-[1024px] relative  overflow-x-clip'>
-          <div className='hidden xl:block left-0 top-0 absolute'>
-            <div className='w-40 h-40 md:w-unit-8xl md:h-unit-8xl left-0 top-0 absolute opacity-30 md:opacity-10 bg-violet-500 rounded-full blur-3xl z-10 ' />
-            <div className='w-40 h-40 md:w-unit-8xl md:h-unit-8xl left-[13rem] md:left-[942.84px] top-[30rem] md:top-[427.55px] absolute opacity-20 md:opacity-10 bg-fuchsia-600 rounded-full blur-3xl z-10' />
-          </div>
           <div className='w-[96%]  md:w-[90%] mx-auto max-h-[6rem] flex justify-between items-center'>
             <Logo />
 
@@ -107,16 +103,20 @@ export default function ConfirmOtp() {
                 Confirm your email
               </div>
               <div className="w-80 mb-4 text-center text-zinc-400 text-base font-normal font-['Manrope']">
-                We have sent an email with a code to {currentMail ? currentMail : userData?.email}, please
-                enter it below to create your Trendit account.
+                We have sent an email with a code to{' '}
+                {currentMail ? currentMail : userData?.email}, please enter it
+                below to create your MacketIT account.
               </div>
             </div>
             <div className=' w-[80%] md:w-full mx-auto  flex-col justify-start items-center gap-3.5 flex'>
               <div className='self-stretch justify-center items-center gap-3.5 flex'>
-                  <Input type='number' errorMessage={errors?.otp?.message} {...register('otp', {
+                <Input
+                  type='number'
+                  errorMessage={errors?.otp?.message}
+                  {...register('otp', {
                     required: {
                       value: true,
-                      message: 'OTP is required'
+                      message: 'OTP is required',
                     },
                     minLength: {
                       value: 6,
@@ -125,8 +125,10 @@ export default function ConfirmOtp() {
                     maxLength: {
                       value: 6,
                       message: 'OTP should have only 6 characters',
-                    }
-                  })} placeholder='Enter OTP'/>
+                    },
+                  })}
+                  placeholder='Enter OTP'
+                />
               </div>
               <div className='justify-start items-center inline-flex my-12'>
                 <div className="text-center text-zinc-400 text-[12.83px] font-normal font-['Manrope']">

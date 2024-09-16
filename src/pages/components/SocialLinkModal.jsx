@@ -13,7 +13,13 @@ import { useContext } from 'react'
 import { setSocialAcccountContext } from '../../context/SocialAccount'
 import API from '../../services/AxiosInstance'
 
-export default function SocialLinkModal({ isOpen, onClose, type, icon, platform }) {
+export default function SocialLinkModal({
+  isOpen,
+  onClose,
+  type,
+  icon,
+  platform,
+}) {
   const {
     handleSubmit,
     control,
@@ -26,20 +32,20 @@ export default function SocialLinkModal({ isOpen, onClose, type, icon, platform 
   const setAccount = useContext(setSocialAcccountContext)
   console.log(platform)
   const { mutateAsync: verifySocial, isPending } = useVerifySocial()
-  
+
   const queryClient = useQueryClient()
   const GetVerified = () => {
     API.get(`/users/social-profiles`)
-    .then((response) => {
-      setAccount(response.data?.social_profiles)
-    })
-    .catch((error) => console.error(error))
+      .then((response) => {
+        setAccount(response.data?.social_profiles)
+      })
+      .catch((error) => console.error(error))
   }
   const onSubmit = async (data) => {
     try {
-      const res = await verifySocial({...data})
+      const res = await verifySocial({ ...data })
       if (res.data.status) {
-        toast.success(res.data.message)    
+        toast.success(res.data.message)
         queryClient.invalidateQueries({ queryKey: ['get_profile'] })
         onClose()
         GetVerified()
@@ -65,7 +71,10 @@ export default function SocialLinkModal({ isOpen, onClose, type, icon, platform 
         scrollBehavior='outside'
       >
         <ModalContent className='flex flex-col w-11/12 items-center justify-center'>
-          <form onSubmit={handleSubmit(onSubmit)}  className='flex flex-col justify-center items-center'>
+          <form
+            onSubmit={handleSubmit(onSubmit)}
+            className='flex flex-col justify-center items-center'
+          >
             <div className=' px-[26px] py-8 rounded flex-col w-11/12 justify-start items-center gap-12 inline-flex'>
               <div
                 onClick={onClose}
@@ -82,14 +91,14 @@ export default function SocialLinkModal({ isOpen, onClose, type, icon, platform 
                 </div>
                 <div className="text-center text-zinc-400 text-sm font-semibold font-['Manrope']">
                   You must obey the following rules in order to successfully
-                  link your {type} account to Trendit³.
+                  link your {type} account to MacketIT³.
                 </div>
               </div>
               <ol className='flex-col justify-start items-start gap-2 list-decimal flex'>
                 <li className=" text-zinc-400 text-sm font-normal font-['Manrope']">
                   Your account on {type} must have at least 500 Active
                   Followers. Note that Ghost or Bots followers are not allowed
-                  and your account on Trendit³ will be banned if you have ghost
+                  and your account on MacketIT³ will be banned if you have ghost
                   followers
                 </li>
                 <li className=" text-zinc-400 text-sm font-normal font-['Manrope']">
@@ -134,10 +143,24 @@ export default function SocialLinkModal({ isOpen, onClose, type, icon, platform 
                       validate: {
                         isValidLink: (fieldValue) => {
                           return (
-                            (fieldValue.startsWith(`https://${platform}.`) || (fieldValue.startsWith(`https://www.${platform}.`)) || (platform === 'facebook' ? fieldValue.startsWith('https://fb.') || fieldValue.startsWith(`https://www.facebook.`) || fieldValue.startsWith('https://www.fb.'): '') || (platform === 'x' ? fieldValue.startsWith('https://twitter.') || fieldValue.startsWith(`https://www.twitter.`) || fieldValue.startsWith(`https://www.x.`) : '')) || 'Link not valid'
+                            fieldValue.startsWith(`https://${platform}.`) ||
+                            fieldValue.startsWith(`https://www.${platform}.`) ||
+                            (platform === 'facebook'
+                              ? fieldValue.startsWith('https://fb.') ||
+                                fieldValue.startsWith(
+                                  `https://www.facebook.`
+                                ) ||
+                                fieldValue.startsWith('https://www.fb.')
+                              : '') ||
+                            (platform === 'x'
+                              ? fieldValue.startsWith('https://twitter.') ||
+                                fieldValue.startsWith(`https://www.twitter.`) ||
+                                fieldValue.startsWith(`https://www.x.`)
+                              : '') ||
+                            'Link not valid'
                           )
-                        }
-                      }
+                        },
+                      },
                     }}
                   />
                   <Button

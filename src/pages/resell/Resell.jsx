@@ -43,7 +43,7 @@ export default function Resell() {
             </div>
             <div className=' flex-col justify-start items-center gap-3 flex'>
               <div className="text-white text-sm font-bold font-['Manrope']">
-                Sell anything on Trendit
+                Sell anything on MacketIT
               </div>
               <div className="self-stretch md:w-[30rem] text-center text-zinc-400 text-xs font-normal font-['Manrope']">
                 Get people with atleast 1000 active followers to repost your

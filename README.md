@@ -9,7 +9,7 @@ Currently, two official plugins are available:
 
 clone the repo
 
-cd into trendit2
+cd into MacketIT2
 
 create a new branch for yourself
 

@@ -1,32 +1,25 @@
 import { Image } from '@nextui-org/react'
-import logo from '../assets/Logo_Default.svg'
-import lightLogo from '../assets/light_Logo.svg'
-import { useContext, useEffect, useState } from 'react'
-import {
-  AppearanceContext,
-  SetAppearanceContext,
-} from '../providers/AppearanceProvider'
-import API from '../services/AxiosInstance'
-import toast from 'react-hot-toast'
-import { useNavigate } from 'react-router-dom'
-import Cookies from 'js-cookie';
+// import logo from '../assets/Logo_Default.svg'
+import logo from '../assets/macketIt-logo.png'
+import { useContext } from 'react'
+import { AppearanceContext } from '../providers/AppearanceProvider'
+import Cookies from 'js-cookie'
 
 export default function Logo() {
   const userPrefrences = useContext(AppearanceContext)
-  const setPrefrence = useContext(SetAppearanceContext)
-  const navigate = useNavigate()
 
   // useEffect(() => {
-   
+
   // }, [userPrefrences])
-  const system = window.matchMedia('(prefers-color-scheme: light)')
   return (
     <div>
       <div>
-        {userPrefrences === 'dark' || Cookies.get('appearance') === 'dark' || userPrefrences === 'system' ? (
-          <Image className='w-20 md:w-full ml-3' src={logo} />
+        {userPrefrences === 'dark' ||
+        Cookies.get('appearance') === 'dark' ||
+        userPrefrences === 'system' ? (
+          <Image className='w-[10rem] md:wfull ml-3' src={logo} />
         ) : (
-          <Image className='w-20 md:w-full ml-3' src={lightLogo} />
+          <Image className='w-[10rem] md:wfull ml-3' src={logo} />
         )}
       </div>
     </div>

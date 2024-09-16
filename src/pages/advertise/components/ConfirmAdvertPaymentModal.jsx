@@ -58,9 +58,9 @@ export default function ConfirmAdvertPaymentModal({ isOpen, onClose }) {
               <div className='self-stretch p-3 bg-sky-100 justify-start items-start gap-[29px] inline-flex'>
                 <div className='grow shrink basis-0 h-[50px] justify-start items-center gap-2.5 flex'>
                   <div className="grow shrink basis-0 text-blue-600 text-xs font-normal font-['Manrope']">
-                    You must NOT UNLIKE or UNFOLLOW the page after you
-                    have like and followed the page. Your Trendit³ account will
-                    be suspended once you UNLIKE or UNFOLLOW the Page.
+                    You must NOT UNLIKE or UNFOLLOW the page after you have like
+                    and followed the page. Your MacketIT³ account will be
+                    suspended once you UNLIKE or UNFOLLOW the Page.
                   </div>
                   <svg
                     xmlns='http://www.w3.org/2000/svg'

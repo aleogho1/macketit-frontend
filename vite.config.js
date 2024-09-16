@@ -20,8 +20,8 @@ export default defineConfig({
         'android-chrome-512x512.png',
       ],
       manifest: {
-        name: 'Trendit³',
-        short_name: 'Trendit³',
+        name: 'MacketIT³',
+        short_name: 'MacketIT³',
         description: 'Get paid for your engagements',
         display: 'standalone',
         theme_color: '#ffffff',

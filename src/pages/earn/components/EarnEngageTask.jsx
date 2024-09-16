@@ -96,7 +96,7 @@ export default function EarnEngageTask() {
             <div className='grow shrink basis-0 justify-start items-center gap-2.5 flex'>
               <div className="grow shrink basis-0 text-blue-600 text-xs font-normal font-['Manrope']">
                 You must NOT UNLIKE or UNFOLLOW the Facebook page after you have
-                like and followed the page. Your Trendit³ account will be
+                like and followed the page. Your MacketIT³ account will be
                 suspended once you UNLIKE or UNFOLLOW the Facebook Page.
               </div>
               <svg
@@ -190,7 +190,7 @@ export default function EarnEngageTask() {
                   className='self-stretch h-9 p-2 bg-white justify-center items-center gap-1 inline-flex'
                 >
                   <div className="grow shrink basis-0 text-black text-[12.83px] font-normal font-['Manrope']">
-                    https://trendit-web.vercel.app/7839
+                    https://MacketIT-web.vercel.app/7839
                   </div>
                   <div className='justify-start items-center gap-2 flex'>
                     <svg

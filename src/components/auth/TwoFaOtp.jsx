@@ -48,10 +48,6 @@ export default function TwoFaOtp() {
     <div>
       <form onSubmit={handleSubmit(onSubmit)}>
         <div className=' min-h-screen md:h-[1024px] relative  overflow-x-clip'>
-          <div className='left-0 top-0 absolute'>
-            <div className='w-40 h-40 md:w-unit-8xl md:h-unit-8xl left-0 top-0 absolute opacity-30 md:opacity-10 bg-violet-500 rounded-full blur-3xl z-10 ' />
-            <div className='w-40 h-40 md:w-unit-8xl md:h-unit-8xl left-[13rem] md:left-[942.84px] top-[30rem] md:top-[427.55px] absolute opacity-20 md:opacity-10 bg-fuchsia-600 rounded-full blur-3xl z-10' />
-          </div>
           <div className='w-[96%]  md:w-[90%] mx-auto max-h-[6rem] flex justify-between items-center'>
             <Logo />
 
@@ -73,7 +69,7 @@ export default function TwoFaOtp() {
               </div>
               <div className="w-80 mb-4 text-center text-zinc-400 text-base font-normal font-['Manrope']">
                 A code has been sent to your prefered method, please enter it
-                below to verify your Trendit account.
+                below to verify your MacketIT account.
               </div>
             </div>
             <div className=' w-[80%] md:w-full mx-auto  flex-col justify-start items-center gap-3.5 flex'>

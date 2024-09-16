@@ -84,14 +84,17 @@ export default function GenerateLikeFollowFBEngageTask() {
                     Post adverts on Facebook
                   </div>
                   <div className="self-stretch dark:text-black text-center text-white  w-11/12 m-auto text-xs font-normal font-['Manrope']">
-                    Like and follow Facebook pages for individuals, buisnesses, and organizations, and earn #3.5 per 
-                    like or follow. The more pages you like and follow, the more you earn.
+                    Like and follow Facebook pages for individuals, buisnesses,
+                    and organizations, and earn #3.5 per like or follow. The
+                    more pages you like and follow, the more you earn.
                   </div>
                   <div className='p-1 dark:bg-[#3793FF21] bg-white rounded justify-start items-start gap-3 inline-flex'>
                     <div className="text-center text-blue-600 text-[12.83px] font-normal font-['Manrope']">
-                    {
-                        EngageTask?.[`follow and like`] ?  `${EngageTask?.[`follow and like`]?.total} Task available` : 'No task available'
-                      }
+                      {EngageTask?.[`follow and like`]
+                        ? `${
+                            EngageTask?.[`follow and like`]?.total
+                          } Task available`
+                        : 'No task available'}
                     </div>
                   </div>
                 </div>
@@ -103,7 +106,7 @@ export default function GenerateLikeFollowFBEngageTask() {
                   Link your Youtube Account
                 </div>
                 <div className="self-stretch dark:text-gray-400 text-stone-900 text-xs font-normal font-['Manrope']">
-                  You need to link your Youtube Account to Trendit before you
+                  You need to link your Youtube Account to MacketIT before you
                   can start earning with your youtube Account. Click the button
                   below to link your Youtube account now.
                 </div>
@@ -287,7 +290,7 @@ export default function GenerateLikeFollowFBEngageTask() {
                       goal={task?.task?.goal}
                       when={format(
                         new Date(task?.task?.date_created),
-                         'yyyy-MM-dd HH:mm:ss'
+                        'yyyy-MM-dd HH:mm:ss'
                       )}
                     />
                   </div>
@@ -318,7 +321,7 @@ export default function GenerateLikeFollowFBEngageTask() {
                       goal={task?.task?.goal}
                       when={format(
                         new Date(task?.task?.date_created),
-                         'yyyy-MM-dd HH:mm:ss'
+                        'yyyy-MM-dd HH:mm:ss'
                       )}
                     />
                   </div>
@@ -349,7 +352,7 @@ export default function GenerateLikeFollowFBEngageTask() {
                       goal={task?.task?.goal}
                       when={format(
                         new Date(task?.task?.date_created),
-                         'yyyy-MM-dd HH:mm:ss'
+                        'yyyy-MM-dd HH:mm:ss'
                       )}
                     />
                   </div>
@@ -380,7 +383,7 @@ export default function GenerateLikeFollowFBEngageTask() {
                       goal={task?.task?.goal}
                       when={format(
                         new Date(task?.task?.date_created),
-                         'yyyy-MM-dd HH:mm:ss'
+                        'yyyy-MM-dd HH:mm:ss'
                       )}
                     />
                   </div>
@@ -411,7 +414,7 @@ export default function GenerateLikeFollowFBEngageTask() {
                       goal={task?.task?.goal}
                       when={format(
                         new Date(task?.task?.date_created),
-                         'yyyy-MM-dd HH:mm:ss'
+                        'yyyy-MM-dd HH:mm:ss'
                       )}
                     />
                   </div>
@@ -449,7 +452,11 @@ export default function GenerateLikeFollowFBEngageTask() {
                 </div>
               </div>
               <div
-                onClick={() => EngageTask?.[`follow and like`] ? onOpen() : toast.error('No task is available')}
+                onClick={() =>
+                  EngageTask?.[`follow and like`]
+                    ? onOpen()
+                    : toast.error('No task is available')
+                }
                 className='w-[290px] px-6 dark:bg-white cursor-pointer py-3.5 bg-fuchsia-400 rounded-[100px] justify-center items-center gap-2 inline-flex'
               >
                 <svg
@@ -470,8 +477,9 @@ export default function GenerateLikeFollowFBEngageTask() {
                 </div>
               </div>
               <div className="dark:text-[#B1B1B1] text-center w-8/12 self-center text-center text-black text-xs font-normal font-['Manrope']">
-                    To receive your next Facebook page like and follow task, Click Generate task.
-                    You'll get one task at a time, and you must complete the current task before a new one is generated.
+                To receive your next Facebook page like and follow task, Click
+                Generate task. You'll get one task at a time, and you must
+                complete the current task before a new one is generated.
               </div>
             </div>
           )}
