@@ -18,7 +18,7 @@ export default function ConfirmPasswordResetModal({ isOpen, onClose }) {
           <div className='p-6 bg-white rounded flex-col justify-center items-center gap-6 inline-flex'>
             <div
               onClick={onClose}
-              className='p-2 bg-fuchsia-400 top-[-20px] absolute z-40 -right-2 md:-right-4 cursor-pointer rounded-[100px] '
+              className='p-2 bg-primaryBg top-[-20px] absolute z-40 -right-2 md:-right-4 cursor-pointer rounded-[100px] '
             >
               <AiOutlineClose size={20} color='#fff' />
             </div>

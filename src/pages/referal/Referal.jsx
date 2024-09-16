@@ -15,20 +15,26 @@ export default function Referal() {
   const shareText = `Earn Daily Income by Posting Ads and Completing Simple Social Tasks for Individuals, Businesses, and Brands on Your Social Media Account Join now`
   const socials = [
     {
-      link: `https://twitter.com/intent/tweet?url=${encodeURIComponent(profileDeatils.referral_link)}&text=${encodeURIComponent(shareText)}`,
-      icon: 'x-lite'
+      link: `https://twitter.com/intent/tweet?url=${encodeURIComponent(
+        profileDeatils.referral_link
+      )}&text=${encodeURIComponent(shareText)}`,
+      icon: 'x-lite',
     },
     {
-      link: `https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(profileDeatils.referral_link)}`,
-      icon: 'facebook'
+      link: `https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(
+        profileDeatils.referral_link
+      )}`,
+      icon: 'facebook',
     },
     {
       link: '',
-      icon: 'instagram'
+      icon: 'instagram',
     },
     {
-      link: `https://wa.me/?text=${encodeURIComponent(shareText)}%20${encodeURIComponent(profileDeatils?.referral_link)}`,
-      icon: 'whatsapp'
+      link: `https://wa.me/?text=${encodeURIComponent(
+        shareText
+      )}%20${encodeURIComponent(profileDeatils?.referral_link)}`,
+      icon: 'whatsapp',
     },
     {
       link: '',
@@ -36,16 +42,17 @@ export default function Referal() {
     },
     {
       link: '',
-      icon: 'thread-lite'
-    }
+      icon: 'thread-lite',
+    },
   ]
   const shareLink = (platform, link) => {
-    platform === 'x-lite' || platform === 'facebook' || platform === 'whatsapp' ? window.open(link, "_blank") :
-    navigator.share({
-      title: 'Trendit³',
-      text: shareText,
-      url: profileDeatils?.referral_link
-    })
+    platform === 'x-lite' || platform === 'facebook' || platform === 'whatsapp'
+      ? window.open(link, '_blank')
+      : navigator.share({
+          title: 'MacketIT³',
+          text: shareText,
+          url: profileDeatils?.referral_link,
+        })
   }
 
   return (
@@ -73,24 +80,33 @@ export default function Referal() {
                   <div className='self-stretch justify-start items-start gap-0 flex'>
                     <div className='grow shrink basis-0 gap-0 flex flex-col gap-y-4 md:flex-row md:items-center md:gap-x-6'>
                       <div className='text-black font-normal text-xs flex items-center gap-x-2 bg-white border-solid border-[2px] border-black py-2 pl-2 md:pr-2'>
-                          {profileDeatils?.referral_link}
-                          <div onClick={() => (navigator.clipboard.writeText(profileDeatils?.referral_link), toast.success('Referral link copied'))} className='pointer-cursor'>
-                            <Icons type='copy' />
-                          </div>
+                        {profileDeatils?.referral_link}
+                        <div
+                          onClick={() => (
+                            navigator.clipboard.writeText(
+                              profileDeatils?.referral_link
+                            ),
+                            toast.success('Referral link copied')
+                          )}
+                          className='pointer-cursor'
+                        >
+                          <Icons type='copy' />
+                        </div>
                       </div>
                       <div className='flex items-center gap-x-4'>
-                        {
-                          socials.map((item, index) => (
-                            <div key={index} onClick={() => shareLink(item.icon, item.link)}>
-                                <Icons type={item.icon}  width={25} height={25}/>
-                            </div>
-                          ))
-                        }
+                        {socials.map((item, index) => (
+                          <div
+                            key={index}
+                            onClick={() => shareLink(item.icon, item.link)}
+                          >
+                            <Icons type={item.icon} width={25} height={25} />
+                          </div>
+                        ))}
                       </div>
                     </div>
                   </div>
                 </div>
-                )} 
+              )}
               {!profileDeatils?.membership_fee && (
                 <div className='self-stretch '>
                   <div className="text-black my-2 text-sm font-bold font-['Manrope']">
@@ -230,19 +246,23 @@ export default function Referal() {
               </div>
             ) : (
               <div className='flex flex-col pl-4 w-full'>
-                  <div className='flex flex-col gap-y-4 w-11/12 border-solid border-[1px] border-[#E4E7EC] rounded-[12px] py-4 px-2 pb-20 h-[771px] items-center overflow-hidden'>
-                    {referralHistory?.map((item, index) => (
-                      <div className='flex items-center justify-between border-solid border-b-[1px] border-[#E4E7EC] py-2 w-full px-2 ' key={index}>
-                          <div className='flex items-center gap-x-2'>
-                            <Avatar />
-                            <span>@{item.username}</span>
-                          </div>
-                          <div className='sm:flex hidden text-green-700 font-bold'>
-                              {item.status?.charAt(0).toUpperCase()+item.status?.slice(1)}
-                          </div>
+                <div className='flex flex-col gap-y-4 w-11/12 border-solid border-[1px] border-[#E4E7EC] rounded-[12px] py-4 px-2 pb-20 h-[771px] items-center overflow-hidden'>
+                  {referralHistory?.map((item, index) => (
+                    <div
+                      className='flex items-center justify-between border-solid border-b-[1px] border-[#E4E7EC] py-2 w-full px-2 '
+                      key={index}
+                    >
+                      <div className='flex items-center gap-x-2'>
+                        <Avatar />
+                        <span>@{item.username}</span>
                       </div>
-                    ))}
-                  </div>
+                      <div className='sm:flex hidden text-green-700 font-bold'>
+                        {item.status?.charAt(0).toUpperCase() +
+                          item.status?.slice(1)}
+                      </div>
+                    </div>
+                  ))}
+                </div>
               </div>
             )}
           </div>

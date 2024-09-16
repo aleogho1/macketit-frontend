@@ -1,5 +1,12 @@
-[{
-  "relation": ["delegate_permission/common.handle_all_urls"],
-  "target" : { "namespace": "android_app", "package_name": "https://app.trendit3.com",
-               "sha256_cert_fingerprints": ["53:63:97:BB:23:A2:22:BE:F2:87:32:21:9B:D3:74:A3:2D:35:1C:B2:0D:01:40:04:56:CB:F0:4D:09:D0:33:E3"] }
-}]
+[
+  {
+    "relation": ["delegate_permission/common.handle_all_urls"],
+    "target": {
+      "namespace": "android_app",
+      "package_name": "https://app.MacketIT3.com",
+      "sha256_cert_fingerprints": [
+        "53:63:97:BB:23:A2:22:BE:F2:87:32:21:9B:D3:74:A3:2D:35:1C:B2:0D:01:40:04:56:CB:F0:4D:09:D0:33:E3"
+      ]
+    }
+  }
+]

@@ -7,7 +7,7 @@ import { useFetchBallance, useFundWallet } from '../../api/walletApi'
 import { useForm, Controller } from 'react-hook-form'
 import { useState, useContext } from 'react'
 import { AppearanceContext } from '../../providers/AppearanceProvider'
-import { useEffect, useRef } from 'react';
+import { useEffect, useRef } from 'react'
 import { useNavigate } from 'react-router-dom'
 
 export default function FundWalletModal({ isOpen, onClose }) {
@@ -36,30 +36,30 @@ export default function FundWalletModal({ isOpen, onClose }) {
   }
 
   const [authUrl, setAuthUrl] = useState()
-  const linkRef = useRef(null);
+  const linkRef = useRef(null)
   const naviagte = useNavigate()
 
   const onSubmit = async (data) => {
     setFocus(false)
     fundWallet({ data })
-    .then((res) => {
-      if(res.data) {
-        setAuthUrl(res.data?.authorization_url)
-        toast.success(res.data.message, {
-          duration: 2000,
-      })     
-      const authorizationUrl = res?.data?.authorization_url 
-      if (authorizationUrl) {
-         localStorage.setItem('paystack_redirect', window.location.pathname)
-         window.location.href = authorizationUrl
-      }
-      }
-    })
-    .catch((error) => {
-      toast.error(error.response?.data?.message ?? error.message, {
-      duration: 2000,
+      .then((res) => {
+        if (res.data) {
+          setAuthUrl(res.data?.authorization_url)
+          toast.success(res.data.message, {
+            duration: 2000,
+          })
+          const authorizationUrl = res?.data?.authorization_url
+          if (authorizationUrl) {
+            localStorage.setItem('paystack_redirect', window.location.pathname)
+            window.location.href = authorizationUrl
+          }
+        }
       })
-    })
+      .catch((error) => {
+        toast.error(error.response?.data?.message ?? error.message, {
+          duration: 2000,
+        })
+      })
   }
   // useEffect(() => {
   //   if(authUrl) {
@@ -91,7 +91,7 @@ export default function FundWalletModal({ isOpen, onClose }) {
                   <div className='self-stretch  flex-col justify-start items-start gap-[18px] flex'>
                     <div className='self-stretch flex-col justify-start items-center gap-3 flex'>
                       <div className="text-sm font-bold font-['Manrope']">
-                        Fund Your Trendit³ Wallet
+                        Fund Your MacketIT³ Wallet
                       </div>
                       <div className=" text-center text-zinc-400 text-xs font-normal font-['Manrope']">
                         Please enter the amount you would like to fund your
@@ -111,12 +111,22 @@ export default function FundWalletModal({ isOpen, onClose }) {
                               type='text'
                               size='sm'
                               placeholder='Amount'
-                              onClick={ () => (setFocus(true))}
+                              onClick={() => setFocus(true)}
                               {...field}
                               errorMessage={errors?.amount?.message}
                               // isInvalid={!!errors?.amount}
                               startContent={
-                                <span className={`${appreance === 'dark' ? (focus ? 'text-white' : 'text-black') : 'text-[#C026D3]'}`}>{showBalance?.currency_symbol}</span>
+                                <span
+                                  className={`${
+                                    appreance === 'dark'
+                                      ? focus
+                                        ? 'text-white'
+                                        : 'text-black'
+                                      : 'text-[#C026D3]'
+                                  }`}
+                                >
+                                  {showBalance?.currency_symbol}
+                                </span>
                               }
                               onChange={handleInputChange}
                               classNames={{
@@ -137,19 +147,22 @@ export default function FundWalletModal({ isOpen, onClose }) {
                               className={`rounded text-[12.83px] font-normal font-['Manrope']`}
                             />
                           )}
-                          rules={{required: true, 
+                          rules={{
+                            required: true,
                             validate: {
                               isMin: (fieldValue) => {
                                 return (
-                                  fieldValue.replace(/\D/g, '') >= 500 || 'The minimum funding amount is #500'
+                                  fieldValue.replace(/\D/g, '') >= 500 ||
+                                  'The minimum funding amount is #500'
                                 )
                               },
                               isMax: (fieldValue) => {
                                 return (
-                                      fieldValue.replace(/\D/g, '') <= 500000 || 'The maximum funding amount is #500,000'
+                                  fieldValue.replace(/\D/g, '') <= 500000 ||
+                                  'The maximum funding amount is #500,000'
                                 )
-                              }
-                            }
+                              },
+                            },
                           }}
                         />
                         <small className=" text-zinc-400 text-xs font-normal font-['Manrope']">
@@ -193,8 +206,8 @@ export default function FundWalletModal({ isOpen, onClose }) {
                           href={localStorage.getItem('authUrl')}
                           ref={linkRef}
                           style={{ display: 'none' }} // Hide the link visually
-                          target="_self"
-                          rel="noopener noreferrer"
+                          target='_self'
+                          rel='noopener noreferrer'
                         >
                           Open Link
                         </a>

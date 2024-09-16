@@ -2,7 +2,7 @@
 
 export default function LoadingState() {
   return (
-    <div className='flex items-center justify-center w-full h-screen bg-black'>
+    <div className='flex items-center justify-center w-full h-screen bg-primaryBg'>
       <div className='flex items-center justify-center '>
         {/* <Spinner size='lg' /> */}
         <svg

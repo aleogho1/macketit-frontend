@@ -17,22 +17,22 @@ export default function Support() {
   const supportFaqs = [
     {
       id: 1,
-      ques: `What is Trendit³ all about?`,
-      answ: `Trendit³ is a social finance platform that connects advertisers with earners. Advertisers are those who want to grow or boost their social media presence by posting tasks for earners to perform, such as following, resharing, liking, and commenting, etc. Earners are individuals who are paid for completing these simple tasks on their social media platforms`,
+      ques: `What is MacketIT³ all about?`,
+      answ: `MacketIT³ is a social finance platform that connects advertisers with earners. Advertisers are those who want to grow or boost their social media presence by posting tasks for earners to perform, such as following, resharing, liking, and commenting, etc. Earners are individuals who are paid for completing these simple tasks on their social media platforms`,
     },
     {
       id: 2,
-      ques: `Can I lose money on Trendit³?`,
-      answ: `No, Trendit³ is 100% safe. We are not an investment company, so you cannot lose what you never invested with us. We provide services to advertisers and pay promoters for promoting our services. We only charge a one-time registration fee to become a member.`,
+      ques: `Can I lose money on MacketIT³?`,
+      answ: `No, MacketIT³ is 100% safe. We are not an investment company, so you cannot lose what you never invested with us. We provide services to advertisers and pay promoters for promoting our services. We only charge a one-time registration fee to become a member.`,
     },
     {
       id: 3,
       ques: `How much money can I make?`,
-      answ: `On Trendit³, there's no ceiling to your earning potential. Whether you're seeking full-time income or looking to supplement your earnings part-time, Trendit³ offers flexibility for all. Simply ensure your social media accounts are added and verified. Referrals can boost your earnings, earning you ₦500 for every user who signs up as an earner. Stay active on the platform to maximize your task opportunities.`,
+      answ: `On MacketIT³, there's no ceiling to your earning potential. Whether you're seeking full-time income or looking to supplement your earnings part-time, MacketIT³ offers flexibility for all. Simply ensure your social media accounts are added and verified. Referrals can boost your earnings, earning you ₦500 for every user who signs up as an earner. Stay active on the platform to maximize your task opportunities.`,
     },
     {
       id: 4,
-      ques: `When can I withdraw from Trendit³?`,
+      ques: `When can I withdraw from MacketIT³?`,
       answ: `You're free to withdraw your earnings upon reaching the minimum withdrawal threshold of ₦1000 (referrals not required). Once requested, your withdrawal will promptly be transferred to your designated bank account. In case of any delays, please reach out to us, and we'll promptly assist you.`,
     },
     {
@@ -42,11 +42,11 @@ export default function Support() {
     },
     {
       id: 6,
-      ques: `How do I register on Trendit³ as an Earner?`,
-      answ: `Visit the Trendit³ website or app.
+      ques: `How do I register on MacketIT³ as an Earner?`,
+      answ: `Visit the MacketIT³ website or app.
 Fill out the registration form with your details, such as your name, email address, and password.
 Verify your email address by clicking on the verification link OR Code sent to your email inbox.
-Once your email is verified, log in to your Trendit³ account using your credentials.
+Once your email is verified, log in to your MacketIT³ account using your credentials.
 And activate your account with a one-time payment of ₦1000.
 Add your bank account details.
 Start earning!
@@ -54,8 +54,8 @@ Start earning!
     },
     {
       id: 7,
-      ques: `How do I register on Trendit³ as an Advertiser?`,
-      answ: `Visit the Trendit³ website or app.
+      ques: `How do I register on MacketIT³ as an Advertiser?`,
+      answ: `Visit the MacketIT³ website or app.
 Sign up and verify your email.
 Log in and navigate to the advertiser registration section.
 Fill out the required information to create your advertiser account.
@@ -66,8 +66,8 @@ media presence.
     },
     {
       id: 8,
-      ques: `How can I ensure the quality of engagement on Trendit³?`,
-      answ: `Trendit³ implements strict quality control measures to ensure genuine engagement.
+      ques: `How can I ensure the quality of engagement on MacketIT³?`,
+      answ: `MacketIT³ implements strict quality control measures to ensure genuine engagement.
 Advertisers can specify task guidelines to ensure that earners perform tasks accurately.
 We actively monitor and analyze engagement activities to detect any fraudulent behavior.
 `,
@@ -84,13 +84,13 @@ We actively monitor and analyze engagement activities to detect any fraudulent b
     },
     {
       id: 11,
-      ques: `How can I contact Trendit³ for support or assistance?`,
+      ques: `How can I contact MacketIT³ for support or assistance?`,
       answ: `If you have any further questions or need assistance, you can reach out to our support team through the contact information provided on our website.`,
     },
     {
       id: 12,
-      ques: `What type of social media is accepted on Trendit³?`,
-      answ: `Trendit³ accepts all major social media platforms with good quality. However, fake or idle accounts will be rejected to maintain the integrity of the platform and ensure genuine engagement.`,
+      ques: `What type of social media is accepted on MacketIT³?`,
+      answ: `MacketIT³ accepts all major social media platforms with good quality. However, fake or idle accounts will be rejected to maintain the integrity of the platform and ensure genuine engagement.`,
     },
     {
       id: 13,
@@ -114,8 +114,8 @@ We actively monitor and analyze engagement activities to detect any fraudulent b
     },
     {
       id: 17,
-      ques: `How does Trendit³ ensure strict and genuine quality interactions?`,
-      answ: `Trendit³ maintains high-quality engagement and genuine interactions by implementing strict quality control measures, anti-fraud measures, task guidelines, and monitoring and reporting mechanisms.`,
+      ques: `How does MacketIT³ ensure strict and genuine quality interactions?`,
+      answ: `MacketIT³ maintains high-quality engagement and genuine interactions by implementing strict quality control measures, anti-fraud measures, task guidelines, and monitoring and reporting mechanisms.`,
     },
     {
       id: 19,
@@ -178,7 +178,7 @@ We actively monitor and analyze engagement activities to detect any fraudulent b
                         />
                       </svg>
                       <div className="text-center text-black dark:text-white text-sm font-medium font-['Manrope']">
-                        <a target='blank' href='mailto:support@trendit3.com'>
+                        <a target='blank' href='mailto:support@MacketIT3.com'>
                           Send email
                         </a>
                       </div>

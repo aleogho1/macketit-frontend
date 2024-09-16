@@ -1394,7 +1394,7 @@ export default function hhh() {
             <div className=" text-black dark:text-zinc-300 text-xs font-normal font-['Manrope']">
               Subscribe to a YouTube channel and earn ₦35 per subscription
               Unlock your earning potential, The more active you are, the more
-              you'll earn on Trendit³
+              you'll earn on MacketIT³
             </div>
 
             <div className='py-1.5 justify-start items-center gap-2 inline-flex'>
@@ -1726,8 +1726,8 @@ export default function hhh() {
             </div>
             <div className=" text-black dark:text-zinc-300 text-xs font-normal font-['Manrope']">
               Follow , Like or Comment on A LinkedIn account and earn N3.5 per
-              follow, like and comment.Complete more tasks on Trendit³ and watch
-              your earnings grows.
+              follow, like and comment.Complete more tasks on MacketIT³ and
+              watch your earnings grows.
             </div>
 
             <div className='py-1.5 justify-start items-center gap-2 inline-flex'>

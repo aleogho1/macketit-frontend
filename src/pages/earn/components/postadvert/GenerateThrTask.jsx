@@ -34,17 +34,15 @@ export default function GenerateThrTask() {
   const { data: profileDeatils } = useGetProfile()
   const [active, setActive] = useState()
   const socialAccount = useContext(SocialAccountContext)
- 
+
   const getSocial = () => {
-    if(socialAccount) {
+    if (socialAccount) {
       for (const item of socialAccount) {
-        item?.platform === 'threads' ? setActive(item)
-        : ''     
+        item?.platform === 'threads' ? setActive(item) : ''
       }
     } else {
       for (const item of profileDeatils?.social_profiles) {
-        item?.platform === 'threads' ? setActive(item)
-        : ''     
+        item?.platform === 'threads' ? setActive(item) : ''
       }
     }
   }
@@ -68,7 +66,7 @@ export default function GenerateThrTask() {
     }
     queryClient.invalidateQueries({ queryKey: ['get_profile'] })
   }
-  const { data: advertTask} = useGetAdvertTask('Threads')
+  const { data: advertTask } = useGetAdvertTask('Threads')
 
   return (
     <>
@@ -136,55 +134,66 @@ export default function GenerateThrTask() {
                     Post adverts on Thread
                   </div>
                   <div className="self-stretch dark:text-black text-center text-white w-11/12 m-auto text-xs font-normal font-['Manrope']">
-                  Promote advertisements for different businesses and top brands on your Threads page and earn ₦110 for each post. The more you share, the more you earn. 
+                    Promote advertisements for different businesses and top
+                    brands on your Threads page and earn ₦110 for each post. The
+                    more you share, the more you earn.
                   </div>
                   <div className='p-1 dark:bg-[#3793FF21] bg-white rounded justify-start items-start gap-3 inline-flex'>
                     <div className="text-center text-blue-600 text-[12.83px] font-normal font-['Manrope']">
-                    {
-                        advertTask?.length ? `${advertTask?.length} Task available` : 'No task available'
-                      }
+                      {advertTask?.length
+                        ? `${advertTask?.length} Task available`
+                        : 'No task available'}
                     </div>
                   </div>
                 </div>
               </div>
             </div>
-            {
-                active?.status === 'verified'
-             ?
-             (
+            {active?.status === 'verified' ? (
               <div className='w-full pl-4 md:pl-8 mt-6 flex flex-col gap-y-2'>
-              <h2 className='text-zinc-700 dark:text-white font-bold text-[16px]'>Your Threads Profile Account</h2>
-              {
-                active?.status === 'verified' ? 
-                <p className='text-blue-300 dark:text-white font-semibold text-[12px] w-11/12'>
-                Your Threads task must be done from the below Threads profile which has been linked to your Trendit³ account
-                </p> : ''
-               }
-              <div className='flex items-center gap-x-2'>
+                <h2 className='text-zinc-700 dark:text-white font-bold text-[16px]'>
+                  Your Threads Profile Account
+                </h2>
+                {active?.status === 'verified' ? (
+                  <p className='text-blue-300 dark:text-white font-semibold text-[12px] w-11/12'>
+                    Your Threads task must be done from the below Threads
+                    profile which has been linked to your MacketIT³ account
+                  </p>
+                ) : (
+                  ''
+                )}
+                <div className='flex items-center gap-x-2'>
                   <div className='bg-zinc-700 dark:bg-white flex items-center justify-between text-black bg-opacity-50 py-2 w-11/12 md:w-12/12 px-4 rounded'>
-                      {active?.link?.length > 30 ? active?.link?.substring(0, 30) + '(...)' : active?.link}
-                      <div className={`${active?.status === 'verified' && 'text-green-800' || active?.status === 'pending' && 'text-yellow-700' || active?.status === 'idle' && 'text[#FF3D00]' || active?.status === 'rejected' && 'text-[#FF3D00]'} py-[6px] px-[6px] text-center rounded-full font-semibold`}>
-                        {active?.status.charAt(0).toUpperCase()+active?.status?.slice(1)}
-                      </div>
+                    {active?.link?.length > 30
+                      ? active?.link?.substring(0, 30) + '(...)'
+                      : active?.link}
+                    <div
+                      className={`${
+                        (active?.status === 'verified' && 'text-green-800') ||
+                        (active?.status === 'pending' && 'text-yellow-700') ||
+                        (active?.status === 'idle' && 'text[#FF3D00]') ||
+                        (active?.status === 'rejected' && 'text-[#FF3D00]')
+                      } py-[6px] px-[6px] text-center rounded-full font-semibold`}
+                    >
+                      {active?.status.charAt(0).toUpperCase() +
+                        active?.status?.slice(1)}
+                    </div>
                   </div>
+                </div>
               </div>
-              </div> 
-             )
-             : (
+            ) : (
               ''
             )}
           </div>
-          {
-            active?.status !== 'verified' && (
-              <div className='self-stretch p-6 dark:bg-black bg-zinc-400 bg-opacity-30 justify-start items-start gap-[29px] inline-flex'>
+          {active?.status !== 'verified' && (
+            <div className='self-stretch p-6 dark:bg-black bg-zinc-400 bg-opacity-30 justify-start items-start gap-[29px] inline-flex'>
               <div className='grow shrink basis-0 flex-col justify-start items-start gap-2.5 inline-flex'>
                 <div className="text-center dark:text-white text-stone-900 text-base font-bold font-['Manrope']">
                   Link your Thread Account
                 </div>
                 <div className="self-stretch dark:text-gray-400 text-stone-900 text-xs font-normal font-['Manrope']">
-                  You need to link your Thread Accounts to Trendit before you
-                  can start earning with your Thread Accounts . Click the
-                  button below to link your Thread Accounts now.
+                  You need to link your Thread Accounts to MacketIT before you
+                  can start earning with your Thread Accounts . Click the button
+                  below to link your Thread Accounts now.
                 </div>
                 <div
                   onClick={handOpenSocialModal}
@@ -230,8 +239,7 @@ export default function GenerateThrTask() {
                 />
               </svg>
             </div>
-            )
-          }
+          )}
           {active?.status === 'verified' && (
             <>
               <div className='self-stretch flex-col justify-start items-start gap-3 flex '>
@@ -377,7 +385,7 @@ export default function GenerateThrTask() {
                           goal={task?.task?.goal}
                           when={format(
                             new Date(task?.task?.date_created),
-                             'yyyy-MM-dd HH:mm:ss'
+                            'yyyy-MM-dd HH:mm:ss'
                           )}
                         />
                       </div>
@@ -408,7 +416,7 @@ export default function GenerateThrTask() {
                           goal={task?.task?.goal}
                           when={format(
                             new Date(task?.task?.date_created),
-                             'yyyy-MM-dd HH:mm:ss'
+                            'yyyy-MM-dd HH:mm:ss'
                           )}
                         />
                       </div>
@@ -439,7 +447,7 @@ export default function GenerateThrTask() {
                           goal={task?.task?.goal}
                           when={format(
                             new Date(task?.task?.date_created),
-                             'yyyy-MM-dd HH:mm:ss'
+                            'yyyy-MM-dd HH:mm:ss'
                           )}
                         />
                       </div>
@@ -470,7 +478,7 @@ export default function GenerateThrTask() {
                           goal={task?.task?.goal}
                           when={format(
                             new Date(task?.task?.date_created),
-                             'yyyy-MM-dd HH:mm:ss'
+                            'yyyy-MM-dd HH:mm:ss'
                           )}
                         />
                       </div>
@@ -501,7 +509,7 @@ export default function GenerateThrTask() {
                           goal={task?.task?.goal}
                           when={format(
                             new Date(task?.task?.date_created),
-                             'yyyy-MM-dd HH:mm:ss'
+                            'yyyy-MM-dd HH:mm:ss'
                           )}
                         />
                       </div>
@@ -539,7 +547,11 @@ export default function GenerateThrTask() {
                     </div>
                   </div>
                   <div
-                    onClick={() => advertTask?.length !== 0 ? onOpen() : toast.error('No task is available')}
+                    onClick={() =>
+                      advertTask?.length !== 0
+                        ? onOpen()
+                        : toast.error('No task is available')
+                    }
                     className='w-[290px] px-6 dark:bg-white cursor-pointer py-3.5 bg-fuchsia-400 rounded-[100px] justify-center items-center gap-2 inline-flex'
                   >
                     <svg
@@ -561,8 +573,9 @@ export default function GenerateThrTask() {
                   </div>
                   <div className="dark:text-[#B1B1B1] text-center w-8/12 self-center text-center text-black text-xs font-normal font-['Manrope']">
                     To receive your next Threads advert task, click the Above.
-                    You'll get one task at a time, and you must complete the current task before a new one is generated.
-                    </div>
+                    You'll get one task at a time, and you must complete the
+                    current task before a new one is generated.
+                  </div>
                 </div>
               )}
             </>

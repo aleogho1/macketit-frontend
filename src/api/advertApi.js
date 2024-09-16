@@ -17,7 +17,7 @@ export const useCreateAdvertPaymentWallet = () => {
   return useMutation({
     mutationFn: (formData) => {
       return APIFormData.post(
-        `/tasks/new?payment_method=trendit_wallet`,
+        `/tasks/new?payment_method=MacketIT_wallet`,
         formData
       )
     },

@@ -10,8 +10,15 @@ export default {
     './node_modules/@nextui-org/theme/dist/**/*.{js,ts,jsx,tsx}',
   ],
   theme: {
-    fontFamily: { Manrope: ['Manrope', 'sans-serif'], RedHat: ["Red Hat Display", 'sans-serif'] },
-    extend: {},
+    fontFamily: {
+      Manrope: ['Manrope', 'sans-serif'],
+      RedHat: ['Red Hat Display', 'sans-serif'],
+    },
+    extend: {
+      colors: {
+        primaryBg: '#0c2d48',
+      },
+    },
   },
   darkMode: 'class',
 
@@ -22,7 +29,7 @@ export default {
         light: {
           colors: {
             secondary: '#FF6DFB',
-            border: '#E879F9'
+            border: '#E879F9',
           },
         },
         dark: {

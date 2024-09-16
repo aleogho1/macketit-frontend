@@ -33,7 +33,7 @@ export default function OnBoard() {
     setValue,
     register,
     formState: { errors },
-    setError
+    setError,
   } = useForm({})
   const { userData } = useCurrentUser()
 
@@ -61,55 +61,54 @@ export default function OnBoard() {
     const date = new Date()
     const dayDate = format(new Date(date), 'dd')
     const monthDate = format(new Date(date), 'MM')
-    const yearDate = format(new Date(date), 'yyyy') 
+    const yearDate = format(new Date(date), 'yyyy')
     const selectedDate = new Date(year, month, day).getTime()
     const presentDate = new Date(yearDate, monthDate, dayDate).getTime()
-    if(selectedDate > presentDate) {
+    if (selectedDate > presentDate) {
       setError('day', 'Invalid date selection')
-      setError('month', 'Invalid date selection')   
-      setError('year', 'Invalid date selection')   
+      setError('month', 'Invalid date selection')
+      setError('year', 'Invalid date selection')
     }
   }
 
   const onSubmit = async (data) => {
-    if(data) {
-    const day = watch('day')
-    const month = watch('month')
-    const year = watch('year')
+    if (data) {
+      const day = watch('day')
+      const month = watch('month')
+      const year = watch('year')
 
-    const selectedDate = `${year}-${month?.padStart(2, '0')}-${day?.padStart(
-      2,
-      '0'
-    )}`
-    data = { ...data, birthday: selectedDate }
-    try {
-      const formData = new FormData()
-      // Append selected image to formData if available
-      if (selectedImage) {
-        formData.append('profile_picture', selectedImage)
-      }
-      // Append other form fields
-      formData.append('gender', data.gender)
-      formData.append('birthday', selectedDate)
-      formData.append('country', data.country)
-      formData.append('state', data.state)
-      formData.append('local_government', data.local_government)
-      formData.append('phone', data.phone)
+      const selectedDate = `${year}-${month?.padStart(2, '0')}-${day?.padStart(
+        2,
+        '0'
+      )}`
+      data = { ...data, birthday: selectedDate }
+      try {
+        const formData = new FormData()
+        // Append selected image to formData if available
+        if (selectedImage) {
+          formData.append('profile_picture', selectedImage)
+        }
+        // Append other form fields
+        formData.append('gender', data.gender)
+        formData.append('birthday', selectedDate)
+        formData.append('country', data.country)
+        formData.append('state', data.state)
+        formData.append('local_government', data.local_government)
+        formData.append('phone', data.phone)
 
-      const res = await updateProfile(formData)
-      if (res.data.status) {
-        toast.success(res.data.message, {
+        const res = await updateProfile(formData)
+        if (res.data.status) {
+          toast.success(res.data.message, {
+            duration: 2000,
+          })
+          onOpen()
+        }
+      } catch (error) {
+        toast.error(error.response?.data?.message ?? error.message, {
           duration: 2000,
         })
-        onOpen()
       }
-    } catch (error) {
-      toast.error(error.response?.data?.message ?? error.message, {
-        duration: 2000,
-      })
     }
-  }
-
   }
 
   return (
@@ -117,10 +116,6 @@ export default function OnBoard() {
       <div>
         <form onSubmit={handleSubmit(onSubmit)}>
           <div className=' min-h-screen h[1024px] h-[1054px] relative '>
-            <div className='hidden xl:block left-0 top-0 absolute'>
-              <div className='w-40 h-40 md:w-unit-8xl md:h-unit-8xl left-0 top-0 absolute opacity-30 md:opacity-10 bg-violet-500 rounded-full blur-3xl z-10 ' />
-              <div className='w-40 h-40 md:w-unit-8xl md:h-unit-8xl left-[13rem] md:left-[942.84px] top-[30rem] md:top-[427.55px] absolute opacity-20 md:opacity-10 bg-fuchsia-600 rounded-full blur-3xl z-10' />
-            </div>
             <div className=' w-[20rem] md:w-[23rem] left-[10%] md:left-[40%] top-[189px] absolute flex-col justify-start items-center gap-6 inline-flex'>
               <div className='flex-col justify-start items-center gap-6 flex'>
                 <div className="w-80 text-center text-[32px] font-semibold font-['Manrope'] leading-[26.88px]">
@@ -265,7 +260,7 @@ export default function OnBoard() {
                           </Select>
                         )}
                         rules={{
-                          validate:  validateDate
+                          validate: validateDate,
                         }}
                       />
                     </div>
@@ -311,7 +306,7 @@ export default function OnBoard() {
                           </Select>
                         )}
                         rules={{
-                          validate:  validateDate
+                          validate: validateDate,
                         }}
                       />
                     </div>
@@ -357,7 +352,7 @@ export default function OnBoard() {
                           </Select>
                         )}
                         rules={{
-                          validate: validateDate
+                          validate: validateDate,
                         }}
                       />
                     </div>

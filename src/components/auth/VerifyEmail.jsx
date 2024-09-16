@@ -20,7 +20,7 @@ export default function VerifyEmail() {
     control,
     reset,
     formState: { errors },
-    setValue
+    setValue,
   } = useForm()
   const { mutateAsync: verifyUserEmail, isPending } = useVerifyEmail()
   const { mutateAsync: handleGoogleLogin, isPending: loadingAuth } =
@@ -33,7 +33,7 @@ export default function VerifyEmail() {
   const params = new URLSearchParams(location.search)
   const referral_code = params.get('referral')
   useEffect(() => {
-    referral_code!== null ? setValue('referral_code', referral_code) : ''
+    referral_code !== null ? setValue('referral_code', referral_code) : ''
   }, [])
   const { setSignUpToken } = useSignUpToken()
 
@@ -96,10 +96,6 @@ export default function VerifyEmail() {
     <div>
       <form onSubmit={handleSubmit(onSubmit)}>
         <div className=' min-h-screen md:h-[1024px] py-6 relative'>
-        <div className='hidden xl:block left-0 top-0 absolute z-0'>
-            <div className='w-40 h-40 md:w-unit-8xl md:h-unit-8xl left-0 top-0 absolute opacity-30 md:opacity-10 bg-violet-500 rounded-full blur-3xl z-0 ' />
-            <div className='w-40 h-40 md:w-unit-8xl md:h-unit-8xl left-[13rem] md:left-[942.84px] top-[30rem] md:top-[427.55px] absolute opacity-20 md:opacity-10 bg-fuchsia-600 rounded-full blur-3xl z-0' />
-          </div>
           <div className='w-[96%]  md:w-[90%] mx-auto max-h-[6rem] flex justify-between items-center'>
             <Logo />
           </div>
@@ -107,7 +103,7 @@ export default function VerifyEmail() {
           <div className=' w-[20rem] my-8 md:w-[23rem] mx-auto  flex-col  items-center gap-6 '>
             <div className='self-stretch flex-col justify-start items-center gap-3 flex'>
               <div className="w-80 text-center  text-[40px] md:text-[64px] font-semibold font-['Manrope'] leading-10 md:leading-[53.76px]">
-                Welcome to Trendit
+                Welcome to MacketIT
               </div>
               <div className="w-[18rem] py-2 text-center  text-black dark:text-zinc-400 text-base font-normal font-['Manrope']">
                 Turn Daily Social Tasks into Paychecks! Get Paid for your
@@ -136,34 +132,37 @@ export default function VerifyEmail() {
                     }}
                   />
                 )}
-                rules={{ required: true, pattern: {
-                  value: /^([a-zA-Z0-9._%-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,})$/,
-                  message: "Invalid email",
-                } }}
+                rules={{
+                  required: true,
+                  pattern: {
+                    value: /^([a-zA-Z0-9._%-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,})$/,
+                    message: 'Invalid email',
+                  },
+                }}
               />
               <div className='flex items-center w-full pr-2'>
-               <Controller
-                name='referral_code'
-                control={control}
-                render={({ field }) => (
-                  <Input
-                    {...field}
-                    size='sm'
-                    placeholder='Enter referral code'
-                    className="grow shrink basis-0 -mr-[58px]  rounded text-stone-900 text-opacity-50 text-[12.83px] font-normal font-['Manrope']"
-                    errorMessage={errors?.referral_code?.message}
-                    isInvalid={!!errors?.referral_code}
-                    classNames={{
-                      inputWrapper: [
-                        'border-2 border-transparent',
-                        'focus-within:!border-fuchsia-600  ',
-                        '!cursor-text',
-                      ],
-                    }}
-                  />
-                )}
-              />
-              <span className='z-10 text-[12px]'>Optional</span>
+                <Controller
+                  name='referral_code'
+                  control={control}
+                  render={({ field }) => (
+                    <Input
+                      {...field}
+                      size='sm'
+                      placeholder='Enter referral code'
+                      className="grow shrink basis-0 -mr-[58px]  rounded text-stone-900 text-opacity-50 text-[12.83px] font-normal font-['Manrope']"
+                      errorMessage={errors?.referral_code?.message}
+                      isInvalid={!!errors?.referral_code}
+                      classNames={{
+                        inputWrapper: [
+                          'border-2 border-transparent',
+                          'focus-within:!border-fuchsia-600  ',
+                          '!cursor-text',
+                        ],
+                      }}
+                    />
+                  )}
+                />
+                <span className='z-10 text-[12px]'>Optional</span>
               </div>
               <Button
                 type='submit'
@@ -265,7 +264,7 @@ export default function VerifyEmail() {
                 By signing up, you agree to our
               </div>
               <a
-                href='https://trendit3.com/privacy-policy'
+                href='https://MacketIT3.com/privacy-policy'
                 target='_blank'
                 className='p-2 justify-center items-center gap-1 flex py-3'
                 rel='noreferrer'

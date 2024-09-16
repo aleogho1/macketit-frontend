@@ -29,64 +29,67 @@ export default function Signup() {
   const [debouncedValue, setDebouncedValue] = useState()
   const [isExist, setExist] = useState()
   const username = watch('username')
-  
 
   useEffect(() => {
     const handler = setTimeout(() => {
       setDebouncedValue(username)
-  }, 1000)
-  return () => {
-    clearTimeout(handler)
-  };
+    }, 1000)
+    return () => {
+      clearTimeout(handler)
+    }
   })
   useEffect(() => {
-    if(debouncedValue) {
-      if(/[a-zA-Z]/.test(debouncedValue) && /[0-9]/.test(debouncedValue)) {
-        API.post('/check-username', {'username': debouncedValue})
-        .then((response) => setExist(response.data?.message))
-        .catch((error) => (setError('username', {
-          type: 'manual',
-          message: error?.response?.data?.message
-        })))
-      } else if(/[a-zA-Z]/.test(debouncedValue)) {
-        API.post('/check-username', {'username': debouncedValue})
-        .then((response) => setExist(response.data?.message))
-        .catch((error) => (setError('username', {
-          type: 'manual',
-          message: error?.response?.data?.message
-        })))
+    if (debouncedValue) {
+      if (/[a-zA-Z]/.test(debouncedValue) && /[0-9]/.test(debouncedValue)) {
+        API.post('/check-username', { username: debouncedValue })
+          .then((response) => setExist(response.data?.message))
+          .catch((error) =>
+            setError('username', {
+              type: 'manual',
+              message: error?.response?.data?.message,
+            })
+          )
+      } else if (/[a-zA-Z]/.test(debouncedValue)) {
+        API.post('/check-username', { username: debouncedValue })
+          .then((response) => setExist(response.data?.message))
+          .catch((error) =>
+            setError('username', {
+              type: 'manual',
+              message: error?.response?.data?.message,
+            })
+          )
       } else {
         setError('username', {
           type: 'manual',
-          message: 'Numeric username is not allowed'
+          message: 'Numeric username is not allowed',
         })
       }
     }
   }, [debouncedValue])
 
   const validatePassword = (value) => {
-    const hasNumber = /[0-9]/.test(value);
-    const hasSpecialChar = /[!@#$%^&*(),.?":{}_|<>-]/g.test(value);
-   if(hasSpecialChar && hasNumber) {
-    return true
-   }
-   return 'Passowrd must contain as least on special character'    
-  };
-  const validateUsername = (value) => {
-    const containsLetters = /[a-zA-Z]/.test(value);
-    const containsNumbers = /[0-9]/.test(value);
-    if(containsLetters) {
+    const hasNumber = /[0-9]/.test(value)
+    const hasSpecialChar = /[!@#$%^&*(),.?":{}_|<>-]/g.test(value)
+    if (hasSpecialChar && hasNumber) {
       return true
     }
-    if(containsLetters && containsNumbers) {
+    return 'Passowrd must contain as least on special character'
+  }
+  const validateUsername = (value) => {
+    const containsLetters = /[a-zA-Z]/.test(value)
+    const containsNumbers = /[0-9]/.test(value)
+    if (containsLetters) {
+      return true
+    }
+    if (containsLetters && containsNumbers) {
       return true
     }
     return 'Username cannot be Numeric'
   }
   const maxUserName = 16
   const checkUsername = (name) => {
-    if(name.length <= maxUserName) {
-      setValue("username", name)
+    if (name.length <= maxUserName) {
+      setValue('username', name)
     }
   }
 
@@ -111,10 +114,6 @@ export default function Signup() {
     <div>
       <form onSubmit={handleSubmit(onSubmit)}>
         <div className=' min-h-screen md:h-[1024px]  relative '>
-          <div className='hidden xl:block left-0 top-0 absolute'>
-            <div className='w-40 h-40 md:w-unit-8xl md:h-unit-8xl left-0 top-0 absolute opacity-30 md:opacity-10 bg-violet-500 rounded-full blur-3xl z-10 ' />
-            <div className='w-40 h-40 md:w-unit-8xl md:h-unit-8xl left-[13rem] md:left-[942.84px] top-[30rem] md:top-[427.55px] absolute opacity-20 md:opacity-10 bg-fuchsia-600 rounded-full blur-3xl z-10' />
-          </div>
           <div className=' mx-auto w-[20rem] md:w-[23rem] right-[10%] md:right-[38%] top-[200px] absolute  flex-col justify-start items-center gap-6 inlineflex'>
             <div className='self-stretch flex-col justify-start items-center gap-6 flex'>
               <div className="w-80 text-center  text-[32px] font-semibold font-['Manrope'] leading-[26.88px]">
@@ -187,10 +186,20 @@ export default function Signup() {
                   render={({ field }) => (
                     <Input
                       {...field}
-                      errorMessage={isExist ? (isExist ? <p className='text-green-500'>{isExist}</p> : '') : errors?.username?.message}
+                      errorMessage={
+                        isExist ? (
+                          isExist ? (
+                            <p className='text-green-500'>{isExist}</p>
+                          ) : (
+                            ''
+                          )
+                        ) : (
+                          errors?.username?.message
+                        )
+                      }
                       isInvalid={!!errors?.username}
                       required={true}
-                      onChange={(e) => (checkUsername(e.target.value))}
+                      onChange={(e) => checkUsername(e.target.value)}
                       classNames={{
                         inputWrapper: [
                           'border-2 border-transparent',
@@ -202,12 +211,13 @@ export default function Signup() {
                       className="grow shrink basis-0 text-stone-900  rounded text-opacity-50 text-[16.83px] font-normal font-['Manrope']"
                     />
                   )}
-                  rules={{ required: true, 
+                  rules={{
+                    required: true,
                     validate: validateUsername,
-                    maxLength: 16
+                    maxLength: 16,
                   }}
                 />
-                  {/* {isExist ? <p className='text-green-500'>{isExist}</p> : ''} */}
+                {/* {isExist ? <p className='text-green-500'>{isExist}</p> : ''} */}
               </div>
               <div className='self-stretch flex-col justify-start items-start gap-[7px] flex'>
                 <label className="text-center px-2 inline-flex text-[12.83px] font-medium font-['Manrope']">
@@ -284,7 +294,7 @@ export default function Signup() {
                       value: 8,
                       message: 'min length is 8',
                     },
-                    validate: validatePassword
+                    validate: validatePassword,
                   }}
                 />
 
@@ -293,7 +303,8 @@ export default function Signup() {
                     errors?.password ? 'text-red-500' : 'text-zinc-400'
                   } text-left  text-[10px] font-normal font-['Manrope']`}
                 >
-                  (Min. 8 characters with a letter, special character and a number) <br />
+                  (Min. 8 characters with a letter, special character and a
+                  number) <br />
                 </p>
               </div>
               <Button

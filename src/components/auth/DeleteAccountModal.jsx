@@ -38,7 +38,7 @@ export default function DeleteAccountModal({ isOpen, onClose }) {
           <div className=' p-12 rounded flex-col justify-center items-center gap-6 inline-flex'>
             <div
               onClick={onClose}
-              className='p-2 bg-fuchsia-400 top-[-20px] -right-2 md:-right-4 absolute z-40  cursor-pointer rounded-[100px] '
+              className='p-2 bg-primaryBg top-[-20px] -right-2 md:-right-4 absolute z-40  cursor-pointer rounded-[100px] '
             >
               <AiOutlineClose size={20} color='#fff' />
             </div>
@@ -48,7 +48,7 @@ export default function DeleteAccountModal({ isOpen, onClose }) {
               </div>
               <div className=" text-center text-xs font-normal font-['Manrope']">
                 Are you sure you want to delete your account,? By pressing this
-                button you no longer have an account on Trendit.
+                button you no longer have an account on MacketIT.
               </div>
             </div>
             <Button
