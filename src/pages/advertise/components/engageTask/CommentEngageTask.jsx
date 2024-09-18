@@ -38,7 +38,7 @@ export default function CommentEngageTask() {
     watch,
     setValue,
     formState: { errors },
-  } = useForm({ defaultValues: { amount: 40, } })
+  } = useForm({ defaultValues: { amount: 40 } })
   const { data: countries, isLoading: isCountryLoading } = useGetCountry()
   const { data: religions, isLoading: isReligionLoading } = useGetReligion()
   const { mutateAsync: createAdvert, isPending } = useCreateAdvert()
@@ -153,17 +153,19 @@ export default function CommentEngageTask() {
           <div className='p-3 bg-white dark:bg-zinc-900 flex-col justify-start items-start gap-3 inline-flex'>
             <div className='self-stretch grow shrink basis-0 flex-col justify-start items-start gap-4 flex'>
               <div className='w-full'>
-              <div
-                    onClick={() => navigate('/dashboard/advertise/?tab=engagement-tasks')}
-                    className='justify-start cursor-pointer items-center gap-[7px] inline-flex'
-                  >
-                    <div className='cursor-pointer'>
-                      <Icons type='arrow-back' />
-                    </div>
-                    <div className="text-center text-fuchsia-400 text-sm font-medium font-['Manrope']">
-                      Go back
-                    </div>
-              </div>
+                <div
+                  onClick={() =>
+                    navigate('/dashboard/advertise/?tab=engagement-tasks')
+                  }
+                  className='justify-start cursor-pointer items-center gap-[7px] inline-flex'
+                >
+                  <div className='cursor-pointer'>
+                    <Icons type='arrow-back' />
+                  </div>
+                  <div className="text-center text-primaryText text-sm font-medium font-['Manrope']">
+                    Go back
+                  </div>
+                </div>
                 <IgPageHeaderEngage
                   frame={AudFrame}
                   title={`Get Genuine People to Comment on Your  Social Media Posts`}
@@ -334,7 +336,7 @@ export default function CommentEngageTask() {
                                       'dark:group-data-[focused=true]:bg-default/60',
                                       '!cursor-text',
                                       'border-2 border-transparent',
-                                      'focus-within:!border-fuchsia-600  ',
+                                      'focus-within:!border-red-500  ',
                                       '!cursor-text',
                                     ],
                                   }}
@@ -384,28 +386,34 @@ export default function CommentEngageTask() {
                                 }}
                                 placeholder='No. of comments'
                                 {...field}
-                                className="grow shrink basis-0  rounded text-stone-900 text-opacity-50 text-[12.83px] font-normal font-['Manrope']"
+                                className="grow shrink basis-0  rounded text-primaryText text-opacity-50 text-[12.83px] font-normal font-['Manrope']"
                               />
                             )}
-                            rules={{ required: true, min: 0, 
-                                validate: {
-                                  invalidInput: (fieldValue) => {
-                                    return (
-                                      fieldValue > 0 || 'invalid input' 
-                                    )
-                                  },
-                                  isMinimum: (fieldValue) => {
-                                    return (
-                                      fieldValue * +watch().amount >= 1000 || `The total amount of #${+watch().posts_count * +watch().amount} is below our minimum order. Please note that the minimum order amount is #1,000. Kindly adjust your orer accordingly.`
-                                    )
-                                  },
-                                  isMaximum: (fieldValue) => {
-                                    return (
-                                      fieldValue * +watch().amount <= 500000 || `Your order total amount of #${(+watch().posts_count * +watch().amount).toLocaleString()} exceeds the maximum allowed amount. Please review your order and adjust the total accordingly.`
-                                    )
-                                  }
-                                }
-                             }}
+                            rules={{
+                              required: true,
+                              min: 0,
+                              validate: {
+                                invalidInput: (fieldValue) => {
+                                  return fieldValue > 0 || 'invalid input'
+                                },
+                                isMinimum: (fieldValue) => {
+                                  return (
+                                    fieldValue * +watch().amount >= 1000 ||
+                                    `The total amount of #${
+                                      +watch().posts_count * +watch().amount
+                                    } is below our minimum order. Please note that the minimum order amount is #1,000. Kindly adjust your orer accordingly.`
+                                  )
+                                },
+                                isMaximum: (fieldValue) => {
+                                  return (
+                                    fieldValue * +watch().amount <= 500000 ||
+                                    `Your order total amount of #${(
+                                      +watch().posts_count * +watch().amount
+                                    ).toLocaleString()} exceeds the maximum allowed amount. Please review your order and adjust the total accordingly.`
+                                  )
+                                },
+                              },
+                            }}
                           />
                         </div>
                         <div className='self-stretch justify-center items-center gap-2 inline-flex'>
@@ -437,21 +445,69 @@ export default function CommentEngageTask() {
                                 }}
                                 placeholder='Enter your link'
                                 {...field}
-                                className="grow shrink basis-0  rounded text-stone-900 text-opacity-50 text-[12.83px] font-normal font-['Manrope']"
+                                className="grow shrink basis-0  rounded text-primaryText text-opacity-50 text-[12.83px] font-normal font-['Manrope']"
                               />
                             )}
-                            rules={{ required: true, 
+                            rules={{
+                              required: true,
                               validate: {
                                 isValidLink: (fieldValue) => {
                                   return (
-                                    (
-                                      fieldValue.startsWith(`https://${platform}.`) || (fieldValue.startsWith(`https://www.${platform}.`))
-                                     || (platform === 'tiktok' ? fieldValue.startsWith('https://tiktok.') || fieldValue.startsWith(`https://www.tiktok.`) || fieldValue.startsWith(`https://www.vt.tiktok.`)|| fieldValue.startsWith(`https://vt.tiktok.`) : ''))
-                                     || (platform === 'facebook' ? fieldValue.startsWith('https://fb.') || fieldValue.startsWith(`https://www.facebook.`) || fieldValue.startsWith(`https://www.fb.`) || fieldValue.startsWith('https://web.facebook.') || fieldValue.startsWith('https://web.fb.') || fieldValue.startsWith('https://www.web.facebook.') || fieldValue.startsWith('https://www.web.fb.') : '')
-                                     || (platform === 'x' ? fieldValue.startsWith('https://twitter.') || fieldValue.startsWith(`https://www.twitter.`) || fieldValue.startsWith(`https://www.x.`) : '')) || 'Link not valid'
-                                 }
-                              }
-                             }}
+                                    fieldValue.startsWith(
+                                      `https://${platform}.`
+                                    ) ||
+                                    fieldValue.startsWith(
+                                      `https://www.${platform}.`
+                                    ) ||
+                                    (platform === 'tiktok'
+                                      ? fieldValue.startsWith(
+                                          'https://tiktok.'
+                                        ) ||
+                                        fieldValue.startsWith(
+                                          `https://www.tiktok.`
+                                        ) ||
+                                        fieldValue.startsWith(
+                                          `https://www.vt.tiktok.`
+                                        ) ||
+                                        fieldValue.startsWith(
+                                          `https://vt.tiktok.`
+                                        )
+                                      : '') ||
+                                    (platform === 'facebook'
+                                      ? fieldValue.startsWith('https://fb.') ||
+                                        fieldValue.startsWith(
+                                          `https://www.facebook.`
+                                        ) ||
+                                        fieldValue.startsWith(
+                                          `https://www.fb.`
+                                        ) ||
+                                        fieldValue.startsWith(
+                                          'https://web.facebook.'
+                                        ) ||
+                                        fieldValue.startsWith(
+                                          'https://web.fb.'
+                                        ) ||
+                                        fieldValue.startsWith(
+                                          'https://www.web.facebook.'
+                                        ) ||
+                                        fieldValue.startsWith(
+                                          'https://www.web.fb.'
+                                        )
+                                      : '') ||
+                                    (platform === 'x'
+                                      ? fieldValue.startsWith(
+                                          'https://twitter.'
+                                        ) ||
+                                        fieldValue.startsWith(
+                                          `https://www.twitter.`
+                                        ) ||
+                                        fieldValue.startsWith(`https://www.x.`)
+                                      : '') ||
+                                    'Link not valid'
+                                  )
+                                },
+                              },
+                            }}
                           />
                         </div>
                         <div className='self-stretch justify-center items-center gap-2 inline-flex'>
@@ -594,12 +650,14 @@ export default function CommentEngageTask() {
                     </div>
                     <div className='self-stretch px-2 md:justify-between items-center gap-2 inline-flex'>
                       <div className="w-40 text-3xl font-medium font-['Manrope']">
-                      {calculatedAmount > 0 ? ` ₦${calculatedAmount?.toLocaleString()}` : '0'}
+                        {calculatedAmount > 0
+                          ? ` ₦${calculatedAmount?.toLocaleString()}`
+                          : '0'}
                       </div>
                       <Button
                         type='submit'
                         isDisabled={isPending}
-                        className='md:w-[290px] text-white cursor-pointer px-6 py-6 bg-fuchsia-600 rounded-[100px] justify-center items-center gap-2 inline-flex'
+                        className='md:w-[290px] text-white cursor-pointer px-6 py-6 bg-primarybutton rounded-[100px] justify-center items-center gap-2 inline-flex'
                       >
                         {isPending ? <Loader /> : 'Submit and Pay'}
                       </Button>

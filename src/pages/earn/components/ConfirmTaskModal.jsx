@@ -58,18 +58,25 @@ export default function ConfirmTaskModal({
             <div className='p-6 rounded flex-col justify-center items-center gap-12 inline-flex'>
               <div
                 onClick={onClose}
-                className='p-2 bg-fuchsia-400 top-[-20px] -right-2 md:-right-4 absolute z-40  cursor-pointer rounded-[100px] '
+                className='p-2 primaryBg top-[-20px] -right-2 md:-right-4 absolute z-40  cursor-pointer rounded-[100px] '
               >
                 <AiOutlineClose size={20} color='#fff' />
               </div>
               <div className='flex-col justify-center items-center gap-3 flex'>
-                <div className="dark:text-white capitalize text-stone-900 text-sm font-bold font-['Manrope']">
-                  {title ? title : `Generate Next ${platform?.charAt(0).toUpperCase()+platform?.slice(1)} Task?`}
+                <div className="dark:text-white capitalize text-primaryText text-sm font-bold font-['Manrope']">
+                  {title
+                    ? title
+                    : `Generate Next ${
+                        platform?.charAt(0).toUpperCase() + platform?.slice(1)
+                      } Task?`}
                 </div>
                 <div className="w-[253px] text-center dark:text-[#B0B0B0] text-black text-xs font-normal font-['Manrope']">
                   {description
                     ? description
-                    : ` Are you sure you want to generate your next ${goal?.charAt(0).toUpperCase()+goal?.slice(1) || platform?.charAt(0).toUpperCase()+platform?.slice(1)} task now.
+                    : ` Are you sure you want to generate your next ${
+                        goal?.charAt(0).toUpperCase() + goal?.slice(1) ||
+                        platform?.charAt(0).toUpperCase() + platform?.slice(1)
+                      } task now.
                   You have 1 hour to perform this task. Please confirm only if
                   you are ready to perform the task.`}
                 </div>
@@ -77,7 +84,7 @@ export default function ConfirmTaskModal({
               <Button
                 onClick={handleSubmit}
                 disabled={isPending}
-                className='w-[290px] cursor-pointer px-6 py-4.5 bg-fuchsia-600 rounded-[100px] justify-center items-center gap-2 inline-flex'
+                className='w-[290px] cursor-pointer px-6 py-4.5 bg-primarybutton rounded-[100px] justify-center items-center gap-2 inline-flex'
               >
                 <div className="text-center text-white text-[12.83px] font-medium font-['Manrope']">
                   {isPending ? (

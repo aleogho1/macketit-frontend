@@ -279,7 +279,7 @@ export default function CreateThrAdvertTask() {
                   <div className='cursor-pointer'>
                     <Icons type='arrow-back' />
                   </div>
-                  <div className="text-center text-fuchsia-400 text-sm font-medium font-['Manrope']">
+                  <div className="text-center text-primaryText text-sm font-medium font-['Manrope']">
                     Go back
                   </div>
                 </div>
@@ -302,7 +302,7 @@ export default function CreateThrAdvertTask() {
                     <div className='self-stretch  flex-col justify-start items-center gap-3.5 flex'>
                       <div className='self-stretch  flex-col justify-start items-start gap-[7px] flex'>
                         <div className='px-2 justify-center items-center gap-2 inline-flex'>
-                          <div className="text-center dark:text-white text-stone-900 text-[12.83px] font-medium font-['Manrope']">
+                          <div className="text-center dark:text-white text-primaryText text-[12.83px] font-medium font-['Manrope']">
                             Select Platform
                           </div>
                         </div>
@@ -455,7 +455,7 @@ export default function CreateThrAdvertTask() {
                                       'dark:group-data-[focused=true]:bg-default/60',
                                       '!cursor-text',
                                       'border-2 border-transparent',
-                                      'focus-within:!border-fuchsia-600  ',
+                                      'focus-within:!border-red-500  ',
                                       '!cursor-text',
                                     ],
                                   }}
@@ -787,7 +787,7 @@ export default function CreateThrAdvertTask() {
                       <Button
                         type='submit'
                         isDisabled={isPending}
-                        className='md:w-[290px] text-white  cursor-pointer px-6 py-6 bg-fuchsia-600 rounded-[100px] justify-center items-center gap-2 inline-flex'
+                        className='md:w-[290px] text-white  cursor-pointer px-6 py-6 bg-primarybutton rounded-[100px] justify-center items-center gap-2 inline-flex'
                       >
                         {isPending ? <Loader /> : 'Submit and Pay'}
                       </Button>

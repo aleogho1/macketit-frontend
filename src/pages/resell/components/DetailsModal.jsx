@@ -39,7 +39,7 @@ export default function DetailsModal({ isOpen, onClose, fetchSingleItem }) {
             <div className='p-6 bg-white rounded flex-col justify-center items-center gap-12 inline-flex'>
               <div
                 onClick={onClose}
-                className='p-2 bg-fuchsia-400 top-[-20px] -right-2 md:-right-4 absolute z-40  cursor-pointer rounded-[100px] '
+                className='p-2 primaryBg top-[-20px] -right-2 md:-right-4 absolute z-40  cursor-pointer rounded-[100px] '
               >
                 <AiOutlineClose size={20} color='#fff' />
               </div>
@@ -102,7 +102,7 @@ export default function DetailsModal({ isOpen, onClose, fetchSingleItem }) {
                   <div className='self-stretch justify-start items-start gap-2 inline-flex'>
                     <div className='grow shrink basis-0 flex-col justify-start items-start gap-3 inline-flex'>
                       <div className='self-stretch justify-between items-start inline-flex'>
-                        <div className="w-[221px] text-stone-900 text-sm font-medium font-['Manrope']">
+                        <div className="w-[221px] text-primaryText text-sm font-medium font-['Manrope']">
                           {fetchSingleItem?.name} on sales @{' '}
                           {fetchSingleItem?.phone}
                         </div>
@@ -152,7 +152,7 @@ export default function DetailsModal({ isOpen, onClose, fetchSingleItem }) {
                               Commission
                             </div>
                           </div>
-                          <div className="text-stone-900 text-sm font-bold font-['Manrope']">
+                          <div className="text-primaryText text-sm font-bold font-['Manrope']">
                             ₦{fetchSingleItem?.price} {''} per sale
                           </div>
                         </div>
@@ -163,7 +163,7 @@ export default function DetailsModal({ isOpen, onClose, fetchSingleItem }) {
                             Buy this product
                           </div>
                         </Button>
-                        <Button className='grow shrink  basis-0 p-2 bg-fuchsia-400 rounded-sm border border-violet-500 border-opacity-25 justify-center items-center gap-1 flex'>
+                        <Button className='grow shrink  basis-0 p-2 primaryBg rounded-sm border border-violet-500 border-opacity-25 justify-center items-center gap-1 flex'>
                           <div className="text-center text-white text-[10px] font-medium font-['Manrope']">
                             Resell this product
                           </div>
@@ -200,7 +200,7 @@ export default function DetailsModal({ isOpen, onClose, fetchSingleItem }) {
               <div
                 // onClick={openLinkGenerated}
                 onClick={handleLinkGenerated}
-                className='w-[290px] cursor-pointer px-6 py-3.5 bg-fuchsia-600 rounded-[100px] justify-center items-center gap-2 inline-flex'
+                className='w-[290px] cursor-pointer px-6 py-3.5 bg-primarybutton rounded-[100px] justify-center items-center gap-2 inline-flex'
               >
                 <div className="text-center text-white text-[12.83px] font-medium font-['Manrope']">
                   Generate Reseller Link

@@ -146,7 +146,7 @@ const Sidebar = () => {
                   // onClick={routeToHome}
                 >
                   <div onClick={() => navigate('/dashboard/home')}>
-                  <Logo />
+                    <Logo />
                   </div>
                 </div>
               </div>
@@ -202,7 +202,7 @@ const Sidebar = () => {
                             }
     ${
       pathname.startsWith(route.route?.toLocaleLowerCase())
-        ? 'text-fuchsia-400'
+        ? 'text-primaryText'
         : 'text-menuItemIcon'
     }`}
                           />
@@ -210,7 +210,7 @@ const Sidebar = () => {
                             className={`
     ${
       pathname.startsWith(route.route?.toLocaleLowerCase())
-        ? 'text-fuchsia-400'
+        ? 'text-primaryText'
         : 'text-menuItemIcon'
     }`}
                           >

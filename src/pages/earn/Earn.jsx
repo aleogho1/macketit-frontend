@@ -200,7 +200,7 @@ export default function Earn() {
                         strokeLinecap='round'
                       />
                     </svg>
-                    <div className="text-center text-white dark:text-fuchsia-400 text-[12.83px] font-bold font-['Manrope']">
+                    <div className="text-center text-white   text-[12.83px] font-bold font-['Manrope']">
                       Become A Member
                     </div>
                   </Button>
@@ -390,7 +390,7 @@ export default function Earn() {
               <div className='justify-start items-center gap-[11px] flex'>
                 <AnimatePresence mode='wait'>
                   <div className='flex flex-col w-full'>
-                    <div className="flex flex-row items-center gap-x-8 text-center text-fuchsia-400 text-xs font-bold font-['Manrope']">
+                    <div className="flex flex-row items-center gap-x-8 text-center text-primaryText text-xs font-bold font-['Manrope']">
                       {EarningTabs.map((tab, index) => (
                         <p
                           key={index}

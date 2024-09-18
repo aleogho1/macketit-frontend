@@ -58,24 +58,24 @@ export default function AddBankModal({ isOpen, onClose, setBank }) {
       data = { bank_name: bankName, account_no: accountNo }
       if (bankName && accountNo && accountNo?.length === 10) {
         try {
-          if(accountName === undefined)  {
+          if (accountName === undefined) {
             setValue('account_name', 'Loading...')
           }
-          const res = await  API.post('/banks/verify/account', {
-             "account_no": accountNo,
-              "bank_name": bankName.value
+          const res = await API.post('/banks/verify/account', {
+            account_no: accountNo,
+            bank_name: bankName.value,
           })
           if (res?.data?.account_info) {
             setValue('account_name', res.data?.account_info?.account_name)
             toast.success(res?.data?.message)
           }
         } catch (error) {
-          if(accountName === '') {
-          toast.error(
-            'Verification failed: ' +
-              (error.response?.data?.message || error.message)
-          )
-        }
+          if (accountName === '') {
+            toast.error(
+              'Verification failed: ' +
+                (error.response?.data?.message || error.message)
+            )
+          }
         }
       }
     }
@@ -83,9 +83,9 @@ export default function AddBankModal({ isOpen, onClose, setBank }) {
   }, [bankName, accountNo, updateVerifyBank, setValue])
   const onSubmit = async (data) => {
     const details = {
-      "bank_name": data.bank_name.value,
-      "account_no": data.account_no,
-      "account_name": data.account_name
+      bank_name: data.bank_name.value,
+      account_no: data.account_no,
+      account_name: data.account_name,
     }
     setLoading(true)
     try {
@@ -95,7 +95,7 @@ export default function AddBankModal({ isOpen, onClose, setBank }) {
         setBank({
           accountName: data.account_name,
           accountNumber: data.account_no,
-          bankName: data.bank_name.value
+          bankName: data.bank_name.value,
         })
         reset()
         onClose()
@@ -119,7 +119,7 @@ export default function AddBankModal({ isOpen, onClose, setBank }) {
       '&:hover': {
         backgroundColor: 'rgba(75, 85, 99, 0.1)',
       },
-     
+
       '&:focus-within': {
         borderColor: 'rgba(244, 114, 182, 1)',
       },
@@ -157,7 +157,7 @@ export default function AddBankModal({ isOpen, onClose, setBank }) {
           <div className='p-6 md:p-12 rounded flex-col justify-center items-center flex'>
             <div
               onClick={onClose}
-              className='p-2 bg-fuchsia-400 top-[-20px] -right-2 md:-right-4 absolute z-40  cursor-pointer rounded-[100px] '
+              className='p-2 primaryBg top-[-20px] -right-2 md:-right-4 absolute z-40  cursor-pointer rounded-[100px] '
             >
               <AiOutlineClose size={20} color='#fff' />
             </div>
@@ -220,7 +220,7 @@ export default function AddBankModal({ isOpen, onClose, setBank }) {
                               'dark:group-data-[focused=true]:bg-default/60',
                               '!cursor-text',
                               'border-2 border-transparent',
-                              'focus-within:!border-fuchsia-600  ',
+                              'focus-within:!border-red-500  ',
                             ],
                           }}
                           className="grow shrink hover:text-white basis-0 text-zinc-400 text-[12.83px] font-normal font-['Manrope']"
@@ -232,7 +232,7 @@ export default function AddBankModal({ isOpen, onClose, setBank }) {
                   <div className='self-stretch  flex-col justify-start items-start gap-[7px] flex'>
                     <label className="text-center px-2  text-[12.83px] font-medium font-['Manrope']">
                       Account Name
-                    </label>             
+                    </label>
                     <Controller
                       name='account_name'
                       control={control}
@@ -257,7 +257,7 @@ export default function AddBankModal({ isOpen, onClose, setBank }) {
                               'dark:group-data-[focused=true]:bg-default/60',
                               '!cursor-text',
                               'border-2 border-transparent',
-                              'focus-within:!border-fuchsia-600  ',
+                              'focus-within:!border-red-500  ',
                             ],
                           }}
                           className="grow shrink hover:text-white basis-0 text-zinc-400 text-[12.83px] font-normal font-['Manrope']"
@@ -282,7 +282,7 @@ export default function AddBankModal({ isOpen, onClose, setBank }) {
                   <Button
                     type='submit'
                     isDisabled={isPending}
-                    className='md:w[290px]  cursor-pointer px-6 py-6 bg-fuchsia-600 rounded-[100px] justify-center items-center gap-2 inline-flex'
+                    className='md:w[290px]  cursor-pointer px-6 py-6 bg-primarybutton rounded-[100px] justify-center items-center gap-2 inline-flex'
                   >
                     <svg
                       xmlns='http://www.w3.org/2000/svg'

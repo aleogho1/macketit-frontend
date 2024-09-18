@@ -53,7 +53,7 @@ export default function Resell() {
               </div>
               <Button
                 onClick={() => navigate('/dashboard/resell-post')}
-                className='w-[290px] h-11 px-6 py-3.5 bg-fuchsia-400 text-white dark:text-black dark:bg-white rounded-[100px] justify-center items-center gap-2 inline-flex'
+                className='w-[290px] h-11 px-6 py-3.5 primaryBg text-white dark:text-black dark:bg-white rounded-[100px] justify-center items-center gap-2 inline-flex'
               >
                 <svg
                   xmlns='http://www.w3.org/2000/svg'
@@ -104,7 +104,7 @@ export default function Resell() {
                   'group-data-[focused=true]:bg-zinc-800',
                   'dark:group-data-[focused=true]:bg-zinc-800',
                   'border-2 border-transparent',
-                  'focus-within:!border-fuchsia-600  ',
+                  'focus-within:!border-red-500  ',
                   '!cursor-text',
                 ],
               }}
@@ -184,12 +184,12 @@ export default function Resell() {
                       variant='underlined'
                       classNames={{
                         tabList: '  bordered  py-2',
-                        cursor: ' bg-fuchsia-400',
+                        cursor: ' primaryBg',
                         selectedKey: 'text-green-400',
                         tabContent:
-                          'group-data-[selected=true]:text-fuchsia-400  ',
+                          'group-data-[selected=true]:text-primaryText  ',
                       }}
-                      className="text-center text-fuchsia-400 text-[12.83px] font-bold font-['Manrope']"
+                      className="text-center text-primaryText text-[12.83px] font-bold font-['Manrope']"
                       color='secondary'
                     >
                       <Tab

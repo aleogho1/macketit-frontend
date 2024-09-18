@@ -102,12 +102,11 @@ export default function VerifyEmail() {
 
           <div className=' w-[20rem] my-8 md:w-[23rem] mx-auto  flex-col  items-center gap-6 '>
             <div className='self-stretch flex-col justify-start items-center gap-3 flex'>
-              <div className="w-80 text-center  text-[40px] md:text-[64px] font-semibold font-['Manrope'] leading-10 md:leading-[53.76px]">
+              <div className="w-80 text-center text-primaryText  text-[40px] md:text-[64px] font-semibold font-['Manrope'] leading-10 md:leading-[53.76px]">
                 Welcome to MacketIT
               </div>
-              <div className="w-[18rem] py-2 text-center  text-black dark:text-zinc-400 text-base font-normal font-['Manrope']">
-                Turn Daily Social Tasks into Paychecks! Get Paid for your
-                Engagements.
+              <div className="w-[18rem] py-2 text-center  text-black  text-base font-normal font-['Manrope']">
+                Turn Daily Tasks into Payslip! Get Paid for your Time.
               </div>
             </div>
             <div className='self-stretch  flex-col justify-start items-center gap-3 flex'>
@@ -119,14 +118,14 @@ export default function VerifyEmail() {
                     {...field}
                     size='sm'
                     placeholder='Enter a valid email'
-                    className="grow shrink basis-0  rounded text-stone-900 text-opacity-50 text-[12.83px] font-normal font-['Manrope']"
+                    className="grow shrink basis-0  rounded text-primaryText text-opacity-50 text-[12.83px] font-normal font-['Manrope']"
                     errorMessage={errors?.email?.message}
                     isInvalid={!!errors?.email}
                     required={true}
                     classNames={{
                       inputWrapper: [
                         'border-2 border-transparent',
-                        'focus-within:!border-fuchsia-600  ',
+                        'focus-within:!border-red-500  ',
                         '!cursor-text',
                       ],
                     }}
@@ -149,13 +148,13 @@ export default function VerifyEmail() {
                       {...field}
                       size='sm'
                       placeholder='Enter referral code'
-                      className="grow shrink basis-0 -mr-[58px]  rounded text-stone-900 text-opacity-50 text-[12.83px] font-normal font-['Manrope']"
+                      className="grow shrink basis-0 -mr-[58px]  rounded text-primaryText text-opacity-50 text-[12.83px] font-normal font-['Manrope']"
                       errorMessage={errors?.referral_code?.message}
                       isInvalid={!!errors?.referral_code}
                       classNames={{
                         inputWrapper: [
                           'border-2 border-transparent',
-                          'focus-within:!border-fuchsia-600  ',
+                          'focus-within:!border-red-500  ',
                           '!cursor-text',
                         ],
                       }}
@@ -166,7 +165,7 @@ export default function VerifyEmail() {
               </div>
               <Button
                 type='submit'
-                className="w-[290px] px-6 py-3.5 bg-fuchsia-600 rounded-[100px] text-center text-white text-[12.83px] font-medium font-['Manrope']"
+                className="w-[290px] px-6 py-3.5 bg-primarybutton rounded-[100px] text-center text-white text-[12.83px] font-medium font-['Manrope']"
               >
                 {isPending ? <Loader /> : 'Continue'}
               </Button>
@@ -251,14 +250,13 @@ export default function VerifyEmail() {
                   navigate('/login')
                   console.log(10)
                 }}
-                className="text-center cursor-pointer z-20 text-[#FF6DFB] dark:text-fuchsia-400 text-[12.83px] font-bold font-['Manrope']"
+                className="text-center cursor-pointer z-20 text-primaryText  text-[12.83px] font-bold font-['Manrope']"
               >
                 Sign in
               </div>
             </div>
           </div>
           <div className='w-[24rem] mx-auto my-4'>
-            <div className='w-full h-0.5 bg-gradient-to-r  from-[#fff]  dark:from-[#000] !via-[#FF6DFB] to-[#fff] dark:to-[#000] '></div>
             <div className=' flex p-2 bordert border[#CB29BE]  justify-center items-center'>
               <div className="text-center cursor-pointer text-zinc-400 text-[12.83px] font-normal font-['Manrope']">
                 By signing up, you agree to our
@@ -273,7 +271,7 @@ export default function VerifyEmail() {
                 <span className="text-zinc-400 text-[12.83px] font-normal font-['Manrope']">
                   {' '}
                 </span>
-                <span className="text-black dark:text-white text-[12.83px] font-bold font-['Manrope']">
+                <span className="text-black text-[12.83px] font-bold font-['Manrope']">
                   Terms and Privacy Policy
                 </span>
               </a>

@@ -19,22 +19,22 @@ export default function ConfirmAdvertPaymentModal({ isOpen, onClose }) {
           <div className=' p-6 bg-white rounded flex-col justify-center items-center gap-12 inline-flex'>
             <div
               onClick={onClose}
-              className='p-2 bg-fuchsia-400 top-[-20px] -right-2 md:-right-4 absolute z-40 cursor-pointer rounded-[100px] '
+              className='p-2 primaryBg top-[-20px] -right-2 md:-right-4 absolute z-40 cursor-pointer rounded-[100px] '
             >
               <AiOutlineClose size={20} color='#fff' />
             </div>
             <div className='flex-col justify-center items-center gap-3 flex'>
-              <div className="text-stone-900 text-sm font-bold font-['Manrope']">
+              <div className="text-primaryText text-sm font-bold font-['Manrope']">
                 How would you like to pay?
               </div>
             </div>
             <div className='self-stretch h-[261px] flex-col justify-center items-center gap-3 flex'>
               <div className='self-stretch h-[175px] p-3 bg-zinc-400 bg-opacity-30 rounded flex-col justify-center items-center gap-2 flex'>
                 <div className='w-[127px] px-2 flex-col justify-center items-center gap-2 flex'>
-                  <div className="text-center text-stone-900 text-[12.83px] font-medium font-['Manrope']">
+                  <div className="text-center text-primaryText text-[12.83px] font-medium font-['Manrope']">
                     Total Pay
                   </div>
-                  <div className="text-stone-900 text-3xl font-medium font-['Manrope']">
+                  <div className="text-primaryText text-3xl font-medium font-['Manrope']">
                     ₦589 .90
                   </div>
                 </div>
@@ -79,7 +79,7 @@ export default function ConfirmAdvertPaymentModal({ isOpen, onClose }) {
                 </div>
               </div>
             </div>
-            <div className='w-[290px] px-6 py-3.5 bg-fuchsia-600 rounded-[100px] justify-center items-center gap-2 inline-flex'>
+            <div className='w-[290px] px-6 py-3.5 bg-primarybutton rounded-[100px] justify-center items-center gap-2 inline-flex'>
               <div className="text-center text-white text-[12.83px] font-medium font-['Manrope']">
                 Proceed
               </div>

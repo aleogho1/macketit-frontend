@@ -63,7 +63,7 @@ export default function TransactionDownloadModal({ isOpen, onClose }) {
             <div className='p-6 md:p-12 rounded flex-col justify-center items-center gap-12 inline-flex'>
               <div
                 onClick={onClose}
-                className='p-2 bg-fuchsia-400 top-[-20px] -right-2 md:-right-4 absolute z-40  cursor-pointer rounded-[100px] '
+                className='p-2 primaryBg top-[-20px] -right-2 md:-right-4 absolute z-40  cursor-pointer rounded-[100px] '
               >
                 <AiOutlineClose size={20} color='#fff' />
               </div>
@@ -99,7 +99,7 @@ export default function TransactionDownloadModal({ isOpen, onClose }) {
                 </select>
                 <button
                   onClick={handleExport}
-                  className='px-4 py-2 bg-fuchsia-400 rounded'
+                  className='px-4 py-2 primaryBg rounded'
                 >
                   {isPending ? (
                     <div className='flex justify-center'>

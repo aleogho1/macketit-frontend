@@ -100,9 +100,9 @@ export default function RightSidebar() {
                   tabList: '  bordered  py-2',
                   cursor: ' bg-[#FF6DFB]',
                   tabContent:
-                    'group-data-[selected=true]:text-[#FF6DFB]  dark:group-data-[selected=true]:text-[#FF6DFB] ',
+                    'group-data-[selected=true]:text-primaryText  dark:group-data-[selected=true]:text-primaryText ',
                 }}
-                className="text-center text-[#FF6DFB] overflow-auto dark:text-[#FF6DFB] text-[12.83px] font-bold font-['Campton']"
+                className="text-center text-primaryText overflow-auto dark:text-primaryText text-[12.83px] font-bold font-['Campton']"
                 // color='secondary'
               >
                 <Tab key='activities' title='Activities'>
@@ -119,7 +119,7 @@ export default function RightSidebar() {
                     {activities?.length > 8 && (
                       <Button
                         variant='light'
-                        className="text-center  bg-none mx-auto px-2 py-3 justify-center items-center gap-1 inline-flex text-fuchsia-400 text-[12.83px] font-bold font-['Campton']"
+                        className="text-center  bg-none mx-auto px-2 py-3 justify-center items-center gap-1 inline-flex text-primaryText text-[12.83px] font-bold font-['Campton']"
                       >
                         View more
                       </Button>
@@ -157,7 +157,7 @@ export default function RightSidebar() {
                     {notification?.length > 8 && (
                       <Button
                         variant='light'
-                        className="text-center  bg-none mx-auto px-2 py-3 justify-center items-center gap-1 inline-flex text-fuchsia-400 text-[12.83px] font-bold font-['Campton']"
+                        className="text-center  bg-none mx-auto px-2 py-3 justify-center items-center gap-1 inline-flex text-primaryText text-[12.83px] font-bold font-['Campton']"
                       >
                         View more
                       </Button>
@@ -194,7 +194,7 @@ export default function RightSidebar() {
                     {messages?.length > 8 && (
                       <Button
                         variant='light'
-                        className="text-center  bg-none mx-auto px-2 py-3 justify-center items-center gap-1 inline-flex text-fuchsia-400 text-[12.83px] font-bold font-['Campton']"
+                        className="text-center  bg-none mx-auto px-2 py-3 justify-center items-center gap-1 inline-flex text-primaryText text-[12.83px] font-bold font-['Campton']"
                       >
                         View more
                       </Button>

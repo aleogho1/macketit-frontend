@@ -107,7 +107,7 @@ export default function ResellForm() {
               </div>
               <div className='self-stretch  mt-8 grow shrink basis-0 flex-col justify-start items-start gap-4 flex'>
                 <div className='self-stretch py-3 justify-start items-start gap-2 inline-flex'>
-                  <div className="text-stone-900 text-2xl font-medium font-['Manrope']">
+                  <div className="text-primaryText text-2xl font-medium font-['Manrope']">
                     Post your product
                   </div>
                 </div>
@@ -116,7 +116,7 @@ export default function ResellForm() {
                     <div className='self-stretch  flex-col justify-start items-center gap-3.5 flex'>
                       <div className='self-stretch  flex-col justify-start items-start gap-[7px] flex'>
                         <div className='px-2 justify-center items-center gap-2 inline-flex'>
-                          <div className="text-center text-stone-900 text-[12.83px] font-medium font-['Manrope']">
+                          <div className="text-center text-primaryText text-[12.83px] font-medium font-['Manrope']">
                             Name
                           </div>
                         </div>
@@ -133,7 +133,7 @@ export default function ResellForm() {
                                 required={true}
                                 placeholder='name'
                                 {...field}
-                                className="grow shrink basis-0  rounded text-stone-900 text-opacity-50 text-[12.83px] font-normal font-['Manrope']"
+                                className="grow shrink basis-0  rounded text-primaryText text-opacity-50 text-[12.83px] font-normal font-['Manrope']"
                               />
                             )}
                             rules={{ required: true }}
@@ -142,7 +142,7 @@ export default function ResellForm() {
                       </div>
                       <div className='self-stretch  flex-col justify-start items-start gap-[7px] flex'>
                         <div className='px-2 justify-center items-center gap-2 inline-flex'>
-                          <div className="text-center text-stone-900 text-[12.83px] font-medium font-['Manrope']">
+                          <div className="text-center text-primaryText text-[12.83px] font-medium font-['Manrope']">
                             Return Policy
                           </div>
                         </div>
@@ -195,7 +195,7 @@ export default function ResellForm() {
                       </div>
                       <div className='self-stretch  flex-col justify-start items-start gap-[7px] flex'>
                         <div className='px-2 justify-center items-center gap-2 inline-flex'>
-                          <div className="text-center text-stone-900 text-[12.83px] font-medium font-['Manrope']">
+                          <div className="text-center text-primaryText text-[12.83px] font-medium font-['Manrope']">
                             Category
                           </div>
                         </div>
@@ -245,7 +245,7 @@ export default function ResellForm() {
                       </div>
                       <div className='self-stretch flex-col justify-start items-start gap-[7px] flex'>
                         <div className='px-2 justify-center items-center gap-2 inline-flex'>
-                          <div className="text-center text-stone-900 text-[12.83px] font-medium font-['Manrope']">
+                          <div className="text-center text-primaryText text-[12.83px] font-medium font-['Manrope']">
                             Phone
                           </div>
                         </div>
@@ -261,14 +261,14 @@ export default function ResellForm() {
                                 required={true}
                                 placeholder='phone'
                                 {...field}
-                                className="grow shrink basis-0  rounded text-stone-900 text-opacity-50 text-[12.83px] font-normal font-['Manrope']"
+                                className="grow shrink basis-0  rounded text-primaryText text-opacity-50 text-[12.83px] font-normal font-['Manrope']"
                               />
                             )}
                             rules={{ required: true }}
                           />
                         </div>
                         <div className='self-stretch justify-center items-center gap-2 inline-flex'>
-                          <div className="grow shrink basis-0 text-stone-900 text-[10px] font-normal font-['Manrope']">
+                          <div className="grow shrink basis-0 text-primaryText text-[10px] font-normal font-['Manrope']">
                             Please enter the available phone number you want
                             your buyers to call you on. Make sure you enter the
                             right number.
@@ -277,7 +277,7 @@ export default function ResellForm() {
                       </div>
                       <div className='self-stretch flex-col justify-start items-start gap-[7px] flex'>
                         <div className='px-2 justify-center items-center gap-2 inline-flex'>
-                          <div className="text-center text-stone-900 text-[12.83px] font-medium font-['Manrope']">
+                          <div className="text-center text-primaryText text-[12.83px] font-medium font-['Manrope']">
                             Enter Brand Name
                           </div>
                         </div>
@@ -292,13 +292,13 @@ export default function ResellForm() {
                                 isInvalid={!!errors?.brand_name}
                                 placeholder='brand name'
                                 {...field}
-                                className="grow shrink basis-0  rounded text-stone-900 text-opacity-50 text-[12.83px] font-normal font-['Manrope']"
+                                className="grow shrink basis-0  rounded text-primaryText text-opacity-50 text-[12.83px] font-normal font-['Manrope']"
                               />
                             )}
                           />
                         </div>
                         <div className='self-stretch justify-center items-center gap-2 inline-flex'>
-                          <div className="grow shrink basis-0 text-stone-900 text-[10px] font-normal font-['Manrope']">
+                          <div className="grow shrink basis-0 text-primaryText text-[10px] font-normal font-['Manrope']">
                             Please enter the available colours you want your
                             buyers to choose from. Make sure you enter a comma
                             after each option. You can leave this field empty if
@@ -308,7 +308,7 @@ export default function ResellForm() {
                       </div>
                       <div className='self-stretch flex-col justify-start items-start gap-[7px] flex'>
                         <div className='px-2 justify-center items-center gap-2 inline-flex'>
-                          <div className="text-center text-stone-900 text-[12.83px] font-medium font-['Manrope']">
+                          <div className="text-center text-primaryText text-[12.83px] font-medium font-['Manrope']">
                             Enter Available Colours
                           </div>
                         </div>
@@ -323,13 +323,13 @@ export default function ResellForm() {
                                 isInvalid={!!errors?.color}
                                 placeholder='color'
                                 {...field}
-                                className="grow shrink basis-0  rounded text-stone-900 text-opacity-50 text-[12.83px] font-normal font-['Manrope']"
+                                className="grow shrink basis-0  rounded text-primaryText text-opacity-50 text-[12.83px] font-normal font-['Manrope']"
                               />
                             )}
                           />
                         </div>
                         <div className='self-stretch justify-center items-center gap-2 inline-flex'>
-                          <div className="grow shrink basis-0 text-stone-900 text-[10px] font-normal font-['Manrope']">
+                          <div className="grow shrink basis-0 text-primaryText text-[10px] font-normal font-['Manrope']">
                             Please enter the available colours you want your
                             buyers to choose from. Make sure you enter a comma
                             after each option. You can leave this field empty if
@@ -339,7 +339,7 @@ export default function ResellForm() {
                       </div>
                       <div className='self-stretch flex-col justify-start items-start gap-[7px] flex'>
                         <div className='px-2 justify-center items-center gap-2 inline-flex'>
-                          <div className="text-center text-stone-900 text-[12.83px] font-medium font-['Manrope']">
+                          <div className="text-center text-primaryText text-[12.83px] font-medium font-['Manrope']">
                             Enter Available Sizes
                           </div>
                         </div>
@@ -354,14 +354,14 @@ export default function ResellForm() {
                                 isInvalid={!!errors?.posts_count}
                                 placeholder='size'
                                 {...field}
-                                className="grow shrink basis-0  rounded text-stone-900 text-opacity-50 text-[12.83px] font-normal font-['Manrope']"
+                                className="grow shrink basis-0  rounded text-primaryText text-opacity-50 text-[12.83px] font-normal font-['Manrope']"
                               />
                             )}
                             rules={{ required: true }}
                           />
                         </div>
                         <div className='self-stretch justify-center items-center gap-2 inline-flex'>
-                          <div className="grow shrink basis-0 text-stone-900 text-[10px] font-normal font-['Manrope']">
+                          <div className="grow shrink basis-0 text-primaryText text-[10px] font-normal font-['Manrope']">
                             Please enter the available sizes you want your
                             buyers to choose from. Make sure you enter a comma
                             after each option. You can leave this field empty if
@@ -371,7 +371,7 @@ export default function ResellForm() {
                       </div>
                       <div className='self-stretch flex-col justify-start items-start gap-[7px] flex'>
                         <div className='px-2 justify-center items-center gap-2 inline-flex'>
-                          <div className="text-center text-stone-900 text-[12.83px] font-medium font-['Manrope']">
+                          <div className="text-center text-primaryText text-[12.83px] font-medium font-['Manrope']">
                             Price
                           </div>
                         </div>
@@ -387,14 +387,14 @@ export default function ResellForm() {
                                 required={true}
                                 placeholder='Enter the number of view you want'
                                 {...field}
-                                className="grow shrink basis-0  rounded text-stone-900 text-opacity-50 text-[12.83px] font-normal font-['Manrope']"
+                                className="grow shrink basis-0  rounded text-primaryText text-opacity-50 text-[12.83px] font-normal font-['Manrope']"
                               />
                             )}
                             rules={{ required: true }}
                           />
                         </div>
                         <div className='self-stretch justify-center items-center gap-2 inline-flex'>
-                          <div className="grow shrink basis-0 text-stone-900 text-[10px] font-normal font-['Manrope']">
+                          <div className="grow shrink basis-0 text-primaryText text-[10px] font-normal font-['Manrope']">
                             Please make sure your price is very affordable and
                             competitive. Good Products with Great prices get
                             massive sales within a short period of time.
@@ -403,7 +403,7 @@ export default function ResellForm() {
                       </div>
                       <div className='self-stretch flex-col justify-start items-start gap-[7px] flex'>
                         <div className='px-2 justify-center items-center gap-2 inline-flex'>
-                          <div className="text-center text-stone-900 text-[12.83px] font-medium font-['Manrope']">
+                          <div className="text-center text-primaryText text-[12.83px] font-medium font-['Manrope']">
                             Quantities Left
                           </div>
                         </div>
@@ -423,14 +423,14 @@ export default function ResellForm() {
                                 }}
                                 placeholder='Quntity Left'
                                 {...field}
-                                className="grow shrink basis-0  rounded text-stone-900 text-opacity-50 text-[12.83px] font-normal font-['Manrope']"
+                                className="grow shrink basis-0  rounded text-primaryText text-opacity-50 text-[12.83px] font-normal font-['Manrope']"
                               />
                             )}
                             rules={{ required: true }}
                           />
                         </div>
                         <div className='self-stretch justify-center items-center gap-2 inline-flex'>
-                          <div className="grow shrink basis-0 text-stone-900 text-[10px] font-normal font-['Manrope']">
+                          <div className="grow shrink basis-0 text-primaryText text-[10px] font-normal font-['Manrope']">
                             Please enter valid number of product quantities you
                             have left in your stock. You can update this value
                             frequently so buyers will know what you have in
@@ -441,7 +441,7 @@ export default function ResellForm() {
 
                       <div className='self-stretch rounded-md flex-col justify-start items-start gap-[7px] flex'>
                         <div className='px-2 justify-center items-center gap-2 inline-flex'>
-                          <div className="text-center text-stone-900 text-[12.83px] font-medium font-['Manrope']">
+                          <div className="text-center text-primaryText text-[12.83px] font-medium font-['Manrope']">
                             Description
                           </div>
                         </div>
@@ -453,7 +453,7 @@ export default function ResellForm() {
                         />
 
                         <div className='self-stretch justify-center items-center gap-2 inline-flex'>
-                          <div className="grow shrink basis-0 text-stone-900 text-[10px] font-normal font-['Manrope']">
+                          <div className="grow shrink basis-0 text-primaryText text-[10px] font-normal font-['Manrope']">
                             Your product description should be in paragraphs
                             (although it may include key points) and should
                             describe all the important details of the product.
@@ -465,7 +465,7 @@ export default function ResellForm() {
                     </div>
                     <div className='self-stretch  flex-col justify-start items-start gap-3 flex'>
                       <div className='px-2 justify-center items-center gap-2 inline-flex'>
-                        <div className="text-center text-stone-900 text-[12.83px] font-medium font-['Manrope']">
+                        <div className="text-center text-primaryText text-[12.83px] font-medium font-['Manrope']">
                           Choose one of the Advert Media Upload Below:
                         </div>
                       </div>
@@ -488,7 +488,7 @@ export default function ResellForm() {
                           </label>
                         </div>
                       </div>
-                      <div className="w-[559px] h-6 text-stone-900 text-[10px] font-normal font-['Manrope']">
+                      <div className="w-[559px] h-6 text-primaryText text-[10px] font-normal font-['Manrope']">
                         Upload a Photo of the Advert You want people to post on
                         their social media post accounts like Whatsapp,
                         Facebook, Instagram, Twitter etc
@@ -509,7 +509,7 @@ export default function ResellForm() {
                   <div className='self-stretch px-3 py-2 bg-zinc-400 bg-opacity-30 rounded flex-col justify-center items-center gap-2 flex'>
                     <Button
                       type='submit'
-                      className='w-[290px]  cursor-pointer px-6 py-6 bg-fuchsia-600 rounded-[100px] justify-center items-center gap-2 inline-flex'
+                      className='w-[290px]  cursor-pointer px-6 py-6 bg-primarybutton rounded-[100px] justify-center items-center gap-2 inline-flex'
                     >
                       <div className="text-center text-white text-[12.83px] font-medium font-['Manrope']">
                         {isPending ? 'Submiting....' : 'Submit'}

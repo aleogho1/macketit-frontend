@@ -233,17 +233,19 @@ export default function CreateYtAdvertTask() {
           <div className='p-3 bg-white dark:bg-zinc-900 flex-col justify-start items-start gap-3 inline-flex'>
             <div className=' flex-col justify-start items-start gap-4 flex'>
               <div className='w-full'>
-              <div
-                    onClick={() => navigate('/dashboard/advertise/?tab=advert-task')}
-                    className='justify-start cursor-pointer items-center gap-[7px] inline-flex'
-                  >
-                    <div className='cursor-pointer'>
-                      <Icons type='arrow-back' />
-                    </div>
-                    <div className="text-center text-fuchsia-400 text-sm font-medium font-['Manrope']">
-                      Go back
-                    </div>
-              </div>
+                <div
+                  onClick={() =>
+                    navigate('/dashboard/advertise/?tab=advert-task')
+                  }
+                  className='justify-start cursor-pointer items-center gap-[7px] inline-flex'
+                >
+                  <div className='cursor-pointer'>
+                    <Icons type='arrow-back' />
+                  </div>
+                  <div className="text-center text-primaryText text-sm font-medium font-['Manrope']">
+                    Go back
+                  </div>
+                </div>
                 <IgPageHeader
                   title={'Get People to Post Your Advert on Youtube'}
                   frame={YoutubeIcon}
@@ -307,7 +309,7 @@ want to post your advert.`}
                                 ))}
                               </Select>
                             )}
-                            rules={{required: true}}
+                            rules={{ required: true }}
                           />
                         </div>
                         <div className='justify-center items-center gap-2 inline-flex'>
@@ -327,7 +329,7 @@ want to post your advert.`}
                           <Controller
                             name='target_country'
                             control={control}
-                            rules={{required: true}}
+                            rules={{ required: true }}
                             aria-labelledby='target_country'
                             render={({ field }) => (
                               <Select
@@ -387,7 +389,7 @@ want to post your advert.`}
                             <Controller
                               name='target_state'
                               aria-labelledby='target_state'
-                              rules={{required: true}}
+                              rules={{ required: true }}
                               control={control}
                               render={({ field }) => (
                                 <Select
@@ -415,7 +417,7 @@ want to post your advert.`}
                                       'dark:group-data-[focused=true]:bg-default/60',
                                       '!cursor-text',
                                       'border-2 border-transparent',
-                                      'focus-within:!border-fuchsia-600  ',
+                                      'focus-within:!border-red-500  ',
                                       '!cursor-text',
                                     ],
                                   }}
@@ -468,24 +470,31 @@ want to post your advert.`}
                                 className="grow shrink basis-0  rounded text-opacity-50 text-[12.83px] font-normal font-['Manrope']"
                               />
                             )}
-                            rules={{ required: true, min: 0,
+                            rules={{
+                              required: true,
+                              min: 0,
                               validate: {
                                 invalidInput: (fieldValue) => {
-                                  return (
-                                    fieldValue > 0 || 'invalid input' 
-                                  )
+                                  return fieldValue > 0 || 'invalid input'
                                 },
                                 isMinimum: (fieldValue) => {
                                   return (
-                                    fieldValue * +watch().amount >= 1000 || `The total amount of #${+watch().posts_count * +watch().amount} is below our minimum order. Please note that the minimum order amount is #1,000. Kindly adjust your orer accordingly.`
+                                    fieldValue * +watch().amount >= 1000 ||
+                                    `The total amount of #${
+                                      +watch().posts_count * +watch().amount
+                                    } is below our minimum order. Please note that the minimum order amount is #1,000. Kindly adjust your orer accordingly.`
                                   )
                                 },
                                 isMaximum: (fieldValue) => {
                                   return (
-                                    fieldValue * +watch().amount <= 500000 || `Your order total amount of #${(+watch().posts_count * +watch().amount).toLocaleString()} exceeds the maximum allowed amount. Please review your order and adjust the total accordingly.`
+                                    fieldValue * +watch().amount <= 500000 ||
+                                    `Your order total amount of #${(
+                                      +watch().posts_count * +watch().amount
+                                    ).toLocaleString()} exceeds the maximum allowed amount. Please review your order and adjust the total accordingly.`
                                   )
-                                }
-                              } }}
+                                },
+                              },
+                            }}
                           />
                         </div>
                         <div className='self-stretch justify-center items-center gap-2 inline-flex'>
@@ -505,7 +514,7 @@ want to post your advert.`}
                           <Controller
                             name='gender'
                             control={control}
-                            rules={{required: true}}
+                            rules={{ required: true }}
                             render={({ field }) => (
                               <Select
                                 {...field}
@@ -566,7 +575,7 @@ want to post your advert.`}
                           <Controller
                             name='religion'
                             control={control}
-                            rules={{required: true}}
+                            rules={{ required: true }}
                             render={({ field }) => (
                               <Select
                                 aria-labelledby='religion'
@@ -622,7 +631,7 @@ want to post your advert.`}
 
                         <Textarea
                           {...register('caption', {
-                            required: true
+                            required: true,
                           })}
                           isInvalid={!!errors.caption}
                           errorMessage={errors?.caption?.message}
@@ -654,7 +663,7 @@ want to post your advert.`}
                             key={index}
                             className={` flex flex-row items-center gap-x-2 px-2 py-1 bg-zinc-400 bg-opacity-30 w-28 ${
                               isMediaType === media
-                                ? 'border border-fuchsia-400 text-fuchsia-400'
+                                ? 'border border-fuchsia-400 text-primaryText'
                                 : ''
                             }`}
                           >
@@ -731,10 +740,15 @@ want to post your advert.`}
                           ))}
                         </div>
                       ) : null}
-                      <div onClick={() => setError('media', {
+                      <div
+                        onClick={() =>
+                          setError('media', {
                             type: 'manual',
-                            message: ''
-                          })} className='w-[243px] h-[148.59px] opacity-40 dark:bg-white bg-stone-900 justify-center items-center inline-flex'>
+                            message: '',
+                          })
+                        }
+                        className='w-[243px] h-[148.59px] opacity-40 dark:bg-white bg-stone-900 justify-center items-center inline-flex'
+                      >
                         <input
                           type='file'
                           multiple
@@ -759,10 +773,13 @@ want to post your advert.`}
                           />
                         </svg>
                       </div>
-                      {errors.media?.message ? 
-                      <p className='text-red-800 text-sm'>{errors.media?.message}</p>
-                      : ''
-                    }
+                      {errors.media?.message ? (
+                        <p className='text-red-800 text-sm'>
+                          {errors.media?.message}
+                        </p>
+                      ) : (
+                        ''
+                      )}
                     </div>
                   </div>
                   <div className='w-full px-3 py-6 bg-zinc-400 bg-opacity-30 rounded justify-between itemscenter flex flex-col'>
@@ -771,12 +788,14 @@ want to post your advert.`}
                     </div>
                     <div className='self-stretch px-2 md:justify-between items-center gap-2 inline-flex'>
                       <div className="w-40 text-3xl font-medium font-['Manrope']">
-                      {calculatedAmount > 0 ? ` ₦${calculatedAmount?.toLocaleString()}` : '0'}
+                        {calculatedAmount > 0
+                          ? ` ₦${calculatedAmount?.toLocaleString()}`
+                          : '0'}
                       </div>
                       <Button
                         type='submit'
                         isDisabled={isPending}
-                        className='md:w-[290px] text-white cursor-pointer px-6 py-6 bg-fuchsia-600 rounded-[100px] justify-center items-center gap-2 inline-flex'
+                        className='md:w-[290px] text-white cursor-pointer px-6 py-6 bg-primarybutton rounded-[100px] justify-center items-center gap-2 inline-flex'
                       >
                         {isPending ? <Loader /> : 'Submit and Pay'}
                       </Button>

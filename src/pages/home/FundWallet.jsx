@@ -140,7 +140,7 @@ export default function FundWallet() {
                                 'dark:group-data-[focused=true]:bg-default/60',
                                 '!cursor-text',
                                 'border-2 border-transparent',
-                                'focus-within:!border-fuchsia-600  ',
+                                'focus-within:!border-red-500  ',
                               ],
                             }}
                             className=" rounded  text-black text-[12.83px] font-normal font-['Manrope']"
@@ -152,7 +152,7 @@ export default function FundWallet() {
                       <Button
                         type='submit'
                         isDisabled={isPending}
-                        className="md:w-[280px] px-6 py-6  bg-fuchsia-600 rounded text-center text-white text-[12.83px] font-medium font-['Manrope']"
+                        className="md:w-[280px] px-6 py-6  bg-primarybutton rounded text-center text-white text-[12.83px] font-medium font-['Manrope']"
                       >
                         {isPending ? (
                           <svg

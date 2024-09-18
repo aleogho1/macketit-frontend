@@ -37,7 +37,7 @@ export default function SharePostEngageTask() {
     watch,
     setValue,
     formState: { errors },
-  } = useForm({ defaultValues: { amount: 100, } })
+  } = useForm({ defaultValues: { amount: 100 } })
   const { data: countries, isLoading: isCountryLoading } = useGetCountry()
   const { data: religions, isLoading: isReligionLoading } = useGetReligion()
   const { mutateAsync: createAdvert, isPending } = useCreateAdvert()
@@ -306,7 +306,7 @@ export default function SharePostEngageTask() {
                                       'dark:group-data-[focused=true]:bg-default/60',
                                       '!cursor-text',
                                       'border-2 border-transparent',
-                                      'focus-within:!border-fuchsia-600  ',
+                                      'focus-within:!border-red-500  ',
                                       '!cursor-text',
                                     ],
                                   }}
@@ -354,7 +354,7 @@ export default function SharePostEngageTask() {
                                 }}
                                 placeholder='Enter the number of view you want'
                                 {...field}
-                                className="grow shrink basis-0  rounded text-stone-900 text-opacity-50 text-[12.83px] font-normal font-['Manrope']"
+                                className="grow shrink basis-0  rounded text-primaryText text-opacity-50 text-[12.83px] font-normal font-['Manrope']"
                               />
                             )}
                             rules={{ required: true }}
@@ -389,7 +389,7 @@ export default function SharePostEngageTask() {
                                 }}
                                 placeholder='Enter the number of view you want'
                                 {...field}
-                                className="grow shrink basis-0  rounded text-stone-900 text-opacity-50 text-[12.83px] font-normal font-['Manrope']"
+                                className="grow shrink basis-0  rounded text-primaryText text-opacity-50 text-[12.83px] font-normal font-['Manrope']"
                               />
                             )}
                             rules={{ required: true }}
@@ -533,12 +533,14 @@ export default function SharePostEngageTask() {
                     </div>
                     <div className='self-stretch px-2 md:justify-between items-center gap-2 inline-flex'>
                       <div className="w-40 text-3xl font-medium font-['Manrope']">
-                      {calculatedAmount > 0 ? ` ₦${calculatedAmount?.toLocaleString()}` : '0'}
+                        {calculatedAmount > 0
+                          ? ` ₦${calculatedAmount?.toLocaleString()}`
+                          : '0'}
                       </div>
                       <Button
                         type='submit'
                         isDisabled={isPending}
-                        className='md:w-[290px] text-white cursor-pointer px-6 py-6 bg-fuchsia-600 rounded-[100px] justify-center items-center gap-2 inline-flex'
+                        className='md:w-[290px] text-white cursor-pointer px-6 py-6 bg-primarybutton rounded-[100px] justify-center items-center gap-2 inline-flex'
                       >
                         {isPending ? <Loader /> : 'Submit and Pay'}
                       </Button>

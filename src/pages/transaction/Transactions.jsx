@@ -5,7 +5,11 @@ import OverViewCard from './OverViewCard'
 import TransactionCard from './TransactionCard'
 import EarnViewCard from './EarnViewCard'
 import OrdersViewCard from './OrdersViewCard'
-import { useFetchTransactionHistory, useFetchTransactionHistoryEarned, useFetchTransactionHistoryOrder } from '../../api/walletApi'
+import {
+  useFetchTransactionHistory,
+  useFetchTransactionHistoryEarned,
+  useFetchTransactionHistoryOrder,
+} from '../../api/walletApi'
 
 export default function Transactions() {
   const [selected, setSelected] = useState('overview')
@@ -31,12 +35,12 @@ export default function Transactions() {
                       variant='underlined'
                       classNames={{
                         tabList: '  bordered  py-2',
-                        cursor: ' bg-fuchsia-400',
+                        cursor: ' primaryBg',
                         selectedKey: 'text-green-400',
                         tabContent:
-                          'group-data-[selected=true]:text-fuchsia-400 ',
+                          'group-data-[selected=true]:text-primaryText ',
                       }}
-                      className="text-center text-fuchsia-400 text-[12.83px] font-bold font-['Manrope']"
+                      className="text-center text-primaryText text-[12.83px] font-bold font-['Manrope']"
                       color='secondary'
                     >
                       <Tab
@@ -132,11 +136,11 @@ export default function Transactions() {
                     variant='underlined'
                     classNames={{
                       tabList: '  bordered  py-2',
-                      cursor: ' bg-fuchsia-400',
+                      cursor: ' primaryBg',
                       tabContent:
-                        'group-data-[selected=true]:text-fuchsia-400 ',
+                        'group-data-[selected=true]:text-primaryText ',
                     }}
-                    className="text-center text-fuchsia-400 text-xs font-bold font-['Manrope']"
+                    className="text-center text-primaryText text-xs font-bold font-['Manrope']"
                     color='secondary'
                   >
                     <Tab
@@ -224,7 +228,7 @@ export default function Transactions() {
                   scale: { duration: 0.4 },
                 }}
               >
-                <TransactionCard transactionHistory={transactionHistory}/>
+                <TransactionCard transactionHistory={transactionHistory} />
               </motion.div>
             )}
             {selectedHistory === 'earned history' && (
@@ -237,7 +241,9 @@ export default function Transactions() {
                   scale: { duration: 0.4 },
                 }}
               >
-                <TransactionCard transactionHistory={transactionHistoryEarned}/>
+                <TransactionCard
+                  transactionHistory={transactionHistoryEarned}
+                />
               </motion.div>
             )}
             {selectedHistory === 'orders history' && (
@@ -250,7 +256,7 @@ export default function Transactions() {
                   scale: { duration: 0.4 },
                 }}
               >
-                <TransactionCard transactionHistory={transactionHistoryOrder}/>
+                <TransactionCard transactionHistory={transactionHistoryOrder} />
               </motion.div>
             )}
           </div>

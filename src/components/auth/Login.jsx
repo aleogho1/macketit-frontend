@@ -2,7 +2,7 @@
 import { Button, Input } from '@nextui-org/react'
 
 import Logo from '../Logo'
-import { ChevronRight, EyeIcon } from 'lucide-react'
+import { ChevronRight, EyeIcon, EyeOffIcon } from 'lucide-react'
 import { Controller, useForm } from 'react-hook-form'
 import { useNavigate } from 'react-router'
 import { useGoogleLogin, useLoginUser } from '../../api/auth'
@@ -113,12 +113,12 @@ export default function Login() {
           <div className='w-[96%]  md:w-[90%] mx-auto max-h-[6rem] flex justify-between items-center'>
             <Logo />
 
-            <div className="text-center p-2 hidden  md:flex text-[12.83px] font-bold font-['Manrope']">
+            <div className="text-center p-2 text-primaryText hidden  md:flex text-[12.83px] font-bold font-['Manrope']">
               <Button onClick={() => navigate(-1)} variant='flat bg-none'>
                 Go Back
               </Button>
             </div>
-            <div className="text-center p-2 md:hidden  text-[12.83px] font-bold font-['Manrope']">
+            <div className="text-center p-2 md:hidden text-primaryText  text-[12.83px] font-bold font-['Manrope']">
               <Button variant='flat bg-none  '>
                 <ChevronRight />
               </Button>
@@ -127,10 +127,10 @@ export default function Login() {
 
           <div className=' w-[20rem] my-8 md:w-[23rem] mx-auto  flex-col  items-center gap-6 '>
             <div className='self-stretch flex-col justify-start items-center gap-3 flex'>
-              <div className="w-80 text-center  text-[64px] font-semibold font-['Manrope'] leading-[53.76px]">
+              <div className="w-80 text-center text-primaryText  text-[64px] font-semibold font-['Manrope'] leading-[53.76px]">
                 Welcome Back
               </div>
-              <div className="w-[273px] pb-4 text-center text-zinc-400 text-base font-normal font-['Manrope']">
+              <div className="w-[273px] pb-4 text-center text-black text-base font-normal font-['Manrope']">
                 Turn Daily Social Tasks into Paychecks! Get Paid for your
                 Engagements.
               </div>
@@ -151,11 +151,11 @@ export default function Login() {
                     classNames={{
                       inputWrapper: [
                         'border-2 border-transparent',
-                        'focus-within:!border-fuchsia-600  ',
+                        'focus-within:!border-red-500  ',
                         '!cursor-text',
                       ],
                     }}
-                    className={`grow shrink basis-0 focus:ring focus:ring-fuchsia-600 focus:border-2 focus:border-fuchsia-600  rounded text-stone-900 text-opacity-50 text-[16.83px] font-normal font-['Manrope']`}
+                    className={`grow shrink basis-0 focus:ring focus:ring-primarybutton focus:border-2 focus:border-primarybutton  rounded text-primaryText text-opacity-50 text-[16.83px] font-normal font-['Manrope']`}
                   />
                 )}
                 rules={{
@@ -178,7 +178,7 @@ export default function Login() {
                     isInvalid={!!errors?.password}
                     required={true}
                     placeholder='Password'
-                    className={` grow shrink basis-0  rounded text-stone-900 text-opacity-50 text-[16.83px] font-normal font-['Manrope']`}
+                    className={` grow shrink basis-0  rounded text-primaryText text-opacity-50 text-[16.83px] font-normal font-['Manrope']`}
                     endContent={
                       <button
                         className='focus:outline-none'
@@ -191,41 +191,17 @@ export default function Login() {
                             className='text-2xl text-[#B1B1B1] pointer-events-none'
                           />
                         ) : (
-                          <svg
-                            xmlns='http://www.w3.org/2000/svg'
-                            width='14'
-                            height='15'
-                            viewBox='0 0 14 15'
-                            fill='none'
-                          >
-                            <path
-                              d='M12.4067 5.85509C12.2375 5.58676 12.0567 5.33592 11.87 5.10259C11.6542 4.82842 11.2459 4.80509 11.0009 5.05009L9.25086 6.80009C9.3792 7.18509 9.40253 7.62842 9.28586 8.08926C9.0817 8.91176 8.4167 9.57676 7.5942 9.78092C7.13336 9.89759 6.69003 9.87426 6.30503 9.74592C6.30503 9.74592 5.47086 10.5801 4.87003 11.1809C4.57836 11.4726 4.6717 11.9859 5.06253 12.1376C5.6867 12.3768 6.3342 12.4993 6.9992 12.4993C8.03753 12.4993 9.0467 12.1959 9.96836 11.6301C10.9075 11.0468 11.7534 10.1893 12.4359 9.09842C12.99 8.21759 12.9609 6.73592 12.4067 5.85509Z'
-                              fill='#B1B1B1'
-                            />
-                            <path
-                              d='M8.1787 6.32179L5.82203 8.67845C5.52453 8.37512 5.33203 7.95512 5.33203 7.50012C5.33203 6.58429 6.0787 5.83179 7.00036 5.83179C7.45536 5.83179 7.87536 6.02429 8.1787 6.32179Z'
-                              fill='#B1B1B1'
-                            />
-                            <path
-                              d='M10.6471 3.85407L8.66963 5.83157C8.2438 5.3999 7.65464 5.14323 7.0013 5.14323C5.69464 5.14323 4.64464 6.19907 4.64464 7.4999C4.64464 8.15323 4.90714 8.7424 5.33297 9.16823L3.3613 11.1457H3.35547C2.70797 10.6207 2.11297 9.9499 1.60547 9.15657C1.02214 8.24073 1.02214 6.75323 1.60547 5.8374C2.28214 4.77573 3.11047 3.94157 4.03214 3.3699C4.9538 2.8099 5.96297 2.50073 7.0013 2.50073C8.30214 2.50073 9.56214 2.97907 10.6471 3.85407Z'
-                              fill='#B1B1B1'
-                            />
-                            <path
-                              d='M8.66984 7.50005C8.66984 8.41588 7.92318 9.16838 7.00151 9.16838C6.96651 9.16838 6.93734 9.16838 6.90234 9.15671L8.65818 7.40088C8.66984 7.43588 8.66984 7.46505 8.66984 7.50005Z'
-                              fill='#B1B1B1'
-                            />
-                            <path
-                              d='M12.6976 1.80093C12.5226 1.62593 12.2367 1.62593 12.0617 1.80093L1.29922 12.5693C1.12422 12.7443 1.12422 13.0301 1.29922 13.2051C1.38672 13.2868 1.49755 13.3334 1.61422 13.3334C1.73089 13.3334 1.84172 13.2868 1.92922 13.1993L12.6976 2.43093C12.8784 2.25593 12.8784 1.97593 12.6976 1.80093Z'
-                              fill='#B1B1B1'
-                            />
-                          </svg>
+                          <EyeOffIcon
+                            size={20}
+                            className='text-2xl text-[#B1B1B1] pointer-events-none'
+                          />
                         )}
                       </button>
                     }
                     classNames={{
                       inputWrapper: [
                         'border-2 border-transparent',
-                        'focus-within:!border-fuchsia-600  ',
+                        'focus-within:!border-red-500  ',
                         '!cursor-text',
                       ],
                     }}
@@ -240,7 +216,7 @@ export default function Login() {
               <div className='w-full md:w-[365px] h-[15px] flex justify-end itemscenter gap-2'>
                 <div
                   onClick={() => navigate('/forgot_password')}
-                  className="text-center cursor-pointer text-[12.83px] font-bold font-['Manrope']"
+                  className="text-center text-primaryText cursor-pointer text-[12.83px] font-bold font-['Manrope']"
                 >
                   Forgot password
                 </div>
@@ -248,7 +224,7 @@ export default function Login() {
               <Button
                 type='submit'
                 isDisabled={isPending}
-                className="w-[290px] px-6 py-3.5  bg-fuchsia-600 rounded-[100px] text-center text-white text-[16.83px] font-medium font-['Manrope']"
+                className="w-[290px] px-6 py-3.5  bg-primarybutton rounded-[100px] text-center text-white text-[16.83px] font-medium font-['Manrope']"
               >
                 {isPending ? <Loader /> : 'Continue'}
               </Button>
@@ -332,14 +308,13 @@ export default function Login() {
                 onClick={() => {
                   navigate('/ ')
                 }}
-                className="text-center cursor-pointer z-20 text-fuchsia-400 text-[12.83px] font-bold font-['Manrope']"
+                className="text-center cursor-pointer z-20 text-primaryText text-[12.83px] font-bold font-['Manrope']"
               >
                 Sign Up
               </div>
             </div>
           </div>
           <div className='md:w-[24rem] mx-auto my-4'>
-            <div className='w-full h-0.5 bg-gradient-to-r  from-[#fff]  dark:from-[#000] !via-[#FF6DFB] to-[#fff] dark:to-[#000]'></div>
             <div className=' flex flex-col sm:flex-row p-2 bordert border[#CB29BE]  justify-center items-center'>
               <div className="text-center text-zinc-400 text-[12.83px] font-normal font-['Manrope']">
                 By signing up, you agree to our
@@ -353,7 +328,7 @@ export default function Login() {
                 <span className="text-zinc-400 text-[12.83px] font-normal font-['Manrope']">
                   {' '}
                 </span>
-                <span className="text-[12.83px] font-bold font-['Manrope']">
+                <span className="text-[12.83px] text-black font-bold font-['Manrope']">
                   Terms and Privacy Policy
                 </span>
               </a>

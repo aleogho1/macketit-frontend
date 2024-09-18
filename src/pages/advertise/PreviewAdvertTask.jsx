@@ -80,7 +80,7 @@ export default function PreviewAdvertTask() {
                   />
                 </svg>
               </div>
-              <div className="text-center text-fuchsia-400 text-xs font-medium font-['Manrope']">
+              <div className="text-center text-primaryText text-xs font-medium font-['Manrope']">
                 Go back
               </div>
             </div>
@@ -99,13 +99,16 @@ export default function PreviewAdvertTask() {
                           : 'Loading...'}
                       </div>
                       <div className="capitalize text-3xl font-medium font-['Manrope']">
-                      {
-                      taskPreview?.task_type === 'advert' ? `Post Advert on your ${taskPreview?.platform} Page` :                       
-                          (taskPreview?.goal === 'comment' && `Comment on ${taskPreview?.platform} Post`) ||
-                          (taskPreview?.goal === 'follow and like' && `Follow and Like ${taskPreview?.platform} Page`) ||
-                          (taskPreview?.goal === 'follow' && `Follow ${taskPreview?.platform} Page`) ||
-                          (taskPreview?.goal === 'like' && `Like ${taskPreview?.platform} Post`)                      
-                    }
+                        {taskPreview?.task_type === 'advert'
+                          ? `Post Advert on your ${taskPreview?.platform} Page`
+                          : (taskPreview?.goal === 'comment' &&
+                              `Comment on ${taskPreview?.platform} Post`) ||
+                            (taskPreview?.goal === 'follow and like' &&
+                              `Follow and Like ${taskPreview?.platform} Page`) ||
+                            (taskPreview?.goal === 'follow' &&
+                              `Follow ${taskPreview?.platform} Page`) ||
+                            (taskPreview?.goal === 'like' &&
+                              `Like ${taskPreview?.platform} Post`)}
                       </div>
                       <div className='py-1.5 justify-start items-center gap-2 inline-flex'>
                         <div className='justify-start items-center gap-0.5 flex'>
@@ -127,15 +130,17 @@ export default function PreviewAdvertTask() {
                           </div>
                         </div>
                         <div className=" text-xs font-bold font-['Manrope']">
-                        {
-                        taskPreview?.task_type === 'advert' ? 
-                        taskPreview?.platform === 'whatsapp' ? '#80 per Advert post' :
-                        ` ₦140 per Advert post` : 
-                        (taskPreview?.goal === 'comment' && ` ₦40 per comment`) ||
-                        (taskPreview?.goal === 'follow and like' && ` ₦5 per follow and like`) ||
-                        (taskPreview?.goal === 'follow' && `₦5 per follow`) ||
-                        (taskPreview?.goal === 'like' && `₦5 per like`)  
-                      }
+                          {taskPreview?.task_type === 'advert'
+                            ? taskPreview?.platform === 'whatsapp'
+                              ? '#80 per Advert post'
+                              : ` ₦140 per Advert post`
+                            : (taskPreview?.goal === 'comment' &&
+                                ` ₦40 per comment`) ||
+                              (taskPreview?.goal === 'follow and like' &&
+                                ` ₦5 per follow and like`) ||
+                              (taskPreview?.goal === 'follow' &&
+                                `₦5 per follow`) ||
+                              (taskPreview?.goal === 'like' && `₦5 per like`)}
                         </div>
                       </div>
                     </div>
@@ -202,106 +207,10 @@ export default function PreviewAdvertTask() {
                     )}
                   </div>
                 </div>
-                {
-                  taskPreview?.task_type === 'advert' ? 
-                <div className='w-full flex flex-col items-center pl-2 gap-y-6 pt-10 lg:pl-0'>
-                  <div className='w-full flex items-center justify-between'>
-                    <div className='w-10/12 flex flex-col gap-y-2'>
-                          <p className='text-xs font-semibold'>Status</p>
-                          {taskPreview?.total_allocated <= 0 ? (
-                            <div
-                              className={`flex items-center justify-center gap-x-2  ${
-                                taskPreview?.status === 'pending'
-                                  ? 'bg-white text-black'
-                                  : 'bg-[#13BF62] text-white'
-                              }  lg:w-4/12 w-9/12 py-2 rounded-lg`}
-                            >
-                              <Icons type={taskPreview?.status} />{' '}
-                              {taskPreview?.status}
-                            </div>
-                          ) : (
-                            <div
-                              className={`flex items-center justify-center gap-x-2  bg-[#1877F2] text-white'}  lg:w-4/12 w-9/12 py-2 rounded-lg`}
-                            >
-                              Running <Icons type='active' />
-                            </div>
-                          )}
-                    </div>
-                  </div>
-                  <div className='w-full flex items-center justify-between'>
-                    <div className='w-10/12 flex flex-col gap-y-2'>
-                      <p className='text-xs font-semibold'>
-                        Numbers of Advert Post
-                      </p>
-                      <Input
-                        type='text'
-                        value={taskPreview?.engagements_count || taskPreview?.posts_count}
-                        className='w-11/12'
-                        disabled
-                      />
-                    </div>
-                    <div className='w-10/12 flex flex-col gap-y-2'>
-                      <p className='text-xs font-semibold'>Gender</p>
-                      <Input
-                        type='text'
-                        value={taskPreview?.gender?.charAt(0).toUpperCase()+taskPreview?.gender.slice(1)}
-                        className='w-11/12'
-                        disabled
-                      />
-                    </div>                   
-                  </div>
-                  <div className='w-full flex items-center justify-between'>
-                    <div className='w-10/12 flex flex-col gap-y-2'>
-                      <p className='text-xs font-semibold'>Platform</p>
-                      <Input
-                        type='text'
-                        value={taskPreview?.platform?.charAt(0).toUpperCase()+taskPreview?.platform?.slice(1)}
-                        className='w-11/12'
-                        disabled
-                      />
-                    </div>
-                    <div className='w-10/12 flex flex-col gap-y-2'>
-                      <p className='text-xs font-semibold'>Amount paid</p>
-                      <Input
-                        type='text'
-                        value={taskPreview?.fee_paid}
-                        className='w-11/12'
-                        disabled
-                      />
-                    </div>
-                  </div>
-                  <div className='w-full flex items-start justify-between'>
-                    <div className='w-10/12 flex flex-col gap-y-10'>
-                      <div className='w-12/12 flex flex-col gap-y-2'>
-                        <p className='text-xs font-semibold'>Allocated</p>
-                        <Input
-                          type='text'
-                          value={taskPreview?.total_allocated > 0 ? 'Successful' : 0}
-                          className='w-11/12'
-                          disabled
-                        />
-                      </div>
-                      <div className='w-12/12 flex flex-col gap-y-2'>
-                      <p className='text-xs font-semibold'>Location</p>
-                      <Input
-                        type='text'
-                        value={taskPreview?.target_country}
-                        className='w-11/12'
-                        disabled
-                      />
-                    </div>  
-                    </div>
-                    <div className='w-10/12 flex flex-col gap-y-2'>
-                      <p className='text-xs font-semibold'>Advert Image/Video</p>
-                      <div className='w-11/12 bg-[#27272A] overflow-y-hidden flex justify-center'>
-                        <img src={taskPreview?.media_path} alt='advert media' className='w-fit h-fit'/>
-                      </div>
-                    </div>
-                  </div>
-                </div> 
-                  : 
-                <div className='w-full flex flex-col items-start pl-2 gap-y-6 pt-10 lg:pl-0'>
-                  <div className='w-7/12 flex flex-col gap-y-2'>
+                {taskPreview?.task_type === 'advert' ? (
+                  <div className='w-full flex flex-col items-center pl-2 gap-y-6 pt-10 lg:pl-0'>
+                    <div className='w-full flex items-center justify-between'>
+                      <div className='w-10/12 flex flex-col gap-y-2'>
                         <p className='text-xs font-semibold'>Status</p>
                         {taskPreview?.total_allocated <= 0 ? (
                           <div
@@ -318,85 +227,208 @@ export default function PreviewAdvertTask() {
                           <div
                             className={`flex items-center justify-center gap-x-2  bg-[#1877F2] text-white'}  lg:w-4/12 w-9/12 py-2 rounded-lg`}
                           >
-                            Running <img src={spinner} alt='spinner' width={17} height={17} />
+                            Running <Icons type='active' />
                           </div>
                         )}
-                  </div> 
-                  <div className='w-full flex items-center justify-between'>
-                    <div className='w-10/12 flex flex-col gap-y-2'>
-                      <p className='text-xs font-semibold'>
-                        Numbers of {taskPreview?.goal}
-                      </p>
-                      <Input
-                        type='text'
-                        value={taskPreview?.engagements_count || taskPreview?.posts_count}
-                        className='w-11/12'
-                        disabled
-                      />
+                      </div>
                     </div>
-                    <div className='w-10/12 flex flex-col gap-y-2'>
-                      <p className='text-xs font-semibold'>Location</p>
-                      <Input
-                        type='text'
-                        value={taskPreview?.target_country}
-                        className='w-11/12'
-                        disabled
-                      />
+                    <div className='w-full flex items-center justify-between'>
+                      <div className='w-10/12 flex flex-col gap-y-2'>
+                        <p className='text-xs font-semibold'>
+                          Numbers of Advert Post
+                        </p>
+                        <Input
+                          type='text'
+                          value={
+                            taskPreview?.engagements_count ||
+                            taskPreview?.posts_count
+                          }
+                          className='w-11/12'
+                          disabled
+                        />
+                      </div>
+                      <div className='w-10/12 flex flex-col gap-y-2'>
+                        <p className='text-xs font-semibold'>Gender</p>
+                        <Input
+                          type='text'
+                          value={
+                            taskPreview?.gender?.charAt(0).toUpperCase() +
+                            taskPreview?.gender.slice(1)
+                          }
+                          className='w-11/12'
+                          disabled
+                        />
+                      </div>
+                    </div>
+                    <div className='w-full flex items-center justify-between'>
+                      <div className='w-10/12 flex flex-col gap-y-2'>
+                        <p className='text-xs font-semibold'>Platform</p>
+                        <Input
+                          type='text'
+                          value={
+                            taskPreview?.platform?.charAt(0).toUpperCase() +
+                            taskPreview?.platform?.slice(1)
+                          }
+                          className='w-11/12'
+                          disabled
+                        />
+                      </div>
+                      <div className='w-10/12 flex flex-col gap-y-2'>
+                        <p className='text-xs font-semibold'>Amount paid</p>
+                        <Input
+                          type='text'
+                          value={taskPreview?.fee_paid}
+                          className='w-11/12'
+                          disabled
+                        />
+                      </div>
+                    </div>
+                    <div className='w-full flex items-start justify-between'>
+                      <div className='w-10/12 flex flex-col gap-y-10'>
+                        <div className='w-12/12 flex flex-col gap-y-2'>
+                          <p className='text-xs font-semibold'>Allocated</p>
+                          <Input
+                            type='text'
+                            value={
+                              taskPreview?.total_allocated > 0
+                                ? 'Successful'
+                                : 0
+                            }
+                            className='w-11/12'
+                            disabled
+                          />
+                        </div>
+                        <div className='w-12/12 flex flex-col gap-y-2'>
+                          <p className='text-xs font-semibold'>Location</p>
+                          <Input
+                            type='text'
+                            value={taskPreview?.target_country}
+                            className='w-11/12'
+                            disabled
+                          />
+                        </div>
+                      </div>
+                      <div className='w-10/12 flex flex-col gap-y-2'>
+                        <p className='text-xs font-semibold'>
+                          Advert Image/Video
+                        </p>
+                        <div className='w-11/12 bg-[#27272A] overflow-y-hidden flex justify-center'>
+                          <img
+                            src={taskPreview?.media_path}
+                            alt='advert media'
+                            className='w-fit h-fit'
+                          />
+                        </div>
+                      </div>
                     </div>
                   </div>
-                  <div className='w-full flex items-center justify-between'>
-                    <div className='w-10/12 flex flex-col gap-y-2'>
-                      <p className='text-xs font-semibold'>Your Link</p>
-                      <Input
-                        type='text'
-                        value={taskPreview?.account_link}
-                        className='w-11/12'
-                        disabled
-                      />
+                ) : (
+                  <div className='w-full flex flex-col items-start pl-2 gap-y-6 pt-10 lg:pl-0'>
+                    <div className='w-7/12 flex flex-col gap-y-2'>
+                      <p className='text-xs font-semibold'>Status</p>
+                      {taskPreview?.total_allocated <= 0 ? (
+                        <div
+                          className={`flex items-center justify-center gap-x-2  ${
+                            taskPreview?.status === 'pending'
+                              ? 'bg-white text-black'
+                              : 'bg-[#13BF62] text-white'
+                          }  lg:w-4/12 w-9/12 py-2 rounded-lg`}
+                        >
+                          <Icons type={taskPreview?.status} />{' '}
+                          {taskPreview?.status}
+                        </div>
+                      ) : (
+                        <div
+                          className={`flex items-center justify-center gap-x-2  bg-[#1877F2] text-white'}  lg:w-4/12 w-9/12 py-2 rounded-lg`}
+                        >
+                          Running{' '}
+                          <img
+                            src={spinner}
+                            alt='spinner'
+                            width={17}
+                            height={17}
+                          />
+                        </div>
+                      )}
                     </div>
-                    <div className='w-10/12 flex flex-col gap-y-2'>
-                      <p className='text-xs font-semibold'>Gender</p>
-                      <Input
-                        type='text'
-                        value={taskPreview?.gender?.charAt(0).toUpperCase()+taskPreview?.gender.slice(1)}
-                        className='w-11/12'
-                        disabled
-                      />
+                    <div className='w-full flex items-center justify-between'>
+                      <div className='w-10/12 flex flex-col gap-y-2'>
+                        <p className='text-xs font-semibold'>
+                          Numbers of {taskPreview?.goal}
+                        </p>
+                        <Input
+                          type='text'
+                          value={
+                            taskPreview?.engagements_count ||
+                            taskPreview?.posts_count
+                          }
+                          className='w-11/12'
+                          disabled
+                        />
+                      </div>
+                      <div className='w-10/12 flex flex-col gap-y-2'>
+                        <p className='text-xs font-semibold'>Location</p>
+                        <Input
+                          type='text'
+                          value={taskPreview?.target_country}
+                          className='w-11/12'
+                          disabled
+                        />
+                      </div>
                     </div>
-                  </div>
-                  <div className='w-full flex items-center justify-between'>
-                    <div className='w-10/12 flex flex-col gap-y-2'>
-                      <p className='text-xs font-semibold'>Religion</p>
-                      <Input
-                        type='text'
-                        value={taskPreview?.religion}
-                        className='w-11/12'
-                        disabled
-                      />
+                    <div className='w-full flex items-center justify-between'>
+                      <div className='w-10/12 flex flex-col gap-y-2'>
+                        <p className='text-xs font-semibold'>Your Link</p>
+                        <Input
+                          type='text'
+                          value={taskPreview?.account_link}
+                          className='w-11/12'
+                          disabled
+                        />
+                      </div>
+                      <div className='w-10/12 flex flex-col gap-y-2'>
+                        <p className='text-xs font-semibold'>Gender</p>
+                        <Input
+                          type='text'
+                          value={
+                            taskPreview?.gender?.charAt(0).toUpperCase() +
+                            taskPreview?.gender.slice(1)
+                          }
+                          className='w-11/12'
+                          disabled
+                        />
+                      </div>
                     </div>
-                    <div className='w-10/12 flex flex-col gap-y-2'>
-                      <p className='text-xs font-semibold'>Amount paid</p>
-                      <Input
-                        type='text'
-                        value={taskPreview?.fee_paid}
-                        className='w-11/12'
-                        disabled
-                      />
+                    <div className='w-full flex items-center justify-between'>
+                      <div className='w-10/12 flex flex-col gap-y-2'>
+                        <p className='text-xs font-semibold'>Religion</p>
+                        <Input
+                          type='text'
+                          value={taskPreview?.religion}
+                          className='w-11/12'
+                          disabled
+                        />
+                      </div>
+                      <div className='w-10/12 flex flex-col gap-y-2'>
+                        <p className='text-xs font-semibold'>Amount paid</p>
+                        <Input
+                          type='text'
+                          value={taskPreview?.fee_paid}
+                          className='w-11/12'
+                          disabled
+                        />
+                      </div>
                     </div>
-                  </div>
-                  <div className='w-full flex items-start justify-between'>
+                    <div className='w-full flex items-start justify-between'>
                       <div className='w-10/12 text-[12px] font-semibold flex flex-col gap-y-2'>
                         Allocated
-                      </div>  
+                      </div>
                       <div className='w-10/12 flex flex-col gap-y-2 text-[12px] font-semibold'>
-                        {
-                          taskPreview?.total_allocated > 0 ?
-                          'Successful'   : 0     
-                        }
-                      </div>           
+                        {taskPreview?.total_allocated > 0 ? 'Successful' : 0}
+                      </div>
+                    </div>
                   </div>
-                </div>
-                }
+                )}
               </>
             )}
           </div>

@@ -70,7 +70,7 @@ export default function QrCodeModal({ isOpen, onClose }) {
             <div className='p-6 md:p-12 rounded flex-col justify-center items-center gap-12 inline-flex'>
               <div
                 onClick={onClose}
-                className='p-2 bg-fuchsia-400 top-[-20px] -right-2 md:-right-4 absolute z-40  cursor-pointer rounded-[100px] '
+                className='p-2 primaryBg top-[-20px] -right-2 md:-right-4 absolute z-40  cursor-pointer rounded-[100px] '
               >
                 <AiOutlineClose size={20} color='#fff' />
               </div>
@@ -130,7 +130,7 @@ export default function QrCodeModal({ isOpen, onClose }) {
                                   'dark:group-data-[focused=true]:bg-default/60',
                                   '!cursor-text',
                                   'border-2 border-transparent',
-                                  'focus-within:!border-fuchsia-600  ',
+                                  'focus-within:!border-red-500  ',
                                 ],
                               }}
                               className=" rounded-none  text-black text-[12.83px] font-normal font-['Manrope']"
@@ -148,7 +148,7 @@ export default function QrCodeModal({ isOpen, onClose }) {
                         <Button
                           type='submit'
                           isDisabled={isPending}
-                          className=" w-full px-6 py-6  bg-fuchsia-600 rounded text-center text-white text-[12.83px] font-medium font-['Manrope']"
+                          className=" w-full px-6 py-6  bg-primarybutton rounded text-center text-white text-[12.83px] font-medium font-['Manrope']"
                         >
                           {isPending ? (
                             <svg

@@ -60,17 +60,17 @@ export default function ArchivedTaskCard() {
                 </svg>
                 <div className='p-2 bg-white rounded justify-start items-start gap-[29px] flex'>
                   <div className='justify-start items-center gap-2.5 flex'>
-                    <div className="text-stone-900 capitalize text-xs font-normal font-['Manrope']">
+                    <div className="text-primaryText capitalize text-xs font-normal font-['Manrope']">
                       {advert?.status}
                     </div>
                   </div>
                 </div>
               </div>
               <div className='flex-col justify-start items-start gap-3 flex'>
-                <div className="text-stone-900 text-sm font-medium font-['Manrope']">
+                <div className="text-primaryText text-sm font-medium font-['Manrope']">
                   {advert?.goal}
                 </div>
-                <div className="self-stretch text-stone-900 text-[10px] font-normal font-['Manrope']">
+                <div className="self-stretch text-primaryText text-[10px] font-normal font-['Manrope']">
                   {format(new Date(advert.date_created), 'yyyy-MM-dd HH:mm:ss')}
                 </div>
                 <div className='py-[4.50px] justify-start items-center gap-1.5 inline-flex'>
@@ -103,7 +103,7 @@ export default function ArchivedTaskCard() {
                       Earning:
                     </div>
                   </div>
-                  <div className="text-stone-900 text-[10.50px] font-bold font-['Manrope']">
+                  <div className="text-primaryText text-[10.50px] font-bold font-['Manrope']">
                     ₦3 per Page Like and Follow
                   </div>
                 </div>
@@ -113,7 +113,7 @@ export default function ArchivedTaskCard() {
         ) : (
           <div
             key={index}
-            className="text-stone-900 text-center font-normal font-['Manrope']"
+            className="text-primaryText text-center font-normal font-['Manrope']"
           >
             No Archived tasks.
           </div>

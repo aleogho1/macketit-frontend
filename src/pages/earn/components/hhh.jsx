@@ -58,7 +58,7 @@ export default function hhh() {
                   toast.error('Please activate your membership')
                 }
               }}
-              className='self-stretch p-2 bg-fuchsia-400 rounded-none rounded-t-md border border-violet-500 border-opacity-25 justify-center items-center gap-1 inline-flex'
+              className='self-stretch p-2 primaryBg rounded-none rounded-t-md border border-violet-500 border-opacity-25 justify-center items-center gap-1 inline-flex'
             >
               <div className="text-center text-white text-[10px] font-medium font-['Manrope']">
                 Generate Task
@@ -230,7 +230,7 @@ export default function hhh() {
                   toast.error('Please activate your membership')
                 }
               }}
-              className='self-stretch p-2 bg-fuchsia-400 rounded-none rounded-t-md border border-violet-500 border-opacity-25 justify-center items-center gap-1 inline-flex'
+              className='self-stretch p-2 primaryBg rounded-none rounded-t-md border border-violet-500 border-opacity-25 justify-center items-center gap-1 inline-flex'
             >
               <div className="text-center text-white text-[10px] font-medium font-['Manrope']">
                 Generate Task
@@ -400,7 +400,7 @@ export default function hhh() {
                   toast.error('Please activate your membership')
                 }
               }}
-              className='self-stretch p-2 bg-fuchsia-400 rounded-none rounded-t-md border border-violet-500 border-opacity-25 justify-center items-center gap-1 inline-flex'
+              className='self-stretch p-2 primaryBg rounded-none rounded-t-md border border-violet-500 border-opacity-25 justify-center items-center gap-1 inline-flex'
             >
               <div className="text-center text-white text-[10px] font-medium font-['Manrope']">
                 Generate Task
@@ -477,7 +477,7 @@ export default function hhh() {
                   toast.error('Please activate your membership')
                 }
               }}
-              className='self-stretch p-2 bg-fuchsia-400 rounded-none rounded-t-md border border-violet-500 border-opacity-25 justify-center items-center gap-1 inline-flex'
+              className='self-stretch p-2 primaryBg rounded-none rounded-t-md border border-violet-500 border-opacity-25 justify-center items-center gap-1 inline-flex'
             >
               <div className="text-center text-white text-[10px] font-medium font-['Manrope']">
                 Generate Task
@@ -649,7 +649,7 @@ export default function hhh() {
                   toast.error('Please activate your membership')
                 }
               }}
-              className='self-stretch p-2 bg-fuchsia-400 rounded-none rounded-t-md border border-violet-500 border-opacity-25 justify-center items-center gap-1 inline-flex'
+              className='self-stretch p-2 primaryBg rounded-none rounded-t-md border border-violet-500 border-opacity-25 justify-center items-center gap-1 inline-flex'
             >
               <div className="text-center text-white text-[10px] font-medium font-['Manrope']">
                 Generate Task
@@ -835,7 +835,7 @@ export default function hhh() {
                   toast.error('Please activate your membership')
                 }
               }}
-              className='self-stretch p-2 bg-fuchsia-400 rounded-none rounded-t-md border border-violet-500 border-opacity-25 justify-center items-center gap-1 inline-flex'
+              className='self-stretch p-2 primaryBg rounded-none rounded-t-md border border-violet-500 border-opacity-25 justify-center items-center gap-1 inline-flex'
             >
               <div className="text-center text-white text-[10px] font-medium font-['Manrope']">
                 Generate Task
@@ -907,7 +907,7 @@ export default function hhh() {
                   toast.error('Please activate your membership')
                 }
               }}
-              className='self-stretch p-2 bg-fuchsia-400 rounded-none rounded-t-md border border-violet-500 border-opacity-25 justify-center items-center gap-1 inline-flex'
+              className='self-stretch p-2 primaryBg rounded-none rounded-t-md border border-violet-500 border-opacity-25 justify-center items-center gap-1 inline-flex'
             >
               <div className="text-center text-white text-[10px] font-medium font-['Manrope']">
                 Generate Task
@@ -1012,7 +1012,7 @@ export default function hhh() {
                   toast.error('Please activate your membership')
                 }
               }}
-              className='self-stretch p-2 bg-fuchsia-400 rounded-none rounded-t-md border border-violet-500 border-opacity-25 justify-center items-center gap-1 inline-flex'
+              className='self-stretch p-2 primaryBg rounded-none rounded-t-md border border-violet-500 border-opacity-25 justify-center items-center gap-1 inline-flex'
             >
               <div className="text-center text-white text-[10px] font-medium font-['Manrope']">
                 Generate Task
@@ -1184,7 +1184,7 @@ export default function hhh() {
                   toast.error('Please activate your membership')
                 }
               }}
-              className='self-stretch p-2 bg-fuchsia-400 rounded-none rounded-t-md border border-violet-500 border-opacity-25 justify-center items-center gap-1 inline-flex'
+              className='self-stretch p-2 primaryBg rounded-none rounded-t-md border border-violet-500 border-opacity-25 justify-center items-center gap-1 inline-flex'
             >
               <div className="text-center text-white text-[10px] font-medium font-['Manrope']">
                 Generate Task
@@ -1353,7 +1353,7 @@ export default function hhh() {
                   toast.error('Please activate your membership')
                 }
               }}
-              className='self-stretch p-2 bg-fuchsia-400 rounded-none rounded-t-md border border-violet-500 border-opacity-25 justify-center items-center gap-1 inline-flex'
+              className='self-stretch p-2 primaryBg rounded-none rounded-t-md border border-violet-500 border-opacity-25 justify-center items-center gap-1 inline-flex'
             >
               <div className="text-center text-white text-[10px] font-medium font-['Manrope']">
                 Generate Task
@@ -1430,7 +1430,7 @@ export default function hhh() {
                   toast.error('Please activate your membership')
                 }
               }}
-              className='self-stretch p-2 bg-fuchsia-400 rounded-none rounded-t-md border border-violet-500 border-opacity-25 justify-center items-center gap-1 inline-flex'
+              className='self-stretch p-2 primaryBg rounded-none rounded-t-md border border-violet-500 border-opacity-25 justify-center items-center gap-1 inline-flex'
             >
               <div className="text-center text-white text-[10px] font-medium font-['Manrope']">
                 Generate Task
@@ -1504,7 +1504,7 @@ export default function hhh() {
                   toast.error('Please activate your membership')
                 }
               }}
-              className='self-stretch p-2 bg-fuchsia-400 rounded-none rounded-t-md border border-violet-500 border-opacity-25 justify-center items-center gap-1 inline-flex'
+              className='self-stretch p-2 primaryBg rounded-none rounded-t-md border border-violet-500 border-opacity-25 justify-center items-center gap-1 inline-flex'
             >
               <div className="text-center text-white text-[10px] font-medium font-['Manrope']">
                 Generate Task
@@ -1588,7 +1588,7 @@ export default function hhh() {
                   toast.error('Please activate your membership')
                 }
               }}
-              className='self-stretch p-2 bg-fuchsia-400 rounded-none rounded-t-md border border-violet-500 border-opacity-25 justify-center items-center gap-1 inline-flex'
+              className='self-stretch p-2 primaryBg rounded-none rounded-t-md border border-violet-500 border-opacity-25 justify-center items-center gap-1 inline-flex'
             >
               <div className="text-center text-white text-[10px] font-medium font-['Manrope']">
                 Generate Task
@@ -1678,7 +1678,7 @@ export default function hhh() {
                   toast.error('Please activate your membership')
                 }
               }}
-              className='self-stretch p-2 bg-fuchsia-400 rounded-none rounded-t-md border border-violet-500 border-opacity-25 justify-center items-center gap-1 inline-flex'
+              className='self-stretch p-2 primaryBg rounded-none rounded-t-md border border-violet-500 border-opacity-25 justify-center items-center gap-1 inline-flex'
             >
               <div className="text-center text-white text-[10px] font-medium font-['Manrope']">
                 Generate Task
@@ -1763,7 +1763,7 @@ export default function hhh() {
                   toast.error('Please activate your membership')
                 }
               }}
-              className='self-stretch p-2 bg-fuchsia-400 rounded-none rounded-t-md border border-violet-500 border-opacity-25 justify-center items-center gap-1 inline-flex'
+              className='self-stretch p-2 primaryBg rounded-none rounded-t-md border border-violet-500 border-opacity-25 justify-center items-center gap-1 inline-flex'
             >
               <div className="text-center text-white text-[10px] font-medium font-['Manrope']">
                 Generate Task
@@ -1924,7 +1924,7 @@ export default function hhh() {
                   toast.error('Please activate your membership')
                 }
               }}
-              className='self-stretch p-2 bg-fuchsia-400 rounded-none rounded-t-md border border-violet-500 border-opacity-25 justify-center items-center gap-1 inline-flex'
+              className='self-stretch p-2 primaryBg rounded-none rounded-t-md border border-violet-500 border-opacity-25 justify-center items-center gap-1 inline-flex'
             >
               <div className="text-center text-white text-[10px] font-medium font-['Manrope']">
                 Generate Task
@@ -2000,7 +2000,7 @@ export default function hhh() {
                   toast.error('Please activate your membership')
                 }
               }}
-              className='self-stretch p-2 bg-fuchsia-400 rounded-none rounded-t-md border border-violet-500 border-opacity-25 justify-center items-center gap-1 inline-flex'
+              className='self-stretch p-2 primaryBg rounded-none rounded-t-md border border-violet-500 border-opacity-25 justify-center items-center gap-1 inline-flex'
             >
               <div className="text-center text-white text-[10px] font-medium font-['Manrope']">
                 Generate Task
@@ -2073,7 +2073,7 @@ export default function hhh() {
                   toast.error('Please activate your membership')
                 }
               }}
-              className='self-stretch h[35px] p-2 bg-fuchsia-400 rounded-none rounded-t-md border border-violet-500 border-opacity-25 justify-center items-center gap-1 inline-flex'
+              className='self-stretch h[35px] p-2 primaryBg rounded-none rounded-t-md border border-violet-500 border-opacity-25 justify-center items-center gap-1 inline-flex'
             >
               <div className="text-center text-white text-[10px] font-medium font-['Manrope']">
                 Generate Task
@@ -2154,7 +2154,7 @@ export default function hhh() {
                   toast.error('Please activate your membership')
                 }
               }}
-              className='self-stretch p-2 bg-fuchsia-400 rounded-none rounded-t-md border border-violet-500 border-opacity-25 justify-center items-center gap-1 inline-flex'
+              className='self-stretch p-2 primaryBg rounded-none rounded-t-md border border-violet-500 border-opacity-25 justify-center items-center gap-1 inline-flex'
             >
               <div className="text-center text-white text-[10px] font-medium font-['Manrope']">
                 Generate Task
@@ -2222,7 +2222,7 @@ export default function hhh() {
                   toast.error('Please activate your membership')
                 }
               }}
-              className='self-stretch p-2 bg-fuchsia-400 rounded-none rounded-t-md border border-violet-500 border-opacity-25 justify-center items-center gap-1 inline-flex'
+              className='self-stretch p-2 primaryBg rounded-none rounded-t-md border border-violet-500 border-opacity-25 justify-center items-center gap-1 inline-flex'
             >
               <div className="text-center text-white text-[10px] font-medium font-['Manrope']">
                 Generate Task
@@ -2303,7 +2303,7 @@ export default function hhh() {
               onClick={() =>
                 navigate('/dashboard/advertise-engage-follower-task')
               }
-              className="text-center text-white text-[10px] font-medium font-['Manrope'] bg-fuchsia-400 rounded-md border border-violet-500 border-opacity-25 justify-center items-center gap-1 inline-flex"
+              className="text-center text-white text-[10px] font-medium font-['Manrope'] primaryBg rounded-md border border-violet-500 border-opacity-25 justify-center items-center gap-1 inline-flex"
             >
               Create Advert
             </Button>
@@ -2372,7 +2372,7 @@ export default function hhh() {
               onClick={() =>
                 navigate('/dashboard/advertise-engage-follower&like-task')
               }
-              className="text-center text-white text-[10px] font-medium font-['Manrope'] bg-fuchsia-400 rounded-md border border-violet-500 border-opacity-25 justify-center items-center gap-1 inline-flex"
+              className="text-center text-white text-[10px] font-medium font-['Manrope'] primaryBg rounded-md border border-violet-500 border-opacity-25 justify-center items-center gap-1 inline-flex"
             >
               Create Advert
             </Button>
@@ -2439,7 +2439,7 @@ export default function hhh() {
             </div>
             <Button
               onClick={() => navigate('/dashboard/advertise-engage-share-task')}
-              className="text-center text-white text-[10px] font-medium font-['Manrope'] bg-fuchsia-400 rounded-md border border-violet-500 border-opacity-25 justify-center items-center gap-1 inline-flex"
+              className="text-center text-white text-[10px] font-medium font-['Manrope'] primaryBg rounded-md border border-violet-500 border-opacity-25 justify-center items-center gap-1 inline-flex"
             >
               Create Advert
             </Button>

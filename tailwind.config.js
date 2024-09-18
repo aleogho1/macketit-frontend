@@ -11,12 +11,14 @@ export default {
   ],
   theme: {
     fontFamily: {
-      Manrope: ['Manrope', 'sans-serif'],
+      Manrope: ['Mono', 'sans-serif'],
       RedHat: ['Red Hat Display', 'sans-serif'],
     },
     extend: {
       colors: {
-        primaryBg: '#0c2d48',
+        primaryBg: '#f5f5f5',
+        primarybutton: '#0c2d48',
+        primaryText: '#003b73',
       },
     },
   },

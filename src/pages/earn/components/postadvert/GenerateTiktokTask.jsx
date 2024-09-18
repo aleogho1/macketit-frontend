@@ -91,7 +91,7 @@ export default function GenerateTiktokTask() {
                 />
               </svg>
             </div>
-            <div className="text-center text-fuchsia-400 text-sm font-medium font-['Manrope']">
+            <div className="text-center text-primaryText text-sm font-medium font-['Manrope']">
               Go back
             </div>
           </div>
@@ -189,7 +189,7 @@ export default function GenerateTiktokTask() {
                 <div className="text-center  text-base font-bold font-['Manrope']">
                   Link your TikTok Accounts
                 </div>
-                <div className="self-stretch dark:text-gray-400 text-stone-900 text-xs font-normal font-['Manrope']">
+                <div className="self-stretch dark:text-gray-400 text-primaryText text-xs font-normal font-['Manrope']">
                   You need to link your TicTok Accounts to MacketIT before you
                   can start earning with your TikTok Accounts . Click the button
                   below to link your  TikTok Accounts now.
@@ -256,12 +256,12 @@ export default function GenerateTiktokTask() {
                           classNames={{
                             tab: '!px0 mr2',
                             tabList: '!p0 bordered  py-2',
-                            cursor: ' bg-fuchsia-400',
+                            cursor: ' primaryBg',
                             selectedKey: 'text-green-400',
                             tabContent:
-                              'group-data-[selected=true]:text-fuchsia-400 ',
+                              'group-data-[selected=true]:text-primaryText ',
                           }}
-                          className="text-center  text-fuchsia-400 text-[12.83px] font-bold font-['Manrope']"
+                          className="text-center  text-primaryText text-[12.83px] font-bold font-['Manrope']"
                           color='secondary'
                         >
                           <Tab
@@ -321,7 +321,7 @@ export default function GenerateTiktokTask() {
                             className='dark:stroke-[#B1B1B1] stroke-[#1E1E1E] '
                           />
                         </svg>
-                        <div className="text-center dark:text-[#B1B1B1] text-stone-900 text-sm font-medium font-['Manrope']">
+                        <div className="text-center dark:text-[#B1B1B1] text-primaryText text-sm font-medium font-['Manrope']">
                           Filter
                         </div>
                       </div>
@@ -340,7 +340,7 @@ export default function GenerateTiktokTask() {
                             className='dark:stroke-[#B1B1B1] stroke-[#1E1E1E] '
                           />
                         </svg>
-                        <div className="text-center dark:text-[#B1B1B1] text-stone-900 text-sm font-medium font-['Manrope']">
+                        <div className="text-center dark:text-[#B1B1B1] text-primaryText text-sm font-medium font-['Manrope']">
                           Sort
                         </div>
                       </div>
@@ -551,7 +551,7 @@ export default function GenerateTiktokTask() {
                         ? onOpen()
                         : toast.error('No task is available')
                     }
-                    className='w-[290px] px-6 cursor-pointer py-3.5 dark:bg-white bg-fuchsia-400 rounded-[100px] justify-center items-center gap-2 inline-flex'
+                    className='w-[290px] px-6 cursor-pointer py-3.5 dark:bg-white primaryBg rounded-[100px] justify-center items-center gap-2 inline-flex'
                   >
                     <svg
                       xmlns='http://www.w3.org/2000/svg'

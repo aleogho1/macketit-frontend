@@ -21,7 +21,7 @@ export default function LearnMoreModal({ isOpen, onClose }) {
           <div className=' px-[26px] py-8 rounded flex-col justify-start items-center gap-12 inline-flex'>
             <div
               onClick={onClose}
-              className='p-2 bg-fuchsia-400 top-[-20px] absolute z-40 -right-2 md:-right-4 cursor-pointer rounded-[100px] '
+              className='p-2 primaryBg top-[-20px] absolute z-40 -right-2 md:-right-4 cursor-pointer rounded-[100px] '
             >
               <AiOutlineClose size={20} color='#fff' />
             </div>

@@ -39,10 +39,10 @@ export default function IgPageHeader({ title, frame, descp, price }) {
               <div className=" text-sm font-bold font-['Manrope']">{price}</div>
             </div>
             <div className='selfstretch justify-start items-start gap-3 inline-flex'>
-              {/* <div className="text-stone-900 text-[9px] font-normal font-['Manrope'] uppercase tracking-tight">
+              {/* <div className="text-primaryText text-[9px] font-normal font-['Manrope'] uppercase tracking-tight">
                 20+ people
               </div>
-              <div className="text-stone-900 text-[9px] font-normal font-['Manrope'] uppercase tracking-tight">
+              <div className="text-primaryText text-[9px] font-normal font-['Manrope'] uppercase tracking-tight">
                 134 Likes
               </div> */}
               <div className="dark:text-[#909090] capitalize lg:w-8/12 lg:text-[14px] font-normal font-['Manrope'] tracking-tight">

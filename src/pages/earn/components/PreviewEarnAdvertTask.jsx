@@ -26,7 +26,7 @@ export default function PreviewEarnAdvertTask() {
           <div className='cursor-pointer'>
             <Icons type='arrow-back' />
           </div>
-          <div className="text-center text-fuchsia-400 text-sm font-medium font-['Manrope']">
+          <div className="text-center text-primaryText text-sm font-medium font-['Manrope']">
             Go back
           </div>
         </div>
@@ -206,7 +206,7 @@ export default function PreviewEarnAdvertTask() {
                             {fetchTaskPreview?.task?.caption}
                           </div>
                           <p
-                            className='flex items-center gap-x-2 text-[12px] text-[#FF6DFB]'
+                            className='flex items-center gap-x-2 text-[12px] text-primaryText'
                             onClick={() => (
                               navigator.clipboard.writeText(
                                 fetchTaskPreview?.task?.caption

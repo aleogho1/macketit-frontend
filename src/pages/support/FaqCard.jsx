@@ -27,9 +27,9 @@ const FaqCard = ({ faqs }) => {
             className='flex gap-2 cursor-pointer items-center'
           >
             {openFaqId === faq.id ? (
-              <FaMinus className='text-[#FF6DFB] dark:text-[#FFCFFD] cursor-pointer' />
+              <FaMinus className='text-primaryText dark:text-[#FFCFFD] cursor-pointer' />
             ) : (
-              <FaPlus className='text-[#FF6DFB] dark:text-[#FFCFFD] cursor-pointer' />
+              <FaPlus className='text-primaryText dark:text-[#FFCFFD] cursor-pointer' />
             )}
             <div className="grow shrink basis-0 text-[12.83px] font-medium font-['Manrope']">
               {faq.ques}

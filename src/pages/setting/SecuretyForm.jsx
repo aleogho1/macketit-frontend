@@ -69,13 +69,13 @@ function SecuretyFormContent() {
   const new_password = watch('new_password')
   const Cnew_password = watch('Cnew_password')
   const validatePassword = (value) => {
-    const hasNumber = /[0-9]/.test(value);
-    const hasSpecialChar = /[!@#$%^&*(),.?":{}_|<>-]/g.test(value);
-   if(hasSpecialChar && hasNumber) {
-    return true
-   }
-   return 'Passowrd must contain as least on special character'    
-  };
+    const hasNumber = /[0-9]/.test(value)
+    const hasSpecialChar = /[!@#$%^&*(),.?":{}_|<>-]/g.test(value)
+    if (hasSpecialChar && hasNumber) {
+      return true
+    }
+    return 'Passowrd must contain as least on special character'
+  }
 
   const handleUpdatePassword = async (data) => {
     try {
@@ -118,8 +118,8 @@ function SecuretyFormContent() {
   const [is2Fa, set2Fa] = useState('')
   const handelDeactivateGoogleAuth = () => {
     API.get('/settings/deactivate/google-auth-app')
-    .then((response) => (toast.success(response.data.message)))
-    .catch((error) => toast.error(error.message))
+      .then((response) => toast.success(response.data.message))
+      .catch((error) => toast.error(error.message))
     // deactiveGoogleAuth(
     //   {},
     //   {
@@ -228,7 +228,7 @@ function SecuretyFormContent() {
                               'dark:group-data-[focused=true]:bg-default/60',
                               '!cursor-text',
                               'border-2 border-transparent',
-                              'focus-within:!border-fuchsia-600  ',
+                              'focus-within:!border-red-500  ',
                             ],
                           }}
                           {...field}
@@ -311,7 +311,7 @@ function SecuretyFormContent() {
                               'dark:group-data-[focused=true]:bg-default/60',
                               '!cursor-text',
                               'border-2 border-transparent',
-                              'focus-within:!border-fuchsia-600  ',
+                              'focus-within:!border-red-500  ',
                             ],
                           }}
                           {...field}
@@ -324,7 +324,7 @@ function SecuretyFormContent() {
                           value: 8,
                           message: 'min length is 8',
                         },
-                        validate: validatePassword
+                        validate: validatePassword,
                       }}
                       // rules={{
                       //   required: true,
@@ -405,7 +405,7 @@ function SecuretyFormContent() {
                               'dark:group-data-[focused=true]:bg-default/60',
                               '!cursor-text',
                               'border-2 border-transparent',
-                              'focus-within:!border-fuchsia-600  ',
+                              'focus-within:!border-red-500  ',
                             ],
                           }}
                           {...field}
@@ -419,7 +419,7 @@ function SecuretyFormContent() {
                       variant='light'
                       type='submit'
                       onClick={handleSubmit(handleUpdatePassword)}
-                      className='md:w-[290px]   mt-4 text-base cursor-pointer px-6 py-6 bg-fuchsia-600 rounded-[100px] justify-center items-center gap-2'
+                      className='md:w-[290px]   mt-4 text-base cursor-pointer px-6 py-6 bg-primarybutton rounded-[100px] justify-center items-center gap-2'
                     >
                       {isUpdating ? <Loader /> : 'Update-password'}
                     </Button>
@@ -478,26 +478,32 @@ function SecuretyFormContent() {
                             'dark:group-data-[focused=true]:bg-default/60',
                             '!cursor-text',
                             'border-2 border-transparent',
-                            'focus-within:!border-fuchsia-600  ',
+                            'focus-within:!border-red-500  ',
                           ],
                         }}
                         className="grow shrink hover:text-white basis-0 text-zinc-400 text-[12.83px] font-normal font-['Manrope']"
                       />
                     )}
                   />
-                </div>                   
+                </div>
 
                 <div className='self-stretch w-full hover:text-white bg-opacity-10 rounded justify-start items-center gap-2 inline-flex'>
                   <Input
                     readOnly
                     endContent={
-                        <div
-                          // variant='light'
-                          onClick={() => securityPrefrence?.two_fa_method === 'google_auth_app' ? handelDeactivateGoogleAuth() : onOpen()}
-                          className="text-[#FF6DFB] dark:text-fuchsia-200 text-[12.83px] font-normal font-['Manrope']"
-                        >
-                          {securityPrefrence?.two_fa_method === 'google_auth_app' ? 'Deactivate' : 'Activate'}
-                        </div>
+                      <div
+                        // variant='light'
+                        onClick={() =>
+                          securityPrefrence?.two_fa_method === 'google_auth_app'
+                            ? handelDeactivateGoogleAuth()
+                            : onOpen()
+                        }
+                        className="text-primaryText dark:text-fuchsia-200 text-[12.83px] font-normal font-['Manrope']"
+                      >
+                        {securityPrefrence?.two_fa_method === 'google_auth_app'
+                          ? 'Deactivate'
+                          : 'Activate'}
+                      </div>
                     }
                     placeholder='Google Auth App'
                     size='sm'
@@ -517,7 +523,7 @@ function SecuretyFormContent() {
                         'dark:group-data-[focused=true]:bg-default/60',
                         '!cursor-text',
                         'border-2 border-transparent',
-                        'focus-within:!border-fuchsia-600  ',
+                        'focus-within:!border-red-500  ',
                       ],
                     }}
                     className="grow shrink hover:text-white basis-0 text-zinc-400 text-[12.83px] font-normal font-['Manrope']"

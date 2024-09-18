@@ -76,7 +76,7 @@ const SubMenu = ({ data, routeMerge }) => {
             : 'border-0 border-transparent'
         } ${
           sidebarMinimized
-            ? "flex flex-col text-center justify-center gap-1 cursor-pointer  duration-300  text-fuchsia-400 text-sm font-medium font-['Campton']"
+            ? "flex flex-col text-center justify-center gap-1 cursor-pointer  duration-300  text-primaryText text-sm font-medium font-['Campton']"
             : 'link !pr-2 '
         }`}
         onClick={showSubMenu}
@@ -84,11 +84,11 @@ const SubMenu = ({ data, routeMerge }) => {
       >
         <data.icon
           size={sidebarMinimized ? 30 : 18}
-          className={`min-w-max group-hover/navitemsub:text-fuchsia-400 ${
+          className={`min-w-max group-hover/navitemsub:text-primaryText ${
             sidebarMinimized && 'mx-auto'
           } ${
             pathname.includes(data.name) || pathname.includes(data.prefix)
-              ? " text-fuchsia-400 text-sm font-medium font-['Campton']"
+              ? " text-primaryText text-sm font-medium font-['Campton']"
               : 'text-menuItemIcon'
           }`}
         />
@@ -96,8 +96,8 @@ const SubMenu = ({ data, routeMerge }) => {
         <p
           className={`flex-1 capitalize  ${
             pathname.includes(data.name)
-              ? '!text-fuchsia-400'
-              : pathname.includes(data?.prefix) && '!text-fuchsia-400'
+              ? '!text-primaryText'
+              : pathname.includes(data?.prefix) && '!text-primaryText'
           } `}
         >
           {data.name}
@@ -150,7 +150,7 @@ const SubMenu = ({ data, routeMerge }) => {
               {menu?.withSubMenu3 ? (
                 <div
                   // to={ routeMerge ?  `/${data.name}${menu.route}` :  `${menu.route}`}
-                  className='link-sub-menu3   capitalize relative hover:text-fuchsia-400 hover:cursor-pointer hover:no-underline  visited:no-underline active:no-underline'
+                  className='link-sub-menu3   capitalize relative hover:text-primaryText hover:cursor-pointer hover:no-underline  visited:no-underline active:no-underline'
                 >
                   {pathname.includes(menu.route) && (
                     <span className='w-2 h-2 rounded-full  absolute left-[0.3rem] duration-200 transition-all'></span>
@@ -168,7 +168,7 @@ const SubMenu = ({ data, routeMerge }) => {
                         } ${
                           pathname.includes(menu.name) ||
                           pathname.includes(menu.prefix)
-                            ? 'text-fuchsia-400'
+                            ? 'text-primaryText'
                             : 'text-gray-400'
                         }`}
                       />
@@ -217,12 +217,12 @@ const SubMenu = ({ data, routeMerge }) => {
                       {menu?.menus?.map((menu3) => (
                         <li
                           key={menu3.name}
-                          className='!font-[400] !text-[15px] text-fuchsia-400  !leading-8 '
+                          className='!font-[400] !text-[15px] text-primaryText  !leading-8 '
                         >
                           <NavLink
                             to={`${menu3.route}`}
                             // link-sub-menu3
-                            className='link-sub-menu4  capitalize relative hover:text-fuchsia-400 hover:cursor-pointer hover:no-underline  visited:no-underline active:no-underline'
+                            className='link-sub-menu4  capitalize relative hover:text-primaryText hover:cursor-pointer hover:no-underline  visited:no-underline active:no-underline'
                           >
                             {pathname.includes(menu3.route) && (
                               <span className='w-2 h-2 rounded-full bg-btnColor absolute left-[0.2rem] top-3 duration-200 transition-all'></span>
@@ -241,7 +241,7 @@ const SubMenu = ({ data, routeMerge }) => {
                       onClick={openMessageRoom}
                       className={` ${
                         menu?.icon ? 'link-sub-menu3' : 'link-sub-menu'
-                      }    capitalize relative hover:text-fuchsia-400 hover:cursor-pointer hover:no-underline  visited:no-underline active:no-underline`}
+                      }    capitalize relative hover:text-primaryText hover:cursor-pointer hover:no-underline  visited:no-underline active:no-underline`}
                     >
                       {pathname.includes(menu.route) && (
                         <span
@@ -261,7 +261,7 @@ const SubMenu = ({ data, routeMerge }) => {
                       }
                       className={` ${
                         menu?.icon ? 'link-sub-menu3' : 'link-sub-menu'
-                      }    capitalize relative hover:text-fuchsia-400 hover:cursor-pointer hover:no-underline  visited:no-underline active:no-underline`}
+                      }    capitalize relative hover:text-primaryText hover:cursor-pointer hover:no-underline  visited:no-underline active:no-underline`}
                     >
                       {pathname.includes(menu.route) && (
                         <span
@@ -279,7 +279,7 @@ const SubMenu = ({ data, routeMerge }) => {
                               sidebarMinimized && 'mx-auto'
                             } ${
                               pathname.includes(menu.name)
-                                ? 'text-fuchsia-400'
+                                ? 'text-primaryText'
                                 : 'text-menuItemIcon'
                             }`}
                           />

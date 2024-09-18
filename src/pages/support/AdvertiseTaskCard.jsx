@@ -125,7 +125,7 @@ export default function AdvertiseTaskCard() {
                     fill='#FF6DFB'
                   />
                 </svg>
-                <div className="text-fuchsia-400 text-sm font-medium font-['Manrope']">
+                <div className="text-primaryText text-sm font-medium font-['Manrope']">
                   More details
                 </div>
               </Button>
@@ -137,7 +137,7 @@ export default function AdvertiseTaskCard() {
                 Buy this product
               </div>
             </Button>
-            <Button className='grow shrink basis-0 p-2 bg-fuchsia-400 rounded-sm border border-violet-500 border-opacity-25 justify-center items-center gap-1 flex'>
+            <Button className='grow shrink basis-0 p-2 primaryBg rounded-sm border border-violet-500 border-opacity-25 justify-center items-center gap-1 flex'>
               <div className="text-center text-white text-[10px] font-medium font-['Manrope']">
                 Resell this product
               </div>

@@ -34,11 +34,11 @@ import Loader from '../../../Loader'
 import { useNavigate } from 'react-router'
 import Icons from '../../../../components/Icon'
 export default function CreateIgAdvertTask() {
-   const { isOpen, onOpen, onClose } = useDisclosure()
-   const [previewUrls, setPreviewUrls] = useState([])
-   const [media, setMedia] = useState(null)
-   const [count, setCount] = useState(1)
-   const [mediaFiles, setMediaFiles] = useState([]);
+  const { isOpen, onOpen, onClose } = useDisclosure()
+  const [previewUrls, setPreviewUrls] = useState([])
+  const [media, setMedia] = useState(null)
+  const [count, setCount] = useState(1)
+  const [mediaFiles, setMediaFiles] = useState([])
   const {
     handleSubmit,
     control,
@@ -61,97 +61,97 @@ export default function CreateIgAdvertTask() {
   const calculatedAmount = +watch().posts_count * +watch().amount
   const [successView, setSuccessView] = useState()
   const [paymentError, setPaymentError] = useState()
-   const handleChange = async ({ target }) => {
-     const { name } = target
+  const handleChange = async ({ target }) => {
+    const { name } = target
 
-     if (name === 'media') {
-       const file = target.files[0]
+    if (name === 'media') {
+      const file = target.files[0]
 
-       if (!file) {
-         return // No file selected, do nothing
-       }
+      if (!file) {
+        return // No file selected, do nothing
+      }
 
-       const allowedTypes = ['image/*', 'video/*']
-       const maxFileSize = 20 * 1024 * 1024 // 20 MB in bytes
+      const allowedTypes = ['image/*', 'video/*']
+      const maxFileSize = 20 * 1024 * 1024 // 20 MB in bytes
 
-       if (
-         !allowedTypes.some((type) =>
-           file.type.startsWith(type.replace('*', ''))
-         )
-       ) {
-         return toast.error(
-           `Invalid file type! Please select an image or video.`,
-           {
-             duration: 5000,
-           }
-         )
-       }
+      if (
+        !allowedTypes.some((type) =>
+          file.type.startsWith(type.replace('*', ''))
+        )
+      ) {
+        return toast.error(
+          `Invalid file type! Please select an image or video.`,
+          {
+            duration: 5000,
+          }
+        )
+      }
 
-       if (file.size > maxFileSize) {
-         return toast.error(
-           `File size exceeds the limit (20MB). Please choose a smaller file.`,
-           {
-             duration: 5000,
-           }
-         )
-       }
+      if (file.size > maxFileSize) {
+        return toast.error(
+          `File size exceeds the limit (20MB). Please choose a smaller file.`,
+          {
+            duration: 5000,
+          }
+        )
+      }
 
-       // If the file is valid, set the image URL, log the file, and set the image state
-       // setImageUrl(URL.createObjectURL(file))
-       setMedia(file)
-       const files = Array.from(target.files).map((file) => ({
+      // If the file is valid, set the image URL, log the file, and set the image state
+      // setImageUrl(URL.createObjectURL(file))
+      setMedia(file)
+      const files = Array.from(target.files).map((file) => ({
         file,
         url: URL.createObjectURL(file),
-      }));
-      setMediaFiles((prevFiles) => [...prevFiles, ...files]);
-     }
-   }
-   const renderPreview = (media, index) => {
-    const fileType = media.file.type.split('/')[0];
-    if (fileType === 'image')  {
+      }))
+      setMediaFiles((prevFiles) => [...prevFiles, ...files])
+    }
+  }
+  const renderPreview = (media, index) => {
+    const fileType = media.file.type.split('/')[0]
+    if (fileType === 'image') {
       return (
-        <div key={index} className='relative group'> 
-        <Image src={media?.url}  className='w-24' alt='' />                      
-        <button
+        <div key={index} className='relative group'>
+          <Image src={media?.url} className='w-24' alt='' />
+          <button
             type='button'
             className='absolute top-0 z-20 right-0 h-6 w-6 bg-red-500 text-white py-0 rounded-full opacity-100 '
-            onClick={() => handleDelete(index)}>
-              X
-        </button>
+            onClick={() => handleDelete(index)}
+          >
+            X
+          </button>
         </div>
       )
-     
     }
     if (fileType === 'video') {
       return (
-        <div key={index} className='relative group'> 
-        <video width='240' height='180' controls>
-          <source src={media?.url} type='video/mp4'/>
-        </video>                      
-        <button
+        <div key={index} className='relative group'>
+          <video width='240' height='180' controls>
+            <source src={media?.url} type='video/mp4' />
+          </video>
+          <button
             type='button'
             className='absolute top-0 z-20 right-0 h-6 w-6 bg-red-500 text-white py-0 rounded-full opacity-100 '
-            onClick={() => handleDelete(index)}>
-              X
-        </button>
+            onClick={() => handleDelete(index)}
+          >
+            X
+          </button>
         </div>
       )
-     
     }
   }
 
   const handleDelete = (index) => {
-    setMediaFiles((prevFiles) => prevFiles.filter((_, i) => i !== index));
+    setMediaFiles((prevFiles) => prevFiles.filter((_, i) => i !== index))
   }
-   // // const navigate = useNavigate()
+  // // const navigate = useNavigate()
 
-   useEffect(() => {
-     setValue('target_state', '')
-     return () => {
-       previewUrls.forEach((url) => URL.revokeObjectURL(url))
-     }
-     //  setValue('local_government', '')
-   }, [watch().target_country, setValue])
+  useEffect(() => {
+    setValue('target_state', '')
+    return () => {
+      previewUrls.forEach((url) => URL.revokeObjectURL(url))
+    }
+    //  setValue('local_government', '')
+  }, [watch().target_country, setValue])
 
   const onSubmit = async () => {
     onOpen()
@@ -262,17 +262,19 @@ export default function CreateIgAdvertTask() {
           <div className='p-3 bg-white dark:bg-zinc-900 flex-col justify-start items-start gap-3 inline-flex'>
             <div className=' flex-col justify-start items-start gap-4 flex'>
               <div className='w-full'>
-              <div
-                    onClick={() => navigate('/dashboard/advertise/?tab=advert-task')}
-                    className='justify-start cursor-pointer items-center gap-[7px] inline-flex'
-                  >
-                    <div className='cursor-pointer'>
-                      <Icons type='arrow-back' />
-                    </div>
-                    <div className="text-center text-fuchsia-400 text-sm font-medium font-['Manrope']">
-                      Go back
-                    </div>
-              </div>
+                <div
+                  onClick={() =>
+                    navigate('/dashboard/advertise/?tab=advert-task')
+                  }
+                  className='justify-start cursor-pointer items-center gap-[7px] inline-flex'
+                >
+                  <div className='cursor-pointer'>
+                    <Icons type='arrow-back' />
+                  </div>
+                  <div className="text-center text-primaryText text-sm font-medium font-['Manrope']">
+                    Go back
+                  </div>
+                </div>
                 <IgPageHeader
                   title={'Get People to Post Your Advert on Instagram'}
                   frame={Igframe}
@@ -336,7 +338,7 @@ export default function CreateIgAdvertTask() {
                                 ))}
                               </Select>
                             )}
-                            rules={{required: true}}
+                            rules={{ required: true }}
                           />
                         </div>
                         <div className='justify-center items-center gap-2 inline-flex'>
@@ -356,7 +358,7 @@ export default function CreateIgAdvertTask() {
                           <Controller
                             name='target_country'
                             control={control}
-                            rules={{required: true}}
+                            rules={{ required: true }}
                             aria-labelledby='target_country'
                             render={({ field }) => (
                               <Select
@@ -417,7 +419,7 @@ export default function CreateIgAdvertTask() {
                               name='target_state'
                               aria-labelledby='target_state'
                               control={control}
-                              rules={{required: true}}
+                              rules={{ required: true }}
                               render={({ field }) => (
                                 <Select
                                   aria-labelledby='target_state'
@@ -444,7 +446,7 @@ export default function CreateIgAdvertTask() {
                                       'dark:group-data-[focused=true]:bg-default/60',
                                       '!cursor-text',
                                       'border-2 border-transparent',
-                                      'focus-within:!border-fuchsia-600  ',
+                                      'focus-within:!border-red-500  ',
                                       '!cursor-text',
                                     ],
                                   }}
@@ -493,27 +495,33 @@ export default function CreateIgAdvertTask() {
                                 }}
                                 placeholder='No. of posts'
                                 {...field}
-                                className="grow shrink basis-0  rounded text-stone-900 text-opacity-50 text-[12.83px] font-normal font-['Manrope']"
+                                className="grow shrink basis-0  rounded text-primaryText text-opacity-50 text-[12.83px] font-normal font-['Manrope']"
                               />
                             )}
-                            rules={{ required: true, min: 0 , 
+                            rules={{
+                              required: true,
+                              min: 0,
                               validate: {
                                 invalidInput: (fieldValue) => {
-                                  return (
-                                    fieldValue > 0 || 'invalid input' 
-                                  )
+                                  return fieldValue > 0 || 'invalid input'
                                 },
                                 isMinimum: (fieldValue) => {
                                   return (
-                                    fieldValue * +watch().amount >= 1000 || `The total amount of #${+watch().posts_count * +watch().amount} is below our minimum order. Please note that the minimum order amount is #1,000. Kindly adjust your orer accordingly.`
+                                    fieldValue * +watch().amount >= 1000 ||
+                                    `The total amount of #${
+                                      +watch().posts_count * +watch().amount
+                                    } is below our minimum order. Please note that the minimum order amount is #1,000. Kindly adjust your orer accordingly.`
                                   )
                                 },
                                 isMaximum: (fieldValue) => {
                                   return (
-                                    fieldValue * +watch().amount <= 500000 || `Your order total amount of #${(+watch().posts_count * +watch().amount).toLocaleString()} exceeds the maximum allowed amount. Please review your order and adjust the total accordingly.`
+                                    fieldValue * +watch().amount <= 500000 ||
+                                    `Your order total amount of #${(
+                                      +watch().posts_count * +watch().amount
+                                    ).toLocaleString()} exceeds the maximum allowed amount. Please review your order and adjust the total accordingly.`
                                   )
-                                }
-                              }
+                                },
+                              },
                             }}
                           />
                         </div>
@@ -534,7 +542,7 @@ export default function CreateIgAdvertTask() {
                           <Controller
                             name='gender'
                             control={control}
-                            rules={{required: true}}
+                            rules={{ required: true }}
                             render={({ field }) => (
                               <Select
                                 {...field}
@@ -595,7 +603,7 @@ export default function CreateIgAdvertTask() {
                           <Controller
                             name='religion'
                             control={control}
-                            rules={{required: true}}
+                            rules={{ required: true }}
                             render={({ field }) => (
                               <Select
                                 aria-labelledby='religion'
@@ -651,7 +659,7 @@ export default function CreateIgAdvertTask() {
 
                         <Textarea
                           {...register('caption', {
-                            required: true
+                            required: true,
                           })}
                           isInvalid={!!errors.caption}
                           errorMessage={errors?.caption?.message}
@@ -677,40 +685,46 @@ export default function CreateIgAdvertTask() {
                         </div>
                       </div>
                       <div className='justify-start items-center gap-[11px] inline-flex'>
-                      <p
-                              
-                              className={` flex flex-row items-center gap-x-2 px-2 py-1 bg-zinc-400 bg-opacity-30 w-28`}
-                            >
-                              <svg
-                                  xmlns='http://www.w3.org/2000/svg'
-                                  width='20'
-                                  height='20'
-                                  viewBox='0 0 20 20'
-                                  fill='none'
-                                >
-                                  <path
-                                    d='M2.50466 6.66667C2.5 7.01051 2.5 7.39635 2.5 7.83333V12.1667C2.5 14.0335 2.5 14.9669 2.86331 15.68C3.18289 16.3072 3.69282 16.8171 4.32003 17.1367C5.03307 17.5 5.96649 17.5 7.83333 17.5H12.1667C12.6037 17.5 12.9895 17.5 13.3333 17.4953M2.50466 6.66667C2.51991 5.54158 2.58504 4.86616 2.86331 4.32003C3.18289 3.69282 3.69282 3.18289 4.32003 2.86331C5.03307 2.5 5.96649 2.5 7.83333 2.5H12.1667C14.0335 2.5 14.9669 2.5 15.68 2.86331C16.3072 3.18289 16.8171 3.69282 17.1367 4.32003C17.5 5.03307 17.5 5.96649 17.5 7.83333V12.1667C17.5 13.4282 17.5 14.2635 17.3879 14.8925M2.50466 6.66667L6.67133 10.8333M13.3333 17.4953C14.4584 17.4801 15.1338 17.415 15.68 17.1367C16.3072 16.8171 16.8171 16.3072 17.1367 15.68C17.2545 15.4488 17.3341 15.1944 17.3879 14.8925M13.3333 17.4953L6.67133 10.8333M6.67133 10.8333L7.73726 9.7674C8.52929 8.97537 8.92531 8.57935 9.38197 8.43097C9.78365 8.30046 10.2163 8.30046 10.618 8.43097C11.0747 8.57935 11.4707 8.97537 12.2627 9.7674L17.3879 14.8925M14.175 5.83333H14.1583'
-                                    // stroke='#FF6DFB'
-                                    stroke={'#FF6DFB'}
-                                    strokeWidth='2'
-                                    strokeLinecap='round'
-                                  />
-                                </svg>
-                                Media                         
+                        <p
+                          className={` flex flex-row items-center gap-x-2 px-2 py-1 bg-zinc-400 bg-opacity-30 w-28`}
+                        >
+                          <svg
+                            xmlns='http://www.w3.org/2000/svg'
+                            width='20'
+                            height='20'
+                            viewBox='0 0 20 20'
+                            fill='none'
+                          >
+                            <path
+                              d='M2.50466 6.66667C2.5 7.01051 2.5 7.39635 2.5 7.83333V12.1667C2.5 14.0335 2.5 14.9669 2.86331 15.68C3.18289 16.3072 3.69282 16.8171 4.32003 17.1367C5.03307 17.5 5.96649 17.5 7.83333 17.5H12.1667C12.6037 17.5 12.9895 17.5 13.3333 17.4953M2.50466 6.66667C2.51991 5.54158 2.58504 4.86616 2.86331 4.32003C3.18289 3.69282 3.69282 3.18289 4.32003 2.86331C5.03307 2.5 5.96649 2.5 7.83333 2.5H12.1667C14.0335 2.5 14.9669 2.5 15.68 2.86331C16.3072 3.18289 16.8171 3.69282 17.1367 4.32003C17.5 5.03307 17.5 5.96649 17.5 7.83333V12.1667C17.5 13.4282 17.5 14.2635 17.3879 14.8925M2.50466 6.66667L6.67133 10.8333M13.3333 17.4953C14.4584 17.4801 15.1338 17.415 15.68 17.1367C16.3072 16.8171 16.8171 16.3072 17.1367 15.68C17.2545 15.4488 17.3341 15.1944 17.3879 14.8925M13.3333 17.4953L6.67133 10.8333M6.67133 10.8333L7.73726 9.7674C8.52929 8.97537 8.92531 8.57935 9.38197 8.43097C9.78365 8.30046 10.2163 8.30046 10.618 8.43097C11.0747 8.57935 11.4707 8.97537 12.2627 9.7674L17.3879 14.8925M14.175 5.83333H14.1583'
+                              // stroke='#FF6DFB'
+                              stroke={'#FF6DFB'}
+                              strokeWidth='2'
+                              strokeLinecap='round'
+                            />
+                          </svg>
+                          Media
                         </p>
                       </div>
                       <div className='md:w-[559px] h-6 text-[10px] font-normal font-Manrope'>
-                      Upload a Photo / Video of the Advert You want people to post on
-                        their social media post accounts like Whatsapp,
+                        Upload a Photo / Video of the Advert You want people to
+                        post on their social media post accounts like Whatsapp,
                         Facebook, Instagram, Twitter etc
                       </div>
-                        <div className='flex flex-row w-full overflow-x-scroll items-center gap-x-4'>
-                          {mediaFiles.map((media, index) => renderPreview(media, index))}
-                        </div>
-                      <div  onClick={() => setError('media', {
+                      <div className='flex flex-row w-full overflow-x-scroll items-center gap-x-4'>
+                        {mediaFiles.map((media, index) =>
+                          renderPreview(media, index)
+                        )}
+                      </div>
+                      <div
+                        onClick={() =>
+                          setError('media', {
                             type: 'manual',
-                            message: ''
-                          })} className='w-[243px] h-[148.59px] opacity-40 dark:bg-white bg-stone-900 justify-center items-center inline-flex'>
+                            message: '',
+                          })
+                        }
+                        className='w-[243px] h-[148.59px] opacity-40 dark:bg-white bg-stone-900 justify-center items-center inline-flex'
+                      >
                         <input
                           type='file'
                           multiple
@@ -720,8 +734,8 @@ export default function CreateIgAdvertTask() {
                           {...register('media', {
                             required: {
                               value: true,
-                              message: 'Post cannot be empty'
-                            }
+                              message: 'Post cannot be empty',
+                            },
                           })}
                           onChange={handleChange}
                         />
@@ -740,10 +754,13 @@ export default function CreateIgAdvertTask() {
                           />
                         </svg>
                       </div>
-                      {errors.media?.message ? 
-                      <p className='text-red-800 text-sm'>{errors.media?.message}</p>
-                      : ''
-                    }
+                      {errors.media?.message ? (
+                        <p className='text-red-800 text-sm'>
+                          {errors.media?.message}
+                        </p>
+                      ) : (
+                        ''
+                      )}
                     </div>
                   </div>
                   <div className='w-full px-3 py-6 bg-zinc-400 bg-opacity-30 rounded justify-between itemscenter flex flex-col'>
@@ -752,12 +769,14 @@ export default function CreateIgAdvertTask() {
                     </div>
                     <div className='self-stretch px-2 md:justify-between items-center gap-2 inline-flex'>
                       <div className="w-40 text-3xl font-medium font-['Manrope']">
-                      {calculatedAmount > 0 ? ` ₦${calculatedAmount?.toLocaleString()}` : '0'}
+                        {calculatedAmount > 0
+                          ? ` ₦${calculatedAmount?.toLocaleString()}`
+                          : '0'}
                       </div>
                       <Button
                         type='submit'
                         isDisabled={isPending}
-                        className='md:w-[290px]  text-white  cursor-pointer px-6 py-6 bg-fuchsia-600 rounded-[100px] justify-center items-center gap-2 inline-flex'
+                        className='md:w-[290px]  text-white  cursor-pointer px-6 py-6 bg-primarybutton rounded-[100px] justify-center items-center gap-2 inline-flex'
                       >
                         {isPending ? <Loader /> : 'Submit and Pay'}
                       </Button>
