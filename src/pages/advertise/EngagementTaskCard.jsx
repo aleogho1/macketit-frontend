@@ -1,18 +1,16 @@
 import { Button } from '@nextui-org/button'
 import { useNavigate } from 'react-router-dom'
-import { useContext } from 'react'
-import { AppearanceContext } from '../../providers/AppearanceProvider'
 import Icons from '../../components/Icon'
 
 export default function EngagementTaskCard() {
   const navigate = useNavigate()
-  const appearance = useContext(AppearanceContext)
+
   const socialIcons = [
     'instagram',
     'facebook',
-    `${appearance === 'dark' ? 'tik-tok' : 'tik-tok-lite'}`,
-    `${appearance === 'dark' ? 'twitter' : 'x-lite'}`,
-    `${appearance === 'dark' ? 'thread' : 'thread-lite'}`,
+    'tik-tok-lite',
+    'x-lite',
+    'thread-lite',
   ]
   return (
     <div className='flex flex-col md:grid md:grid-cols-2 gap-3'>

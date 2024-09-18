@@ -5,9 +5,8 @@ import { AiOutlineClose } from 'react-icons/ai'
 import toast from 'react-hot-toast'
 import { useFetchBallance, useFundWallet } from '../../api/walletApi'
 import { useForm, Controller } from 'react-hook-form'
-import { useState, useContext } from 'react'
-import { AppearanceContext } from '../../providers/AppearanceProvider'
-import { useEffect, useRef } from 'react'
+import { useState } from 'react'
+import { useRef } from 'react'
 import { useNavigate } from 'react-router-dom'
 
 export default function FundWalletModal({ isOpen, onClose }) {
@@ -20,7 +19,6 @@ export default function FundWalletModal({ isOpen, onClose }) {
   const { mutateAsync: fundWallet, isPending } = useFundWallet()
   const { data: showBalance } = useFetchBallance()
   const [focus, setFocus] = useState(false)
-  const appreance = useContext(AppearanceContext)
 
   const handleInputChange = (event) => {
     const { value } = event.target
@@ -118,11 +116,7 @@ export default function FundWalletModal({ isOpen, onClose }) {
                               startContent={
                                 <span
                                   className={`${
-                                    appreance === 'dark'
-                                      ? focus
-                                        ? 'text-white'
-                                        : 'text-black'
-                                      : 'text-[#C026D3]'
+                                    focus ? 'text-black' : 'text-[#C026D3]'
                                   }`}
                                 >
                                   {showBalance?.currency_symbol}

@@ -10,8 +10,7 @@ import {
 } from '../../api/walletApi'
 import { useForm, Controller } from 'react-hook-form'
 import BankCard from '../setting/BankCard'
-import { useContext, useState } from 'react'
-import { AppearanceContext } from '../../providers/AppearanceProvider'
+import { useState } from 'react'
 import API from '../../services/AxiosInstance'
 import { useNavigate } from 'react-router-dom'
 export default function WithdrawWalletModal({ isOpen, onClose }) {
@@ -25,7 +24,6 @@ export default function WithdrawWalletModal({ isOpen, onClose }) {
   const { data: showBalance } = useFetchBallance()
   const { data: userBank } = useBankDetails()
   const [focus, setFocus] = useState(false)
-  const appreance = useContext(AppearanceContext)
   const navigate = useNavigate()
 
   const handleInputChange = (event) => {
@@ -124,11 +122,7 @@ export default function WithdrawWalletModal({ isOpen, onClose }) {
                               startContent={
                                 <span
                                   className={`${
-                                    appreance === 'dark'
-                                      ? focus
-                                        ? 'text-white'
-                                        : 'text-black'
-                                      : 'text-[#C026D3]'
+                                    focus ? 'text-white' : 'text-black'
                                   }`}
                                 >
                                   {showBalance?.currency_symbol}

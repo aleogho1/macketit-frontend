@@ -6,7 +6,6 @@ import { NextUIProvider } from '@nextui-org/react'
 import { BrowserRouter } from 'react-router-dom'
 import DashboardContext from './context/Dashboard.jsx'
 import QueryProvider from './providers/QueryProvider.jsx'
-import AppearanceProvider from './providers/AppearanceProvider.jsx'
 import ProfileProvider from './context/Profile.jsx'
 import SocialAccountProvider from './context/SocialAccount.jsx'
 
@@ -16,13 +15,11 @@ ReactDOM.createRoot(document.getElementById('root')).render(
       <DashboardContext>
         <NextUIProvider>
           <QueryProvider>
-            <AppearanceProvider>
-              <SocialAccountProvider>
+            <SocialAccountProvider>
               <ProfileProvider>
-                  <App />
-            </ProfileProvider>
+                <App />
+              </ProfileProvider>
             </SocialAccountProvider>
-            </AppearanceProvider>
           </QueryProvider>
         </NextUIProvider>
       </DashboardContext>

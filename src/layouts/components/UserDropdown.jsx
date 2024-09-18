@@ -5,99 +5,9 @@ import { Avatar, useDisclosure } from '@nextui-org/react'
 import { useGetProfile } from '../../api/profileApis'
 import SignOutModal from '../../components/auth/SignOutModal'
 import { ProfileContext } from '../../context/Profile'
-import {
-  AppearanceContext,
-  SetAppearanceContext,
-} from '../../providers/AppearanceProvider'
-import { useGetUserPrefence } from '../../api/settingsApis'
-import { useLightPref, useDarkPref } from '../../hooks/usePref'
-import toast from 'react-hot-toast'
-import API from '../../services/AxiosInstance'
-import Cookies from 'js-cookie'
 
 const UserDropdown = () => {
   const [dropdownOpen, setDropdownOpen] = useState(false)
-  const userPrefrences = useContext(AppearanceContext)
-  const setPrefrence = useContext(SetAppearanceContext)
-  const { data: pref } = useGetUserPrefence()
-  const system = window.matchMedia('(prefers-color-scheme: light)')
-  const setAppearance = () => {
-    if (pref.appearance === undefined) {
-      useDarkPref()
-      API.post('/settings/preferences', {
-        setting_name: 'appearance',
-        value: 'dark',
-      })
-        .then((response) => {
-          useDarkPref()
-          setPrefrence('dark')
-          Cookies.set('appearance', 'dark')
-        })
-        .catch((error) => {
-          useLightPref()
-        })
-    } else if (userPrefrences === 'light' || pref.appearance === 'light') {
-      useDarkPref()
-      API.post('/settings/preferences', {
-        setting_name: 'appearance',
-        value: 'dark',
-      })
-        .then((response) => {
-          useDarkPref()
-          setPrefrence('dark')
-          Cookies.set('appearance', 'dark')
-        })
-        .catch((error) => {
-          useLightPref()
-        })
-    } else if (userPrefrences === 'dark' || pref.appearance === 'dark') {
-      useLightPref()
-      API.post('/settings/preferences', {
-        setting_name: 'appearance',
-        value: 'light',
-      })
-        .then((response) => {
-          useLightPref()
-          setPrefrence('light')
-          Cookies.set('appearance', 'light')
-        })
-        .catch((error) => {
-          useDarkPref()
-        })
-    } else if (userPrefrences === 'system' || pref.appearance === 'system') {
-      if (system.matches) {
-        useLightPref()
-        API.post('/settings/preferences', {
-          setting_name: 'appearance',
-          value: 'light',
-        })
-          .then((response) => {
-            useLightPref()
-            setPrefrence('light')
-            Cookies.set('appearance', 'light')
-          })
-          .catch((error) => {
-            useDarkPref()
-          })
-      } else {
-        useDarkPref()
-        API.post('/settings/preferences', {
-          setting_name: 'appearance',
-          value: 'dark',
-        })
-          .then((response) => {
-            toast.success(response.data?.message)
-            useDarkPref()
-            setPrefrence('dark')
-            Cookies.set('appearance', 'dark')
-          })
-          .catch((error) => {
-            toast.error(error.response?.data?.message ?? error.message)
-            useLightPref()
-          })
-      }
-    }
-  }
 
   const trigger = useRef(null)
   const dropdown = useRef(null)
@@ -136,7 +46,7 @@ const UserDropdown = () => {
   return (
     <div className='relative flex items-center'>
       <div
-        onClick={() => setAppearance()}
+        // onClick={() => setAppearance()}
         className='w-6 h-6 relative sm:hidden cursor-pointer mr-8'
       >
         {/* <MdModeNight /> */}
