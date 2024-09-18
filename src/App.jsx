@@ -1,4 +1,10 @@
-import { Navigate, Route, Routes, useLocation, useNavigate } from 'react-router-dom'
+import {
+  Navigate,
+  Route,
+  Routes,
+  useLocation,
+  useNavigate,
+} from 'react-router-dom'
 import './App.css'
 import Login from './components/auth/Login'
 import Animation from './utilities/Animation'
@@ -17,7 +23,6 @@ import Support from './pages/support/Support'
 import PageNotFound from './pages/PageNotFound'
 import Settings from './pages/setting/Settings'
 import { useEffect } from 'react'
-import { useDarkMode } from 'usehooks-ts'
 import ForgetPassword from './components/auth/ForgetPassword'
 import GenerateEngagementTask from './pages/earn/components/engageadvert/GenerateLikeEngageTask'
 import History from './pages/history/History'
@@ -60,51 +65,18 @@ import CreateThrAdvertTask from './pages/advertise/components/createAdvert/Creat
 import GenerateThrTask from './pages/earn/components/postadvert/GenerateThrTask'
 import TwoFaOtp from './components/auth/TwoFaOtp'
 import Terms from './pages/terms'
-import {
-  // AppearanceContext,
-  SetAppearanceContext,
-} from './providers/AppearanceProvider'
-import API from './services/AxiosInstance'
-import { useContext } from 'react'
 import EarnHistory from './pages/earn_history/EarnHistory'
 import GenerateLikeFollowFBEngageTask from './pages/earn/components/engageadvert/GenerateLike&FollowFBEngageTask'
-import Cookies from 'js-cookie';
-import { useDarkPref, useLightPref } from './hooks/usePref'
-import { useGetProfile } from './api/profileApis'
-import { useGetUserPrefence } from './api/settingsApis'
+
 import NotificationPage from './pages/transaction/notification/NotificationPage'
 
 function App() {
-  const { isDarkMode } = useDarkMode()
-  const setPrefrence = useContext(SetAppearanceContext)
-  const { data: userDetails } = useGetProfile()
   const location = useLocation()
   const navigate = useNavigate()
   useEffect(() => {
-    if(location.pathname === '/dashboard') {
-      navigate('/dashboard/home')      
+    if (location.pathname === '/dashboard') {
+      navigate('/dashboard/home')
     }
-  }, [])
-  const theme = window.matchMedia('(prefers-color-scheme: light)') 
-  const { data: userPrefrence } = useGetUserPrefence()
-  useEffect(() => {
-    API.get('/settings/preferences')
-    .then((respone) => {
-      if(respone.data?.user_preferences?.appearance === 'dark') {
-        useDarkPref()
-        setPrefrence('dark')
-        Cookies.set('appearance', 'dark')
-      } else if(respone.data?.user_preferences?.appearance === 'light') {
-        useLightPref()
-        setPrefrence('light')
-        Cookies.set('appearance', 'light')
-      } else {
-        theme.matches ? (useLightPref(),   setPrefrence('light'),  Cookies.set('appearance', 'light')) : (useDarkPref(), setPrefrence('dark'),  Cookies.set('appearance', 'dark'))
-      }
-    })
-    .catch((error) => {
-      theme.matches ? (useLightPref(),   setPrefrence('light'),  Cookies.set('appearance', 'light')) : (useDarkPref(), setPrefrence('dark'),  Cookies.set('appearance', 'dark'))
-    })
   }, [])
 
   return (

@@ -22,7 +22,7 @@ export default {
       },
     },
   },
-  darkMode: 'class',
+  darkMode: '',
 
   plugins: [
     scrollbar,

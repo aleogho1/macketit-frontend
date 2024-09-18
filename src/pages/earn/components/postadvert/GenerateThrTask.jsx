@@ -1,3 +1,5 @@
+/* eslint-disable react/no-unescaped-entities */
+/* eslint-disable no-unsafe-optional-chaining */
 /* eslint-disable no-irregular-whitespace */
 
 import { useNavigate } from 'react-router-dom'
@@ -15,9 +17,8 @@ import { useGetProfile } from '../../../../api/profileApis'
 import SocialLinkModal from '../../../components/SocialLinkModal'
 import toast from 'react-hot-toast'
 import { useQueryClient } from '@tanstack/react-query'
-import { AppearanceContext } from '../../../../providers/AppearanceProvider'
 import { SocialAccountContext } from '../../../../context/SocialAccount'
-import Icons from '../../../../components/Icon'
+import { format } from 'date-fns'
 
 export default function GenerateThrTask() {
   const [selected, setSelected] = useState()
@@ -50,7 +51,6 @@ export default function GenerateThrTask() {
     getSocial()
   }, [socialAccount, active])
   const queryClient = useQueryClient()
-  const appearance = useContext(AppearanceContext)
 
   const handOpenSocialModal = () => {
     if (active?.status === 'pending') {
@@ -593,7 +593,8 @@ export default function GenerateThrTask() {
         <SocialLinkModal
           type='Threads'
           platform='threads'
-          icon={appearance === 'dark' ? 'thread' : 'thread-lite'}
+          // icon={appearance === 'dark' ? 'thread' : 'thread-lite'}
+          icon={'thread-lite'}
           LogoBand={
             <svg
               xmlns='http://www.w3.org/2000/svg'

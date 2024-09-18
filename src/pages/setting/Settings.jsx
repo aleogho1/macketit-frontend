@@ -5,7 +5,7 @@ import GeneralForm from './GeneralForm'
 import SecuretyForm from './SecuretyForm'
 import NotificationForm from './NotificationForm'
 import BankDetailsForm from './BankDetailsForm'
-import PrefrenceForm from './PrefrenceForm'
+// import PrefrenceForm from './PrefrenceForm'
 import SocialAccount from './SocialAccount'
 import { useLocation, useNavigate } from 'react-router-dom'
 
@@ -47,11 +47,11 @@ export default function Settings() {
         ((location.search = '?tab=social-account'),
         navigate('/dashboard/settings/?tab=social-account'))
     }
-    {
-      selected === 'Preferences' &&
-        ((location.search = '?tab=preferences'),
-        navigate('/dashboard/settings/?tab=preferences'))
-    }
+    // {
+    //   selected === 'Preferences' &&
+    //     ((location.search = '?tab=preferences'),
+    //     navigate('/dashboard/settings/?tab=preferences'))
+    // }
   }
   useEffect(() => {
     location.search === '?tab=notifications' ? setSelected('Notifications') : ''
@@ -206,7 +206,7 @@ export default function Settings() {
               <BankDetailsForm />
             </motion.div>
           )}
-          {selected === 'Preferences' && (
+          {/* {selected === 'Preferences' && (
             <motion.div
               initial={{ x: 100 }}
               animate={{ x: 0 }}
@@ -218,7 +218,7 @@ export default function Settings() {
             >
               <PrefrenceForm />
             </motion.div>
-          )}
+          )} */}
         </div>
       </div>
     </div>

@@ -8,16 +8,7 @@ import UserDropdown from '../components/UserDropdown'
 import { Search } from 'lucide-react'
 import SignOutModal from '../../components/auth/SignOutModal'
 import { useDisclosure } from '@nextui-org/react'
-import {
-  AppearanceContext,
-  SetAppearanceContext,
-} from '../../providers/AppearanceProvider'
-import Cookies from 'js-cookie';
-import { useDarkPref, useLightPref } from '../../hooks/usePref'
-import API from '../../services/AxiosInstance'
-import toast from 'react-hot-toast'
 import { useNavigate } from 'react-router-dom'
-import { useGetUserPrefence } from '../../api/settingsApis'
 import DropdownNotification from '../components/DropdownNotification'
 import { useGetNotification } from '../../api/notificationApi'
 
@@ -25,121 +16,21 @@ import { useGetNotification } from '../../api/notificationApi'
 const Navbar = () => {
   const { toggleSideBar, sidebarOpen, sidebarMinimized } =
     useContext(dashboardContext)
- 
+
   const { isOpen, onOpen, onClose } = useDisclosure()
-  const userPrefrences = useContext(AppearanceContext)
-  const setPrefrence = useContext(SetAppearanceContext)
-  const {data: pref} = useGetUserPrefence()
-  const system = window.matchMedia('(prefers-color-scheme: light)')
-  const setAppearance = () => {
-    if(pref.appearance === undefined) {
-      useDarkPref()
-      API.post('/settings/preferences', {
-        setting_name: 'appearance',
-        value: 'dark',
-      })
-        .then(
-          (response) => {
-            useDarkPref()
-            setPrefrence('dark')
-            Cookies.set('appearance', 'dark')
-          }
-        )
-        .catch(
-          (error) => {
-            useLightPref()
-            }
-          )
-    } else if(userPrefrences === 'light' || pref.appearance === 'light') {
-      useDarkPref()
-      API.post('/settings/preferences', {
-        setting_name: 'appearance',
-        value: 'dark',
-      })
-        .then(
-          (response) => {
-            useDarkPref()
-            setPrefrence('dark')
-            Cookies.set('appearance', 'dark')
-          }
-        )
-        .catch(
-          (error) => {
-            useLightPref()
-            }
-          )
-    } else if(userPrefrences === 'dark' || pref.appearance === 'dark') {
-      useLightPref()
-      API.post('/settings/preferences', {
-        setting_name: 'appearance',
-        value: 'light',
-      })
-        .then(
-          (response) => {
-            useLightPref()
-            setPrefrence('light')
-            Cookies.set('appearance', 'light')
-          }
-        )
-        .catch(
-          (error) => {
-            useDarkPref()
-            }
-          )
-    } else if(userPrefrences === 'system' || pref.appearance === 'system') {
-      if(system.matches) {
-        useLightPref()
-        API.post('/settings/preferences', {
-          setting_name: 'appearance',
-          value: 'light',
-        })
-          .then(
-            (response) => {
-              useLightPref()
-              setPrefrence('light')
-              Cookies.set('appearance', 'light')
-            }
-          )
-          .catch(
-            (error) => {
-              console.error(error.response?.data?.message ?? error.message)
-              useDarkPref()
-              }
-            )
- } else {
-        useDarkPref()
-        API.post('/settings/preferences', {
-          setting_name: 'appearance',
-          value: 'dark',
-        })
-          .then(
-            (response) => {
-              useDarkPref()
-              setPrefrence('dark')
-              Cookies.set('appearance', 'dark')
-            }
-          )
-          .catch(
-            (error) => {
-              useLightPref()
-              }
-            )
- }
-    }
-   
-  }
+
   const navigate = useNavigate()
-  const [dropdownOpen, setDropdownOpen] = useState(false);
-  const { data: notification} = useGetNotification()
+  const [dropdownOpen, setDropdownOpen] = useState(false)
+  const { data: notification } = useGetNotification()
   const [unread, setUnread] = useState(0)
   useEffect(() => {
-      if(notification) {
-          for(const item of notification) {
-              if(item?.read === false) {
-                  setUnread((prevRead) => prevRead + 1)
-              }
-          }
+    if (notification) {
+      for (const item of notification) {
+        if (item?.read === false) {
+          setUnread((prevRead) => prevRead + 1)
+        }
       }
+    }
   }, [notification])
 
   return (
@@ -147,7 +38,7 @@ const Navbar = () => {
       <div
         className={`right-0 left-0 p-2 shadow-md z-20 sticky top-0 bg-white  dark:bg-neutral-900`}
       >
-        <div className='px-3 py-1 ' >
+        <div className='px-3 py-1 '>
           <div className='flex items-center justify-between'>
             <div
               className={`flex items-center justify-between gap-2  p-2 ${
@@ -209,10 +100,7 @@ const Navbar = () => {
                 <div
                   className={`w[181px] h-6 justify-start items-center gap-6 lg:inline-flex hidden`}
                 >
-                  <div
-                    onClick={() => setAppearance()}
-                    className='w-6 h-6 relative cursor-pointer'
-                  >
+                  <div className='w-6 h-6 relative cursor-pointer'>
                     {/* <MdModeNight /> */}
                     <svg
                       xmlns='http://www.w3.org/2000/svg'
@@ -229,9 +117,7 @@ const Navbar = () => {
                       />
                     </svg>
                   </div>
-                  <div
-                    className='w-6 h-6 cursor-pointer'
-                  >
+                  <div className='w-6 h-6 cursor-pointer'>
                     <svg
                       xmlns='http://www.w3.org/2000/svg'
                       width='24'
@@ -247,11 +133,11 @@ const Navbar = () => {
                         strokeLinecap='round'
                       />
                     </svg>
-                    {
-                      dropdownOpen ?   <DropdownNotification /> : ''
-                    }
+                    {dropdownOpen ? <DropdownNotification /> : ''}
                   </div>
-                  <span className="relative -mt-6 font-bold text-[10px] -ml-6 text-black dark:text-white">{unread}</span>
+                  <span className='relative -mt-6 font-bold text-[10px] -ml-6 text-black dark:text-white'>
+                    {unread}
+                  </span>
                   <div
                     onClick={onOpen}
                     className='justify-start w-full items-center gap-[7px] cursor-pointer flex'
@@ -306,25 +192,27 @@ const Navbar = () => {
                     </svg>
               </div> */}
               <div
-                    className='w-6 h-6 cursor-pointer flex flex-row'
-                    onClick={() => navigate('notification')}
-                  >
-                    <svg
-                      xmlns='http://www.w3.org/2000/svg'
-                      width='24'
-                      height='24'
-                      viewBox='0 0 24 24'
-                      fill='none'
-                    >
-                      <path
-                        d='M9.00007 22H15.0001M5.00007 9C5.00007 5.13401 8.13408 2 12.0001 2C15.8661 2 19.0001 5.13401 19.0001 9V11.5778C19.0001 13.1572 19.4676 14.7013 20.3437 16.0154L20.8333 16.7498C20.9173 16.8758 20.8585 17.0472 20.7148 17.0951C15.058 18.9807 8.94216 18.9807 3.28532 17.0951C3.14166 17.0472 3.08286 16.8758 3.16685 16.7498L3.65647 16.0154C4.53257 14.7013 5.00007 13.1572 5.00007 11.5778V9Z'
-                        stroke='#B1B1B1'
-                        strokeWidth='2'
-                        strokeLinecap='round'
-                      />
-                    </svg>                    
+                className='w-6 h-6 cursor-pointer flex flex-row'
+                onClick={() => navigate('notification')}
+              >
+                <svg
+                  xmlns='http://www.w3.org/2000/svg'
+                  width='24'
+                  height='24'
+                  viewBox='0 0 24 24'
+                  fill='none'
+                >
+                  <path
+                    d='M9.00007 22H15.0001M5.00007 9C5.00007 5.13401 8.13408 2 12.0001 2C15.8661 2 19.0001 5.13401 19.0001 9V11.5778C19.0001 13.1572 19.4676 14.7013 20.3437 16.0154L20.8333 16.7498C20.9173 16.8758 20.8585 17.0472 20.7148 17.0951C15.058 18.9807 8.94216 18.9807 3.28532 17.0951C3.14166 17.0472 3.08286 16.8758 3.16685 16.7498L3.65647 16.0154C4.53257 14.7013 5.00007 13.1572 5.00007 11.5778V9Z'
+                    stroke='#B1B1B1'
+                    strokeWidth='2'
+                    strokeLinecap='round'
+                  />
+                </svg>
               </div>
-              <span className="relative -mt-6 font-bold text-[10px] mr-4 text-black dark:text-white">{unread}</span>
+              <span className='relative -mt-6 font-bold text-[10px] mr-4 text-black dark:text-white'>
+                {unread}
+              </span>
               <div className=''>
                 <UserDropdown />
               </div>

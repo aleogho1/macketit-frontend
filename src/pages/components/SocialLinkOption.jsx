@@ -1,12 +1,11 @@
+/* eslint-disable react/prop-types */
 import { Modal, ModalContent } from '@nextui-org/react'
 import { AiOutlineClose } from 'react-icons/ai'
 import Icons from '../../components/Icon'
 import SocialLinkModal from './SocialLinkModal'
 import { useDisclosure } from '@nextui-org/react'
-import { useState, useContext } from 'react'
-import { AppearanceContext } from '../../providers/AppearanceProvider'
+import { useState } from 'react'
 const SocialLinkOption = ({ isOpen, onClose }) => {
-  const appearance = useContext(AppearanceContext)
   const socials = [
     {
       icon: 'facebook',
@@ -19,17 +18,20 @@ const SocialLinkOption = ({ isOpen, onClose }) => {
       platform: 'instagram',
     },
     {
-      icon: `${appearance === 'dark' ? 'twitter' : 'x-lite'}`,
+      // icon: `${appearance === 'dark' ? 'twitter' : 'x-lite'}`,
+      icon: 'x-lite',
       lable: 'X',
       platform: 'x',
     },
     {
-      icon: `${appearance === 'dark' ? 'tik-tok' : 'tik-tok-lite'}`,
+      // icon: `${appearance === 'dark' ? 'tik-tok' : 'tik-tok-lite'}`,
+      icon: 'tik-tok-lite',
       lable: 'Tiktok',
       platform: 'tiktok',
     },
     {
-      icon: `${appearance === 'dark' ? 'thread' : 'thread-lite'}`,
+      // icon: `${appearance === 'dark' ? 'thread' : 'thread-lite'}`,
+      icon: 'thread-lite',
       lable: 'Threads',
       platform: 'threads',
     },

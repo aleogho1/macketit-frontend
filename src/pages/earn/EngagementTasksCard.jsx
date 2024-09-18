@@ -5,8 +5,6 @@ import { Button, useDisclosure } from '@nextui-org/react'
 import toast from 'react-hot-toast'
 import ActivationSmallPaymentmodal2 from '../transaction/components/ActivationSmallPaymentmodal2'
 import Icons from '../../components/Icon'
-import { useContext } from 'react'
-import { AppearanceContext } from '../../providers/AppearanceProvider'
 // import boomplayImg from '../../assets/boomplay.svg'
 // import AudioMarkImg from '../../assets/audio_mack.svg'
 
@@ -14,13 +12,12 @@ export default function EngagementTasksCard() {
   const navigate = useNavigate()
   const { data: profileDeatils } = useGetProfile()
   const { isOpen, onOpen, onClose } = useDisclosure()
-  const appearance = useContext(AppearanceContext)
   const socialIcons = [
     'instagram',
     'facebook',
-    `${appearance === 'dark' ? 'tik-tok' : 'tik-tok-lite'}`,
-    `${appearance === 'dark' ? 'twitter' : 'x-lite'}`,
-    `${appearance === 'dark' ? 'thread' : 'thread-lite'}`,
+    'tik-tok-lite',
+    'x-lite',
+    'thread-lite',
   ]
 
   return (
