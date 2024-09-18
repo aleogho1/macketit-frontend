@@ -13,13 +13,13 @@ export default function BankDetailsForm() {
   console.log(bankDetails)
   useEffect(() => {
     API.get('/profile/bank')
-    .then((response) => console.log(response))
-    .catch((error) => console.error(error))
+      .then((response) => console.log(response))
+      .catch((error) => console.error(error))
   })
   const [bankInfo, setBankInfo] = useState({
-      accountName: '',
-      accountNumber: '',
-      bankName: ''
+    accountName: '',
+    accountNumber: '',
+    bankName: '',
   })
 
   return (
@@ -30,15 +30,15 @@ export default function BankDetailsForm() {
         </div>
       ) : (
         <div className='grid md:px-16 py-6 '>
-          {bankDetails ? <BankCard {...bankInfo}/> : null}
-          <BankDetailsFormContent setBankInfo={setBankInfo}/>
+          {bankDetails ? <BankCard {...bankInfo} /> : null}
+          <BankDetailsFormContent setBankInfo={setBankInfo} />
         </div>
       )}
     </>
   )
 }
 
-function BankDetailsFormContent({setBankInfo}) {
+function BankDetailsFormContent({ setBankInfo }) {
   const { isOpen, onOpen, onClose } = useDisclosure()
   const { data: bankDetails } = useBankDetails()
 
@@ -48,7 +48,7 @@ function BankDetailsFormContent({setBankInfo}) {
         <Button
           type='button'
           onClick={onOpen}
-          className='md:w-[290px]  cursor-pointer px-6 py-6 bg-fuchsia-600 rounded-[100px] justify-center items-center gap-2 inline-flex'
+          className='md:w-[290px]  cursor-pointer px-6 py-6 bg-primarybutton rounded-[100px] justify-center items-center gap-2 inline-flex'
         >
           <AiOutlinePlusCircle />
           <div className='text-center text-white capitalize text-sm font-medium font-Manrope'>
@@ -56,7 +56,9 @@ function BankDetailsFormContent({setBankInfo}) {
           </div>
         </Button>
       </div>
-      {isOpen && <AddBankModal isOpen={isOpen} onClose={onClose} setBank={setBankInfo}/>}
+      {isOpen && (
+        <AddBankModal isOpen={isOpen} onClose={onClose} setBank={setBankInfo} />
+      )}
     </>
   )
 }

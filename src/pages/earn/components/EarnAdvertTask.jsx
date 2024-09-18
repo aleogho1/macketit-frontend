@@ -162,7 +162,7 @@ export default function EarnAdvertTask() {
                 />
               </svg>
             </div>
-            <div className='text-center text-fuchsia-400 text-sm font-medium font-Manrope'>
+            <div className='text-center text-primaryText text-sm font-medium font-Manrope'>
               Go back
             </div>
           </div>
@@ -325,7 +325,7 @@ export default function EarnAdvertTask() {
                         {fetchTask?.task?.caption}
                       </div>
                       <p
-                        className='flex items-center gap-x-2 text-[10px] font-bold text-[#FF6DFB]'
+                        className='flex items-center gap-x-2 text-[10px] font-bold text-primaryText'
                         onClick={() => (
                           navigator.clipboard.writeText(
                             fetchTask?.task?.caption
@@ -381,7 +381,7 @@ export default function EarnAdvertTask() {
                       </div>
                       <a
                         href={fetchTask?.task?.account_link}
-                        className='flex items-center gap-x-2 text-[10px] font-bold text-[#FF6DFB]'
+                        className='flex items-center gap-x-2 text-[10px] font-bold text-primaryText'
                         target='_blank'
                       >
                         <Icons type='visit-link' />
@@ -596,7 +596,7 @@ export default function EarnAdvertTask() {
                           />
                         </div>
                         <div className='self-stretch justify-between items-center inline-flex'>
-                          {/* <div className='p-2 bg-fuchsia-400 bg-opacity-10 rounded-md border border-violet-1000 border-opacity-25 justify-center items-center gap-1 flex'>
+                          {/* <div className='p-2 primaryBg bg-opacity-10 rounded-md border border-violet-1000 border-opacity-25 justify-center items-center gap-1 flex'>
                                 <label
                                   htmlFor='image-upload'
                                   className='text-center  cursor-pointer text-[10px] font-medium font-Manrope'

@@ -56,7 +56,7 @@ export default function EarnHistory() {
   }
   const getAdvert = () => {
     API.get('/performed-tasks')
-      .then((response) => (setAdvert(response?.data?.performed_tasks)))
+      .then((response) => setAdvert(response?.data?.performed_tasks))
       .catch((error) => console.error(error))
   }
   useEffect(() => {
@@ -71,8 +71,7 @@ export default function EarnHistory() {
     <div>
       <div className='w-full min-h-screen p-3 flex-col justify-start items-start gap-3 inline-flex'>
         <div className='self-stretch grow shrink basis-0 flex-col justify-start items-start gap-4 flex'>
-          <div className='self-stretch flex-col justify-start items-start gap-2 flex'>
-          </div>
+          <div className='self-stretch flex-col justify-start items-start gap-2 flex'></div>
           <div className='self-stretch py-3 justify-start items-start gap-2 inline-flex'>
             <div className=" text-2xl font-medium font-['Manrope']">
               History
@@ -82,7 +81,7 @@ export default function EarnHistory() {
             <div className='justify-start items-center gap-[11px] flex'>
               <AnimatePresence mode='wait'>
                 <div className='flex flex-col w-full'>
-                  <div className="flex flex-row items-center gap-x-8 text-center text-fuchsia-400 text-xs font-bold font-['Manrope']">
+                  <div className="flex flex-row items-center gap-x-8 text-center text-primaryText text-xs font-bold font-['Manrope']">
                     {historyTabs.map((tab, index) => (
                       <p
                         key={index}
@@ -108,7 +107,7 @@ export default function EarnHistory() {
                 </div>
               </div>
               <div className='justify-start hidden items-center gap-[7px] flx'>
-               <Icons type='sort' />
+                <Icons type='sort' />
                 <div className="text-center hidden md:grid text-zinc-400 text-sm font-medium font-['Manrope']">
                   Sort
                 </div>
@@ -137,7 +136,7 @@ export default function EarnHistory() {
                   <div className='grid gap-4'>
                     {eachAdvert?.length === 0 ? (
                       <div className='text-center'>
-                       There are no {selectedHistory} performed tasks.
+                        There are no {selectedHistory} performed tasks.
                       </div>
                     ) : (
                       eachAdvert?.map((advert, index) => (
@@ -152,20 +151,47 @@ export default function EarnHistory() {
                           )}
                           status={advert?.status}
                           onNextPage={() => {
-                            const [hours, minutes, seconds] = format(new Date(advert?.started_at), 'HH:mm:ss').split(':').map(Number);
-                            const currentDate = new Date();
-                            const started_date = new Date(currentDate.getFullYear(), currentDate.getMonth(), currentDate.getDate(), hours, minutes, seconds).getTime();
-                            const endTime = started_date + 60 * 60 * 1000;
+                            const [hours, minutes, seconds] = format(
+                              new Date(advert?.started_at),
+                              'HH:mm:ss'
+                            )
+                              .split(':')
+                              .map(Number)
+                            const currentDate = new Date()
+                            const started_date = new Date(
+                              currentDate.getFullYear(),
+                              currentDate.getMonth(),
+                              currentDate.getDate(),
+                              hours,
+                              minutes,
+                              seconds
+                            ).getTime()
+                            const endTime = started_date + 60 * 60 * 1000
                             const updateCountdown = () => {
-                              const now = Date.now();
-                              const timeLeft = Math.max(0, Math.floor((endTime - now) / 1000))
-                              if (timeLeft <= 0 || advert?.status === 'completed' || advert?.status === 'cancelled'  || advert?.status === 'rejected' || advert?.status === 'in_review') {
-                                handleRoute(advert?.key, 'dashboard/earn-advert-task-preview')
-                               } else {
-                                handleRoute(advert?.key, 'dashboard/earn-advert-task')
-                               }
-                              };
-                              updateCountdown();  
+                              const now = Date.now()
+                              const timeLeft = Math.max(
+                                0,
+                                Math.floor((endTime - now) / 1000)
+                              )
+                              if (
+                                timeLeft <= 0 ||
+                                advert?.status === 'completed' ||
+                                advert?.status === 'cancelled' ||
+                                advert?.status === 'rejected' ||
+                                advert?.status === 'in_review'
+                              ) {
+                                handleRoute(
+                                  advert?.key,
+                                  'dashboard/earn-advert-task-preview'
+                                )
+                              } else {
+                                handleRoute(
+                                  advert?.key,
+                                  'dashboard/earn-advert-task'
+                                )
+                              }
+                            }
+                            updateCountdown()
                           }}
                           price={advert?.task?.fee}
                           taskId={advert?.key}
@@ -176,7 +202,7 @@ export default function EarnHistory() {
                 )}
               </motion.div>
             )}
-             {selectedHistory === 'in_review' && (
+            {selectedHistory === 'in_review' && (
               <motion.div
                 initial={{ x: 100 }}
                 animate={{ x: 0 }}
@@ -196,7 +222,7 @@ export default function EarnHistory() {
                   <div className='grid gap-4'>
                     {eachAdvert?.length === 0 ? (
                       <div className='text-center'>
-                       There are no {selectedHistory} performed tasks.
+                        There are no {selectedHistory} performed tasks.
                       </div>
                     ) : (
                       eachAdvert?.map((advert, index) => (
@@ -209,22 +235,49 @@ export default function EarnHistory() {
                             new Date(advert?.task?.date_created),
                             'yyyy-MM-dd HH:mm:ss'
                           )}
-                          status="In-review"
+                          status='In-review'
                           onNextPage={() => {
-                            const [hours, minutes, seconds] = format(new Date(advert?.started_at), 'HH:mm:ss').split(':').map(Number);
-                            const currentDate = new Date();
-                            const started_date = new Date(currentDate.getFullYear(), currentDate.getMonth(), currentDate.getDate(), hours, minutes, seconds).getTime();
-                            const endTime = started_date + 60 * 60 * 1000;
+                            const [hours, minutes, seconds] = format(
+                              new Date(advert?.started_at),
+                              'HH:mm:ss'
+                            )
+                              .split(':')
+                              .map(Number)
+                            const currentDate = new Date()
+                            const started_date = new Date(
+                              currentDate.getFullYear(),
+                              currentDate.getMonth(),
+                              currentDate.getDate(),
+                              hours,
+                              minutes,
+                              seconds
+                            ).getTime()
+                            const endTime = started_date + 60 * 60 * 1000
                             const updateCountdown = () => {
-                              const now = Date.now();
-                              const timeLeft = Math.max(0, Math.floor((endTime - now) / 1000))
-                              if (timeLeft <= 0 || advert?.status === 'completed' || advert?.status === 'cancelled' || advert?.status === 'rejected' || advert?.status === 'in_review') {
-                                handleRoute(advert?.key, 'dashboard/earn-advert-task-preview')
-                               } else {
-                                handleRoute(advert?.key, 'dashboard/earn-advert-task')
-                               }
-                              };
-                              updateCountdown();  
+                              const now = Date.now()
+                              const timeLeft = Math.max(
+                                0,
+                                Math.floor((endTime - now) / 1000)
+                              )
+                              if (
+                                timeLeft <= 0 ||
+                                advert?.status === 'completed' ||
+                                advert?.status === 'cancelled' ||
+                                advert?.status === 'rejected' ||
+                                advert?.status === 'in_review'
+                              ) {
+                                handleRoute(
+                                  advert?.key,
+                                  'dashboard/earn-advert-task-preview'
+                                )
+                              } else {
+                                handleRoute(
+                                  advert?.key,
+                                  'dashboard/earn-advert-task'
+                                )
+                              }
+                            }
+                            updateCountdown()
                           }}
                           price={advert?.task?.fee}
                           taskId={advert?.key}
@@ -270,20 +323,47 @@ export default function EarnHistory() {
                           )}
                           status={advert?.status}
                           onNextPage={() => {
-                            const [hours, minutes, seconds] = format(new Date(advert?.started_at), 'HH:mm:ss').split(':').map(Number);
-                            const currentDate = new Date();
-                            const started_date = new Date(currentDate.getFullYear(), currentDate.getMonth(), currentDate.getDate(), hours, minutes, seconds).getTime();
-                            const endTime = started_date + 60 * 60 * 1000;
+                            const [hours, minutes, seconds] = format(
+                              new Date(advert?.started_at),
+                              'HH:mm:ss'
+                            )
+                              .split(':')
+                              .map(Number)
+                            const currentDate = new Date()
+                            const started_date = new Date(
+                              currentDate.getFullYear(),
+                              currentDate.getMonth(),
+                              currentDate.getDate(),
+                              hours,
+                              minutes,
+                              seconds
+                            ).getTime()
+                            const endTime = started_date + 60 * 60 * 1000
                             const updateCountdown = () => {
-                              const now = Date.now();
-                              const timeLeft = Math.max(0, Math.floor((endTime - now) / 1000))
-                              if (timeLeft <= 0 || advert?.status === 'completed' || advert?.status === 'cancelled' || advert?.status === 'rejected' || advert?.status === 'in_review') {
-                                handleRoute(advert?.key, 'dashboard/earn-advert-task-preview')
-                               } else {
-                                handleRoute(advert?.key, 'dashboard/earn-advert-task')
-                               }
-                              };
-                              updateCountdown();  
+                              const now = Date.now()
+                              const timeLeft = Math.max(
+                                0,
+                                Math.floor((endTime - now) / 1000)
+                              )
+                              if (
+                                timeLeft <= 0 ||
+                                advert?.status === 'completed' ||
+                                advert?.status === 'cancelled' ||
+                                advert?.status === 'rejected' ||
+                                advert?.status === 'in_review'
+                              ) {
+                                handleRoute(
+                                  advert?.key,
+                                  'dashboard/earn-advert-task-preview'
+                                )
+                              } else {
+                                handleRoute(
+                                  advert?.key,
+                                  'dashboard/earn-advert-task'
+                                )
+                              }
+                            }
+                            updateCountdown()
                           }}
                           price={advert?.task?.fee}
                           taskId={advert?.key}
@@ -314,7 +394,7 @@ export default function EarnHistory() {
                   <div className='grid gap-4'>
                     {eachAdvert?.length === 0 || !eachAdvert ? (
                       <div className='text-center'>
-                       There are no {selectedHistory} performed tasks.
+                        There are no {selectedHistory} performed tasks.
                       </div>
                     ) : (
                       eachAdvert?.map((advert, index) => (
@@ -329,20 +409,47 @@ export default function EarnHistory() {
                           )}
                           status={advert?.status}
                           onNextPage={() => {
-                            const [hours, minutes, seconds] = format(new Date(advert?.started_at), 'HH:mm:ss').split(':').map(Number);
-                            const currentDate = new Date();
-                            const started_date = new Date(currentDate.getFullYear(), currentDate.getMonth(), currentDate.getDate(), hours, minutes, seconds).getTime();
-                            const endTime = started_date + 60 * 60 * 1000;
+                            const [hours, minutes, seconds] = format(
+                              new Date(advert?.started_at),
+                              'HH:mm:ss'
+                            )
+                              .split(':')
+                              .map(Number)
+                            const currentDate = new Date()
+                            const started_date = new Date(
+                              currentDate.getFullYear(),
+                              currentDate.getMonth(),
+                              currentDate.getDate(),
+                              hours,
+                              minutes,
+                              seconds
+                            ).getTime()
+                            const endTime = started_date + 60 * 60 * 1000
                             const updateCountdown = () => {
-                              const now = Date.now();
-                              const timeLeft = Math.max(0, Math.floor((endTime - now) / 1000))
-                              if (timeLeft <= 0 || advert?.status === 'completed' || advert?.status === 'cancelled' || advert?.status === 'rejected' || advert?.status === 'in_review') {
-                                handleRoute(advert?.key, 'dashboard/earn-advert-task-preview')
-                               } else {
-                                handleRoute(advert?.key, 'dashboard/earn-advert-task')
-                               }
-                              };
-                              updateCountdown();  
+                              const now = Date.now()
+                              const timeLeft = Math.max(
+                                0,
+                                Math.floor((endTime - now) / 1000)
+                              )
+                              if (
+                                timeLeft <= 0 ||
+                                advert?.status === 'completed' ||
+                                advert?.status === 'cancelled' ||
+                                advert?.status === 'rejected' ||
+                                advert?.status === 'in_review'
+                              ) {
+                                handleRoute(
+                                  advert?.key,
+                                  'dashboard/earn-advert-task-preview'
+                                )
+                              } else {
+                                handleRoute(
+                                  advert?.key,
+                                  'dashboard/earn-advert-task'
+                                )
+                              }
+                            }
+                            updateCountdown()
                           }}
                           price={advert?.task?.fee}
                           taskId={advert?.key}

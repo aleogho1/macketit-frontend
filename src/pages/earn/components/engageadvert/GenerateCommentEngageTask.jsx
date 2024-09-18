@@ -46,7 +46,7 @@ export default function GenerateCommentEngageTask() {
                 />
               </svg>
             </div>
-            <div className="text-center text-fuchsia-400 text-sm font-medium font-['Manrope']">
+            <div className="text-center text-primaryText text-sm font-medium font-['Manrope']">
               Go back
             </div>
           </div>
@@ -88,9 +88,9 @@ export default function GenerateCommentEngageTask() {
                   </div>
                   <div className='p-1 dark:bg-[#3793FF21] bg-white rounded justify-start items-start gap-3 inline-flex'>
                     <div className="text-center text-blue-600 text-[12.83px] font-normal font-['Manrope']">
-                      {
-                        EngageTask?.comment ?  `${EngageTask?.comment?.total} Task available` : 'No task available'
-                      }                    
+                      {EngageTask?.comment
+                        ? `${EngageTask?.comment?.total} Task available`
+                        : 'No task available'}
                     </div>
                   </div>
                 </div>
@@ -113,12 +113,12 @@ export default function GenerateCommentEngageTask() {
                       classNames={{
                         tab: '!px-0 mr-2',
                         tabList: '!p-0',
-                        cursor: ' bg-fuchsia-400',
+                        cursor: ' primaryBg',
                         selectedKey: 'text-green-400',
                         tabContent:
-                          'group-data-[selected=true]:text-fuchsia-400 ',
+                          'group-data-[selected=true]:text-primaryText ',
                       }}
-                      className="text-center  text-fuchsia-400 text-[12.83px] font-bold font-['Manrope']"
+                      className="text-center  text-primaryText text-[12.83px] font-bold font-['Manrope']"
                       color='secondary'
                     >
                       <Tab
@@ -177,7 +177,7 @@ export default function GenerateCommentEngageTask() {
                       className='dark:stroke-[#B1B1B1] stroke-[#1E1E1E]'
                     />
                   </svg>
-                  <div className="text-center dark:text-[#B1B1B1] text-stone-900 text-sm font-medium font-['Manrope']">
+                  <div className="text-center dark:text-[#B1B1B1] text-primaryText text-sm font-medium font-['Manrope']">
                     Filter
                   </div>
                 </div>
@@ -196,7 +196,7 @@ export default function GenerateCommentEngageTask() {
                       className='dark:stroke-[#B1B1B1] stroke-[#1E1E1E]'
                     />
                   </svg>
-                  <div className="text-center dark:text-[#B1B1B1] text-stone-900 text-sm font-medium font-['Manrope']">
+                  <div className="text-center dark:text-[#B1B1B1] text-primaryText text-sm font-medium font-['Manrope']">
                     Sort
                   </div>
                 </div>
@@ -239,7 +239,7 @@ export default function GenerateCommentEngageTask() {
                       goal={task?.task?.goal}
                       when={format(
                         new Date(task?.task?.date_created),
-                         'yyyy-MM-dd HH:mm:ss'
+                        'yyyy-MM-dd HH:mm:ss'
                       )}
                     />
                   </div>
@@ -270,7 +270,7 @@ export default function GenerateCommentEngageTask() {
                       goal={task?.task?.goal}
                       when={format(
                         new Date(task?.task?.date_created),
-                         'yyyy-MM-dd HH:mm:ss'
+                        'yyyy-MM-dd HH:mm:ss'
                       )}
                     />
                   </div>
@@ -301,7 +301,7 @@ export default function GenerateCommentEngageTask() {
                       goal={task?.task?.goal}
                       when={format(
                         new Date(task?.task?.date_created),
-                         'yyyy-MM-dd HH:mm:ss'
+                        'yyyy-MM-dd HH:mm:ss'
                       )}
                     />
                   </div>
@@ -332,7 +332,7 @@ export default function GenerateCommentEngageTask() {
                       goal={task?.task?.goal}
                       when={format(
                         new Date(task?.task?.date_created),
-                         'yyyy-MM-dd HH:mm:ss'
+                        'yyyy-MM-dd HH:mm:ss'
                       )}
                     />
                   </div>
@@ -363,7 +363,7 @@ export default function GenerateCommentEngageTask() {
                       goal={task?.task?.goal}
                       when={format(
                         new Date(task?.task?.date_created),
-                         'yyyy-MM-dd HH:mm:ss'
+                        'yyyy-MM-dd HH:mm:ss'
                       )}
                     />
                   </div>
@@ -401,8 +401,12 @@ export default function GenerateCommentEngageTask() {
                 </div>
               </div>
               <div
-                onClick={() => EngageTask?.comment ? onOpen() : toast.error('No task is avaialble')}
-                className='w-[290px] px-6 dark:bg-white cursor-pointer py-3.5 bg-fuchsia-400 rounded-[100px] justify-center items-center gap-2 inline-flex'
+                onClick={() =>
+                  EngageTask?.comment
+                    ? onOpen()
+                    : toast.error('No task is avaialble')
+                }
+                className='w-[290px] px-6 dark:bg-white cursor-pointer py-3.5 primaryBg rounded-[100px] justify-center items-center gap-2 inline-flex'
               >
                 <svg
                   xmlns='http://www.w3.org/2000/svg'
@@ -422,8 +426,9 @@ export default function GenerateCommentEngageTask() {
                 </div>
               </div>
               <div className="dark:text-[#B1B1B1] text-center w-8/12 self-center text-center text-black text-xs font-normal font-['Manrope']">
-                    To receive your next social media page-comment task, click the Above.
-                    You'll get one task at a time, and you must complete the current task before a new one is generated.
+                To receive your next social media page-comment task, click the
+                Above. You'll get one task at a time, and you must complete the
+                current task before a new one is generated.
               </div>
             </div>
           )}

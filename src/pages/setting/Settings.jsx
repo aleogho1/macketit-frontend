@@ -10,35 +10,48 @@ import SocialAccount from './SocialAccount'
 import { useLocation, useNavigate } from 'react-router-dom'
 
 export default function Settings() {
-  const settingsTab = ['General', 'Security', 'Notifications', 'Bank Details', 'Social Account', 'Preferences']
+  const settingsTab = [
+    'General',
+    'Security',
+    'Notifications',
+    'Bank Details',
+    'Social Account',
+    'Preferences',
+  ]
   const [selected, setSelected] = useState(settingsTab[0])
   const location = useLocation()
   const navigate = useNavigate()
   const setTab = () => {
-    {selected === 'General' && (
-      location.search = '?tab=general',
-      navigate('/dashboard/settings/?tab=general')
-    )}
-    {selected === 'Security' && (
-      location.search = '?tab=security',
-      navigate('/dashboard/settings/?tab=security')
-    )}
-    {selected === 'Notifications' && (
-      location.search = '?tab=notifications',
-      navigate('/dashboard/settings/?tab=notifications')
-    )}
-    {selected === 'Bank Details' && (
-      location.search = '?tab=bank-details',
-      navigate('/dashboard/settings/?tab=bank-details')
-    )}
-    {selected === 'Social Account' && (
-      location.search = '?tab=social-account',
-      navigate('/dashboard/settings/?tab=social-account')
-    )}
-    {selected === 'Preferences' && (
-      location.search = '?tab=preferences',
-      navigate('/dashboard/settings/?tab=preferences')
-    )}
+    {
+      selected === 'General' &&
+        ((location.search = '?tab=general'),
+        navigate('/dashboard/settings/?tab=general'))
+    }
+    {
+      selected === 'Security' &&
+        ((location.search = '?tab=security'),
+        navigate('/dashboard/settings/?tab=security'))
+    }
+    {
+      selected === 'Notifications' &&
+        ((location.search = '?tab=notifications'),
+        navigate('/dashboard/settings/?tab=notifications'))
+    }
+    {
+      selected === 'Bank Details' &&
+        ((location.search = '?tab=bank-details'),
+        navigate('/dashboard/settings/?tab=bank-details'))
+    }
+    {
+      selected === 'Social Account' &&
+        ((location.search = '?tab=social-account'),
+        navigate('/dashboard/settings/?tab=social-account'))
+    }
+    {
+      selected === 'Preferences' &&
+        ((location.search = '?tab=preferences'),
+        navigate('/dashboard/settings/?tab=preferences'))
+    }
   }
   useEffect(() => {
     location.search === '?tab=notifications' ? setSelected('Notifications') : ''
@@ -67,11 +80,11 @@ export default function Settings() {
                     variant='underlined'
                     classNames={{
                       tabList: '  bordered py-2',
-                      cursor: ' bg-fuchsia-400',
+                      cursor: ' primaryBg',
                       tabContent:
-                        'group-data-[selected=true]:text-fuchsia-400 ',
+                        'group-data-[selected=true]:text-primaryText ',
                     }}
-                    className="text-center overflow-auto text-[#CB29BE] dark:text-fuchsia-400 text-xs font-bold font-['Manrope']"
+                    className="text-center overflow-auto text-[#CB29BE]   text-xs font-bold font-['Manrope']"
                     color='secondary'
                   >
                     <Tab
@@ -88,8 +101,7 @@ export default function Settings() {
                       key='Notifications'
                       className=" text-zinc-400 text-[12.83px] font-bold font-['Manrope']"
                       title='Notifications'
-                    >
-                    </Tab>
+                    ></Tab>
                     <Tab
                       key='Bank Details'
                       title='Bank details'
@@ -123,7 +135,7 @@ export default function Settings() {
                   strokeLinecap='round'
                 />
               </svg>
-              <div className="text-center text-[#FF6DFB] dark:text-fuchsia-200 text-[12.83px] font-bold font-['Manrope']">
+              <div className="text-center text-primaryText dark:text-fuchsia-200 text-[12.83px] font-bold font-['Manrope']">
                 Save
               </div>
             </div> */}

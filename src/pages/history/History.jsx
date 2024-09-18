@@ -47,7 +47,11 @@ export default function History() {
   }
   const getAdvert = () => {
     API.get('/user/tasks')
-      .then((response) => (setAdvert(response.data.all_tasks), console.log(response)))
+      .then(
+        (response) => (
+          setAdvert(response.data.all_tasks), console.log(response)
+        )
+      )
       .catch((error) => console.error(error))
   }
   useEffect(() => {
@@ -64,7 +68,6 @@ export default function History() {
     <div>
       <div className='w-full min-h-screen p-3 flex-col justify-start items-start gap-3 inline-flex'>
         <div className='self-stretch grow shrink basis-0 flex-col justify-start items-start gap-4 flex'>
-        
           <div className='self-stretch py-3 justify-start items-start gap-2 inline-flex'>
             <div className=" text-2xl font-medium font-['Manrope']">
               My Adverts
@@ -74,7 +77,7 @@ export default function History() {
             <div className='justify-start items-center gap-[11px] flex'>
               <AnimatePresence mode='wait'>
                 <div className='flex flex-col w-full'>
-                  <div className="flex flex-row items-center gap-x-8 text-center text-fuchsia-400 text-xs font-bold font-['Manrope']">
+                  <div className="flex flex-row items-center gap-x-8 text-center text-primaryText text-xs font-bold font-['Manrope']">
                     {historyTabs.map((tab, index) => (
                       <p
                         key={index}
@@ -151,12 +154,12 @@ export default function History() {
                   ) : (
                     adverts?.map((advert, index) => (
                       <TaskCard
-                      key={index}
-                      {...advert}
-                      when={format(
-                        new Date(advert.date_created),
-                        'yyyy-MM-dd HH:mm:ss'
-                      )}
+                        key={index}
+                        {...advert}
+                        when={format(
+                          new Date(advert.date_created),
+                          'yyyy-MM-dd HH:mm:ss'
+                        )}
                         onNextPage={() => handleRoute(advert?.task_key)}
                       />
                     ))

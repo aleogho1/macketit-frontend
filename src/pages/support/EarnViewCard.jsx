@@ -41,7 +41,7 @@ export default function EarnViewCard() {
                     strokeLinecap='round'
                   />
                 </svg>
-                <div className="text-fuchsia-400 text-sm font-medium font-['Manrope']">
+                <div className="text-primaryText text-sm font-medium font-['Manrope']">
                   Export
                 </div>
               </div>

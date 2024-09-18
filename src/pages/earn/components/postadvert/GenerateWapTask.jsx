@@ -23,7 +23,7 @@ export default function GenerateWapTask() {
   const frameImage = isDarkMode ? frameImageDark : frameImageLight
   const navigate = useNavigate()
   // const { data: profileDeatils } = useGetProfile()
-  const { data: advertTask} = useGetAdvertTask('Whatsapp')
+  const { data: advertTask } = useGetAdvertTask('Whatsapp')
 
   return (
     <>
@@ -49,7 +49,7 @@ export default function GenerateWapTask() {
                 />
               </svg>
             </div>
-            <div className="text-center text-fuchsia-400 text-sm font-medium font-['Manrope']">
+            <div className="text-center text-primaryText text-sm font-medium font-['Manrope']">
               Go back
             </div>
           </div>
@@ -115,13 +115,15 @@ export default function GenerateWapTask() {
                     Post adverts on Whatsapp
                   </div>
                   <div className="self-stretch dark:text-black text-center text-white text-xs font-normal font-['Manrope']">
-                  Promote advertisements for different businesses and top brands on your Whatsapp status and earn ₦110 for each post. The more you share, the more you earn. 
+                    Promote advertisements for different businesses and top
+                    brands on your Whatsapp status and earn ₦110 for each post.
+                    The more you share, the more you earn.
                   </div>
                   <div className='p-1 dark:bg-[#3793FF21] bg-white rounded justify-start items-start gap-3 inline-flex'>
                     <div className="text-center text-blue-600 text-[12.83px] font-normal font-['Manrope']">
-                    {
-                        advertTask?.length ? `${advertTask?.length} Task available` : 'No task available'
-                      }
+                      {advertTask?.length
+                        ? `${advertTask?.length} Task available`
+                        : 'No task available'}
                     </div>
                   </div>
                 </div>
@@ -144,12 +146,12 @@ export default function GenerateWapTask() {
                       classNames={{
                         tab: '!px0 mr2',
                         tabList: '!p0 bordered  py-2',
-                        cursor: ' bg-fuchsia-400',
+                        cursor: ' primaryBg',
                         selectedKey: 'text-green-400',
                         tabContent:
-                          'group-data-[selected=true]:text-fuchsia-400 ',
+                          'group-data-[selected=true]:text-primaryText ',
                       }}
-                      className="text-center  text-fuchsia-400 text-[12.83px] font-bold font-['Manrope']"
+                      className="text-center  text-primaryText text-[12.83px] font-bold font-['Manrope']"
                       color='secondary'
                     >
                       <Tab
@@ -209,7 +211,7 @@ export default function GenerateWapTask() {
                         className='dark:stroke-[#B1B1B1] stroke-[#1E1E1E] '
                       />
                     </svg>
-                    <div className="text-center dark:text-[#B1B1B1] text-stone-900 text-sm font-medium font-['Manrope']">
+                    <div className="text-center dark:text-[#B1B1B1] text-primaryText text-sm font-medium font-['Manrope']">
                       Filter
                     </div>
                   </div>
@@ -228,7 +230,7 @@ export default function GenerateWapTask() {
                         className='dark:stroke-[#B1B1B1] stroke-[#1E1E1E] '
                       />
                     </svg>
-                    <div className="text-center dark:text-[#B1B1B1] text-stone-900 text-sm font-medium font-['Manrope']">
+                    <div className="text-center dark:text-[#B1B1B1] text-primaryText text-sm font-medium font-['Manrope']">
                       Sort
                     </div>
                   </div>
@@ -272,7 +274,7 @@ export default function GenerateWapTask() {
                       goal={task?.task?.goal}
                       when={format(
                         new Date(task?.task?.date_created),
-                         'yyyy-MM-dd HH:mm:ss'
+                        'yyyy-MM-dd HH:mm:ss'
                       )}
                     />
                   </div>
@@ -303,7 +305,7 @@ export default function GenerateWapTask() {
                       goal={task?.task?.goal}
                       when={format(
                         new Date(task?.task?.date_created),
-                         'yyyy-MM-dd HH:mm:ss'
+                        'yyyy-MM-dd HH:mm:ss'
                       )}
                     />
                   </div>
@@ -334,7 +336,7 @@ export default function GenerateWapTask() {
                       goal={task?.task?.goal}
                       when={format(
                         new Date(task?.task?.date_created),
-                         'yyyy-MM-dd HH:mm:ss'
+                        'yyyy-MM-dd HH:mm:ss'
                       )}
                     />
                   </div>
@@ -365,7 +367,7 @@ export default function GenerateWapTask() {
                       goal={task?.task?.goal}
                       when={format(
                         new Date(task?.task?.date_created),
-                         'yyyy-MM-dd HH:mm:ss'
+                        'yyyy-MM-dd HH:mm:ss'
                       )}
                     />
                   </div>
@@ -396,7 +398,7 @@ export default function GenerateWapTask() {
                       goal={task?.task?.goal}
                       when={format(
                         new Date(task?.task?.date_created),
-                         'yyyy-MM-dd HH:mm:ss'
+                        'yyyy-MM-dd HH:mm:ss'
                       )}
                     />
                   </div>
@@ -432,8 +434,12 @@ export default function GenerateWapTask() {
                 </div>
               </div>
               <div
-                onClick={() => advertTask?.length !== 0 ? onOpen() : toast.error('No task is available')}
-                className='w-[290px] px-6 dark:bg-white cursor-pointer py-3.5 bg-fuchsia-400 rounded-[100px] justify-center items-center gap-2 inline-flex'
+                onClick={() =>
+                  advertTask?.length !== 0
+                    ? onOpen()
+                    : toast.error('No task is available')
+                }
+                className='w-[290px] px-6 dark:bg-white cursor-pointer py-3.5 primaryBg rounded-[100px] justify-center items-center gap-2 inline-flex'
               >
                 <svg
                   xmlns='http://www.w3.org/2000/svg'
@@ -453,9 +459,10 @@ export default function GenerateWapTask() {
                 </div>
               </div>
               <div className="dark:text-[#B1B1B1] text-center w-8/12 self-center text-center text-black text-xs font-normal font-['Manrope']">
-                    To receive your next Whatsapp advert task, click the Above.
-                    You'll get one task at a time, and you must complete the current task before a new one is generated.
-                    </div>
+                To receive your next Whatsapp advert task, click the Above.
+                You'll get one task at a time, and you must complete the current
+                task before a new one is generated.
+              </div>
             </div>
           )}
         </div>

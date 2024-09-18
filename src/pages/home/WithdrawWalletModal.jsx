@@ -36,25 +36,25 @@ export default function WithdrawWalletModal({ isOpen, onClose }) {
     setValue('amount', formattedValue) // Set unformatted value for submission
   }
   const onSubmit = async (data) => {
-    setFocus(false)  
+    setFocus(false)
     try {
       const res = await Withdraw({ data })
       if (res.data) {
         console.log(res.data?.withdrawal_info?.transfer_id)
         console.log(res.data?.withdrawal_info?.reference)
-         await API.post(`/payment/withdraw/verify`, {
-           "transfer_id": res.data?.withdrawal_info?.transfer_id,
-            "reference": res.data?.withdrawal_info?.reference
+        await API.post(`/payment/withdraw/verify`, {
+          transfer_id: res.data?.withdrawal_info?.transfer_id,
+          reference: res.data?.withdrawal_info?.reference,
         })
-        .then((response) => {
-          toast.success(response.data?.message)   
-          navigate('/dashboard/transactions')       
-        })
-        .catch((error) => {
-          toast.error(error.response?.data?.message ?? error.message, {
-            duration: 2000,
+          .then((response) => {
+            toast.success(response.data?.message)
+            navigate('/dashboard/transactions')
           })
-        })
+          .catch((error) => {
+            toast.error(error.response?.data?.message ?? error.message, {
+              duration: 2000,
+            })
+          })
       }
     } catch (error) {
       toast.error(error.response?.data?.message ?? error.message, {
@@ -78,7 +78,7 @@ export default function WithdrawWalletModal({ isOpen, onClose }) {
             <div className='p-6 rounded flex-col justify-center items-center gap-12 inline-flex'>
               <div
                 onClick={onClose}
-                className='p-2 bg-fuchsia-400 top-[-20px] -right-2 md:-right-4 absolute z-40  cursor-pointer rounded-[100px] '
+                className='p-2 primaryBg top-[-20px] -right-2 md:-right-4 absolute z-40  cursor-pointer rounded-[100px] '
               >
                 <AiOutlineClose size={20} color='#fff' />
               </div>
@@ -98,7 +98,7 @@ export default function WithdrawWalletModal({ isOpen, onClose }) {
                       <div className='self-stretch rounded-none  gap-2 flex-col flex'>
                         <div className='w[275px] flex items-center gap-x-1'>
                           <span className="text-sm font-normal font-['Manrope'] -mr-0.5">
-                            Wallet Balance: 
+                            Wallet Balance:
                           </span>
 
                           <span className=" text-sm font-semibold font-['Manrope']">
@@ -122,7 +122,17 @@ export default function WithdrawWalletModal({ isOpen, onClose }) {
                               errorMessage={errors?.amount?.message}
                               isInvalid={!!errors?.amount}
                               startContent={
-                                <span className={`${appreance === 'dark' ? (focus ? 'text-white' : 'text-black') : 'text-[#C026D3]'}`}>{showBalance?.currency_symbol}</span>
+                                <span
+                                  className={`${
+                                    appreance === 'dark'
+                                      ? focus
+                                        ? 'text-white'
+                                        : 'text-black'
+                                      : 'text-[#C026D3]'
+                                  }`}
+                                >
+                                  {showBalance?.currency_symbol}
+                                </span>
                               }
                               onChange={handleInputChange}
                               classNames={{
@@ -137,25 +147,28 @@ export default function WithdrawWalletModal({ isOpen, onClose }) {
                                   'dark:bg-white',
                                   '!cursor-text',
                                   'border-2 border-transparent',
-                                  'focus-within:!border-fuchsia-600  ',
+                                  'focus-within:!border-red-500  ',
                                 ],
                               }}
                               className=" rounded text-[12.83px] font-normal font-['Manrope']"
                             />
                           )}
-                          rules={{required: true, 
+                          rules={{
+                            required: true,
                             validate: {
                               isMin: (fieldValue) => {
                                 return (
-                                  fieldValue.replace(/\D/g, '') >= 1000 || 'The minimum withdrawal amount is #1,000'
+                                  fieldValue.replace(/\D/g, '') >= 1000 ||
+                                  'The minimum withdrawal amount is #1,000'
                                 )
                               },
                               isMax: (fieldValue) => {
                                 return (
-                                      fieldValue.replace(/\D/g, '') <= 500000 || 'The maximum withdrawal amount is #500,000'
+                                  fieldValue.replace(/\D/g, '') <= 500000 ||
+                                  'The maximum withdrawal amount is #500,000'
                                 )
-                              }
-                            }  
+                              },
+                            },
                           }}
                         />
                       </div>
@@ -163,7 +176,7 @@ export default function WithdrawWalletModal({ isOpen, onClose }) {
                         <Button
                           type='submit'
                           isDisabled={isPending}
-                          className="w-full px-6 py-6  bg-fuchsia-600 rounded text-center text-white text-[12.83px] font-medium font-['Manrope']"
+                          className="w-full px-6 py-6  bg-primarybutton rounded text-center text-white text-[12.83px] font-medium font-['Manrope']"
                         >
                           {isPending ? (
                             <svg

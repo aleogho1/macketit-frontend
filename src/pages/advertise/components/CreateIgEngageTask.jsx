@@ -207,7 +207,7 @@ export default function CreateIgEngageTask() {
               </div>
               <div className='self-stretch  mt-8 grow shrink basis-0 flex-col justify-start items-start gap-4 flex'>
                 <div className='self-stretch py-3 justify-start items-start gap-2 inline-flex'>
-                  <div className="dark:text-white text-stone-900 text-2xl font-medium font-['Manrope']">
+                  <div className="dark:text-white text-primaryText text-2xl font-medium font-['Manrope']">
                     Create Advert Task
                   </div>
                 </div>
@@ -216,7 +216,7 @@ export default function CreateIgEngageTask() {
                     <div className='self-stretch  flex-col justify-start items-center gap-3.5 flex'>
                       <div className='self-stretch  flex-col justify-start items-start gap-[7px] flex'>
                         <div className='px-2 justify-center items-center gap-2 inline-flex'>
-                          <div className="text-center dark:text-white text-stone-900 text-[12.83px] font-medium font-['Manrope']">
+                          <div className="text-center dark:text-white text-primaryText text-[12.83px] font-medium font-['Manrope']">
                             Select Platform
                           </div>
                         </div>
@@ -267,7 +267,7 @@ export default function CreateIgEngageTask() {
                           />
                         </div>
                         <div className='justify-center items-center gap-2 inline-flex'>
-                          <div className="text-center dark:text-white text-stone-900 text-[10px] font-normal font-['Manrope']">
+                          <div className="text-center dark:text-white text-primaryText text-[10px] font-normal font-['Manrope']">
                             Please select the social media or App Store platform
                             where you want to perform this action
                           </div>
@@ -275,7 +275,7 @@ export default function CreateIgEngageTask() {
                       </div>
                       <div className='self-stretch  flex-col justify-start items-start gap-[7px] flex'>
                         <div className='px-2 justify-center items-center gap-2 inline-flex'>
-                          <div className="text-center dark:text-white text-stone-900 text-[12.83px] font-medium font-['Manrope']">
+                          <div className="text-center dark:text-white text-primaryText text-[12.83px] font-medium font-['Manrope']">
                             Select Location
                           </div>
                         </div>
@@ -326,7 +326,7 @@ export default function CreateIgEngageTask() {
                         </div>
 
                         <div className='justify-center items-center gap-2 inline-flex'>
-                          <div className="text-center dark:text-white text-stone-900 text-[10px] font-normal font-['Manrope']">
+                          <div className="text-center dark:text-white text-primaryText text-[10px] font-normal font-['Manrope']">
                             This is the desired Number of Whatsapp Status Advert
                             Posts you want us to get for you.
                           </div>
@@ -334,7 +334,7 @@ export default function CreateIgEngageTask() {
                       </div>
                       <div className='self-stretch flex-col justify-start items-start gap-[7px] flex'>
                         <div className='px-2 justify-center items-center gap-2 inline-flex'>
-                          <div className="text-center dark:text-white text-stone-900 text-[12.83px] font-medium font-['Manrope']">
+                          <div className="text-center dark:text-white text-primaryText text-[12.83px] font-medium font-['Manrope']">
                             Number of WhatsApp Status post you want
                           </div>
                         </div>
@@ -354,14 +354,14 @@ export default function CreateIgEngageTask() {
                                 }}
                                 placeholder='Enter the number of view you want'
                                 {...field}
-                                className="grow shrink basis-0  rounded text-stone-900 text-opacity-50 text-[12.83px] font-normal font-['Manrope']"
+                                className="grow shrink basis-0  rounded text-primaryText text-opacity-50 text-[12.83px] font-normal font-['Manrope']"
                               />
                             )}
                             rules={{ required: true }}
                           />
                         </div>
                         <div className='self-stretch justify-center items-center gap-2 inline-flex'>
-                          <div className="grow shrink dark:text-white basis-0 text-stone-900 text-[10px] font-normal font-['Manrope']">
+                          <div className="grow shrink dark:text-white basis-0 text-primaryText text-[10px] font-normal font-['Manrope']">
                             You can select the kind of gender whether male or
                             female that you want to see your task. For example,
                             if you are selling women fashion items, you can
@@ -373,7 +373,7 @@ export default function CreateIgEngageTask() {
                       </div>
                       <div className='self-stretch flex-col justify-start items-start gap-[7px] flex'>
                         <div className='px-2 justify-center items-center gap-2 inline-flex'>
-                          <div className="text-center dark:text-white text-stone-900 text-[12.83px] font-medium font-['Manrope']">
+                          <div className="text-center dark:text-white text-primaryText text-[12.83px] font-medium font-['Manrope']">
                             Select Gender
                           </div>
                         </div>
@@ -424,7 +424,7 @@ export default function CreateIgEngageTask() {
                           />
                         </div>
                         <div className='self-stretch justify-center items-center gap-2 inline-flex'>
-                          <div className="grow shrink dark:text-white basis-0 text-stone-900 text-[10px] font-normal font-['Manrope']">
+                          <div className="grow shrink dark:text-white basis-0 text-primaryText text-[10px] font-normal font-['Manrope']">
                             You can target and select a particular location
                             where your task or advert will be mostly shown.
                             Select 'All Nigeria' if you want to target every
@@ -434,7 +434,7 @@ export default function CreateIgEngageTask() {
                       </div>
                       <div className='self-stretch flex-col justify-start items-start gap-[7px] flex'>
                         <div className='px-2 justify-center items-center gap-2 inline-flex'>
-                          <div className="text-center dark:text-white text-stone-900 text-[12.83px] font-medium font-['Manrope']">
+                          <div className="text-center dark:text-white text-primaryText text-[12.83px] font-medium font-['Manrope']">
                             Select Religion
                           </div>
                         </div>
@@ -483,7 +483,7 @@ export default function CreateIgEngageTask() {
                           />
                         </div>
                         <div className='self-stretch justify-center items-center gap-2 inline-flex'>
-                          <div className="grow shrink dark:text-white basis-0 text-stone-900 text-[10px] font-normal font-['Manrope']">
+                          <div className="grow shrink dark:text-white basis-0 text-primaryText text-[10px] font-normal font-['Manrope']">
                             You can target people of a particular religion or
                             belief. Your advert and task will be shown to the
                             particular religion you select. Select 'All
@@ -493,7 +493,7 @@ export default function CreateIgEngageTask() {
                       </div>
                       <div className='self-stretch rounded-md flex-col justify-start items-start gap-[7px] flex'>
                         <div className='px-2 justify-center items-center gap-2 inline-flex'>
-                          <div className="text-center dark:text-white text-stone-900 text-[12.83px] font-medium font-['Manrope']">
+                          <div className="text-center dark:text-white text-primaryText text-[12.83px] font-medium font-['Manrope']">
                             Enter Advert Task or Caption
                           </div>
                         </div>
@@ -505,7 +505,7 @@ export default function CreateIgEngageTask() {
                         />
 
                         <div className='self-stretch justify-center items-center gap-2 inline-flex'>
-                          <div className="grow shrink basis-0 text-stone-900 text-[10px] font-normal font-['Manrope']">
+                          <div className="grow shrink basis-0 text-primaryText text-[10px] font-normal font-['Manrope']">
                             Please enter the advert text or caption. The advert
                             text or caption should be well detailed. You can
                             also include a link to your site, a phone number for
@@ -517,7 +517,7 @@ export default function CreateIgEngageTask() {
                     </div>
                     <div className='self-stretch  flex-col justify-start items-start gap-3 flex'>
                       <div className='px-2 justify-center items-center gap-2 inline-flex'>
-                        <div className="text-center dark:text-white text-stone-900 text-[12.83px] font-medium font-['Manrope']">
+                        <div className="text-center dark:text-white text-primaryText text-[12.83px] font-medium font-['Manrope']">
                           Choose one of the Advert Media Upload Below:
                         </div>
                       </div>
@@ -549,13 +549,13 @@ export default function CreateIgEngageTask() {
                           />
                           <label
                             htmlFor='video-upload'
-                            className="text-center cursor-pointer dark:text-white text-stone-900 text-[12.83px] font-medium font-['Manrope']"
+                            className="text-center cursor-pointer dark:text-white text-primaryText text-[12.83px] font-medium font-['Manrope']"
                           >
                             Video
                           </label>
                         </div>
                       </div>
-                      <div className="w-[559px] h-6 dark:text-white text-stone-900 text-[10px] font-normal font-['Manrope']">
+                      <div className="w-[559px] h-6 dark:text-white text-primaryText text-[10px] font-normal font-['Manrope']">
                         Upload a Photo of the Advert You want people to post on
                         their social media post accounts like Whatsapp,
                         Facebook, Instagram, Twitter etc
@@ -577,7 +577,7 @@ export default function CreateIgEngageTask() {
                   </div>
                   <div className='self-stretch px-3 py-2  bg-zinc-400 bg-opacity-30 rounded flex-col justify-center items-center gap-2 flex'>
                     <div className='w[68px] grow shrink basis-0 px-2 flex-col justify-center items-center gap-2 flex'>
-                      <div className="text-center dark:text-white text-stone-900 text-[12.83px] font-medium font-['Manrope']">
+                      <div className="text-center dark:text-white text-primaryText text-[12.83px] font-medium font-['Manrope']">
                         Total Pay
                         {calculatedAmount}
                       </div>
@@ -585,13 +585,13 @@ export default function CreateIgEngageTask() {
                         disabled
                         value={amount}
                         {...register('amount')}
-                        className="text-stone-900 wfull text-3xl font-medium font-['Manrope']"
+                        className="text-primaryText wfull text-3xl font-medium font-['Manrope']"
                       /> */}
                     </div>
                     <Button
                       type='submit'
                       // onClick={onOpen}
-                      className='w-[290px]  cursor-pointer px-6 py-6 bg-fuchsia-600 rounded-[100px] justify-center items-center gap-2 inline-flex'
+                      className='w-[290px]  cursor-pointer px-6 py-6 bg-primarybutton rounded-[100px] justify-center items-center gap-2 inline-flex'
                     >
                       <div className="text-center text-white text-[12.83px] font-medium font-['Manrope']">
                         {isPending ? 'Submiting....' : 'Submit and Pay'}

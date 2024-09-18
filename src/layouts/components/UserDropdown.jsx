@@ -5,116 +5,98 @@ import { Avatar, useDisclosure } from '@nextui-org/react'
 import { useGetProfile } from '../../api/profileApis'
 import SignOutModal from '../../components/auth/SignOutModal'
 import { ProfileContext } from '../../context/Profile'
-import { AppearanceContext, SetAppearanceContext } from '../../providers/AppearanceProvider'
+import {
+  AppearanceContext,
+  SetAppearanceContext,
+} from '../../providers/AppearanceProvider'
 import { useGetUserPrefence } from '../../api/settingsApis'
 import { useLightPref, useDarkPref } from '../../hooks/usePref'
 import toast from 'react-hot-toast'
 import API from '../../services/AxiosInstance'
-import Cookies from 'js-cookie';
+import Cookies from 'js-cookie'
 
 const UserDropdown = () => {
   const [dropdownOpen, setDropdownOpen] = useState(false)
   const userPrefrences = useContext(AppearanceContext)
   const setPrefrence = useContext(SetAppearanceContext)
-  const {data: pref} = useGetUserPrefence()
+  const { data: pref } = useGetUserPrefence()
   const system = window.matchMedia('(prefers-color-scheme: light)')
   const setAppearance = () => {
-    if(pref.appearance === undefined) {
+    if (pref.appearance === undefined) {
       useDarkPref()
       API.post('/settings/preferences', {
         setting_name: 'appearance',
         value: 'dark',
       })
-        .then(
-          (response) => {
-            useDarkPref()
-            setPrefrence('dark')
-            Cookies.set('appearance', 'dark')
-          }
-        )
-        .catch(
-          (error) => {
-            useLightPref()
-            }
-          )
-    } else if(userPrefrences === 'light' || pref.appearance === 'light') {
+        .then((response) => {
+          useDarkPref()
+          setPrefrence('dark')
+          Cookies.set('appearance', 'dark')
+        })
+        .catch((error) => {
+          useLightPref()
+        })
+    } else if (userPrefrences === 'light' || pref.appearance === 'light') {
       useDarkPref()
       API.post('/settings/preferences', {
         setting_name: 'appearance',
         value: 'dark',
       })
-        .then(
-          (response) => {
-            useDarkPref()
-            setPrefrence('dark')
-            Cookies.set('appearance', 'dark')
-          }
-        )
-        .catch(
-          (error) => {
-            useLightPref()
-            }
-          )
-    } else if(userPrefrences === 'dark' || pref.appearance === 'dark') {
+        .then((response) => {
+          useDarkPref()
+          setPrefrence('dark')
+          Cookies.set('appearance', 'dark')
+        })
+        .catch((error) => {
+          useLightPref()
+        })
+    } else if (userPrefrences === 'dark' || pref.appearance === 'dark') {
       useLightPref()
       API.post('/settings/preferences', {
         setting_name: 'appearance',
         value: 'light',
       })
-        .then(
-          (response) => {
-            useLightPref()
-            setPrefrence('light')
-            Cookies.set('appearance', 'light')
-          }
-        )
-        .catch(
-          (error) => {
-            useDarkPref()
-            }
-          )
-    } else if(userPrefrences === 'system' || pref.appearance === 'system') {
-      if(system.matches) {
+        .then((response) => {
+          useLightPref()
+          setPrefrence('light')
+          Cookies.set('appearance', 'light')
+        })
+        .catch((error) => {
+          useDarkPref()
+        })
+    } else if (userPrefrences === 'system' || pref.appearance === 'system') {
+      if (system.matches) {
         useLightPref()
         API.post('/settings/preferences', {
           setting_name: 'appearance',
           value: 'light',
         })
-          .then(
-            (response) => {
-              useLightPref()
-              setPrefrence('light')
-              Cookies.set('appearance', 'light')
-            }
-          )
-          .catch(
-            (error) => {
-              useDarkPref()
-              }
-            )
- } else {
+          .then((response) => {
+            useLightPref()
+            setPrefrence('light')
+            Cookies.set('appearance', 'light')
+          })
+          .catch((error) => {
+            useDarkPref()
+          })
+      } else {
         useDarkPref()
         API.post('/settings/preferences', {
           setting_name: 'appearance',
           value: 'dark',
         })
-          .then(
-            (response) => {
-              toast.success(response.data?.message)
-              useDarkPref()
-              setPrefrence('dark')
-              Cookies.set('appearance', 'dark')
-            }
-          )
-          .catch(
-            (error) => {
-              toast.error(error.response?.data?.message ?? error.message)
-              useLightPref()
-              }
-            )
- }
+          .then((response) => {
+            toast.success(response.data?.message)
+            useDarkPref()
+            setPrefrence('dark')
+            Cookies.set('appearance', 'dark')
+          })
+          .catch((error) => {
+            toast.error(error.response?.data?.message ?? error.message)
+            useLightPref()
+          })
+      }
     }
-   
   }
 
   const trigger = useRef(null)
@@ -154,24 +136,24 @@ const UserDropdown = () => {
   return (
     <div className='relative flex items-center'>
       <div
-                    onClick={() => setAppearance()}
-                    className='w-6 h-6 relative sm:hidden cursor-pointer mr-8'
-                  >
-                    {/* <MdModeNight /> */}
-                    <svg
-                      xmlns='http://www.w3.org/2000/svg'
-                      width='24'
-                      height='24'
-                      viewBox='0 0 24 24'
-                      fill='none'
-                    >
-                      <path
-                        d='M11.9999 2V4M19.071 4.92893L17.6568 6.34315M21.9999 12H19.9999M19.071 19.0711L17.6568 17.6569M11.9999 20V22M6.34307 17.6569L4.92885 19.0711M4 12.0001H2M6.34303 6.34322L4.92882 4.92901M15.9999 12C15.9999 14.2091 14.2091 16 11.9999 16C9.79078 16 7.99992 14.2091 7.99992 12C7.99992 9.79086 9.79078 8 11.9999 8C14.2091 8 15.9999 9.79086 15.9999 12Z'
-                        stroke='#B1B1B1'
-                        strokeWidth='2'
-                        strokeLinecap='round'
-                      />
-                    </svg>
+        onClick={() => setAppearance()}
+        className='w-6 h-6 relative sm:hidden cursor-pointer mr-8'
+      >
+        {/* <MdModeNight /> */}
+        <svg
+          xmlns='http://www.w3.org/2000/svg'
+          width='24'
+          height='24'
+          viewBox='0 0 24 24'
+          fill='none'
+        >
+          <path
+            d='M11.9999 2V4M19.071 4.92893L17.6568 6.34315M21.9999 12H19.9999M19.071 19.0711L17.6568 17.6569M11.9999 20V22M6.34307 17.6569L4.92885 19.0711M4 12.0001H2M6.34303 6.34322L4.92882 4.92901M15.9999 12C15.9999 14.2091 14.2091 16 11.9999 16C9.79078 16 7.99992 14.2091 7.99992 12C7.99992 9.79086 9.79078 8 11.9999 8C14.2091 8 15.9999 9.79086 15.9999 12Z'
+            stroke='#B1B1B1'
+            strokeWidth='2'
+            strokeLinecap='round'
+          />
+        </svg>
       </div>
       <Link
         ref={trigger}
@@ -182,8 +164,12 @@ const UserDropdown = () => {
       >
         <span className='rounded-full flex items-center'>
           <Avatar
-            className='w-[42px] h-[42px] rounded-md border border-fuchsia-600'
-            src={profile_?.profile_picture?.length === 1 ? URL.createObjectURL(profile_?.profile_picture[0]) : profile_?.profile_picture || profileDeatils?.profile_picture}
+            className='w-[42px] h-[42px] rounded-md border border-red-500'
+            src={
+              profile_?.profile_picture?.length === 1
+                ? URL.createObjectURL(profile_?.profile_picture[0])
+                : profile_?.profile_picture || profileDeatils?.profile_picture
+            }
             title={profileDeatils?.firstname + ' ' + profileDeatils?.lastname}
           />
         </span>
@@ -191,7 +177,9 @@ const UserDropdown = () => {
           <div className='flex gap-1'>
             <div className='flex-col justify-start  gap-1.5 inline-flex'>
               <div className="text-center  text-[12.83px] font-bold font-['Manrope']">
-                {(profile_ ? profile_?.firstname : profileDeatils?.firstname) + ' ' +  (profile_ ? profile_?.lastname : profileDeatils?.lastname)}
+                {(profile_ ? profile_?.firstname : profileDeatils?.firstname) +
+                  ' ' +
+                  (profile_ ? profile_?.lastname : profileDeatils?.lastname)}
               </div>
               <div className="text-zinc-400 text-sm font-medium font-['Manrope']">
                 @{profile_ ? profile_?.username : profileDeatils?.username}

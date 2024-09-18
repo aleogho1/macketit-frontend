@@ -40,7 +40,7 @@ export default function EarnEngageTask() {
               />
             </svg>
           </div>
-          <div className="text-center text-fuchsia-400 text-sm font-medium font-['Manrope']">
+          <div className="text-center text-primaryText text-sm font-medium font-['Manrope']">
             Go back
           </div>
         </div>
@@ -48,10 +48,10 @@ export default function EarnEngageTask() {
         <div className='self-stretch  border border-white flex-col justify-start items-start flex'>
           <div className='self-stretch  p-6 bg-zinc-400 bg-opacity-30 rounded-tl-lg rounded-tr-lg flex-col justify-start items-start gap-2 flex'>
             <div className='flex-col justify-start items-start gap-1.5 flex'>
-              <div className="self-stretch text-stone-900 text-[10px] font-normal font-['Manrope']">
+              <div className="self-stretch text-primaryText text-[10px] font-normal font-['Manrope']">
                 Jan 12th 9:27pm
               </div>
-              <div className="text-stone-900 text-3xl font-medium font-['Manrope']">
+              <div className="text-primaryText text-3xl font-medium font-['Manrope']">
                 Like and follow instagram page
               </div>
               <div className='py-1.5 justify-start items-center gap-2 inline-flex'>
@@ -72,18 +72,18 @@ export default function EarnEngageTask() {
                     Pricing
                   </div>
                 </div>
-                <div className="text-stone-900 text-sm font-bold font-['Manrope']">
+                <div className="text-primaryText text-sm font-bold font-['Manrope']">
                   ₦150 per Advert post
                 </div>
               </div>
               <div className='self-stretch justify-start items-start gap-3 inline-flex'>
-                <div className="text-stone-900 text-[9px] font-normal font-['Manrope'] uppercase tracking-tight">
+                <div className="text-primaryText text-[9px] font-normal font-['Manrope'] uppercase tracking-tight">
                   20+ people
                 </div>
-                <div className="text-stone-900 text-[9px] font-normal font-['Manrope'] uppercase tracking-tight">
+                <div className="text-primaryText text-[9px] font-normal font-['Manrope'] uppercase tracking-tight">
                   134 Likes
                 </div>
-                <div className="text-stone-900 text-[9px] font-normal font-['Manrope'] uppercase tracking-tight">
+                <div className="text-primaryText text-[9px] font-normal font-['Manrope'] uppercase tracking-tight">
                   453 Comments
                 </div>
               </div>
@@ -139,7 +139,7 @@ export default function EarnEngageTask() {
           <div className='grow shrink basis-0 self-stretch p-3 bg-zinc-400 bg-opacity-30 rounded-lg flex-col justify-start items-center gap-10 inline-flex'>
             <div className='self-stretch py-6 flex-col justify-start items-center gap-3 flex'>
               <div className='self-stretch py-3 justify-start items-start gap-2 inline-flex'>
-                <div className="grow shrink basis-0 text-center text-stone-900 text-2xl font-medium font-['Manrope']">
+                <div className="grow shrink basis-0 text-center text-primaryText text-2xl font-medium font-['Manrope']">
                   Task
                 </div>
               </div>
@@ -240,7 +240,7 @@ export default function EarnEngageTask() {
           <div className='grow shrink basis-0 self-stretch p-3 bg-zinc-400 bg-opacity-30 rounded-lg flex-col justify-start items-center gap-10 inline-flex'>
             <div className='self-stretch py-6 flex-col justify-start items-center gap-3 flex'>
               <div className='self-stretch py-3 justify-start items-start gap-2 inline-flex'>
-                <div className="grow shrink basis-0 text-center text-stone-900 text-2xl font-medium font-['Manrope']">
+                <div className="grow shrink basis-0 text-center text-primaryText text-2xl font-medium font-['Manrope']">
                   Upload proof
                 </div>
               </div>
@@ -275,8 +275,8 @@ export default function EarnEngageTask() {
                 />
 
                 <div className='self-stretch justify-between items-center inline-flex'>
-                  <div className='p-2 bg-fuchsia-400 rounded-md border border-violet-500 border-opacity-25 justify-center items-center gap-1 flex'>
-                    <div className="text-center text-stone-900 text-[10px] font-medium font-['Manrope']">
+                  <div className='p-2 primaryBg rounded-md border border-violet-500 border-opacity-25 justify-center items-center gap-1 flex'>
+                    <div className="text-center text-primaryText text-[10px] font-medium font-['Manrope']">
                       Upload Proof
                     </div>
                   </div>

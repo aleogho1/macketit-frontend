@@ -42,7 +42,7 @@ export default function EngageTaskViewCard() {
                     strokeLinecap='round'
                   />
                 </svg>
-                <div className="text-[#FF6DFB] dark:text-fuchsia-400 text-sm font-medium font-['Manrope']">
+                <div className="text-primaryText   text-sm font-medium font-['Manrope']">
                   Export
                 </div>
               </div>
@@ -70,7 +70,7 @@ export default function EngageTaskViewCard() {
                 </svg>
               </div>
             </div>
-            <div className="self-stretch py-10 text-[#FF6DFB] dark:text-fuchsia-200 text-[40px] font-normal font-['Manrope']">
+            <div className="self-stretch py-10 text-primaryText dark:text-fuchsia-200 text-[40px] font-normal font-['Manrope']">
               {totalTask ? `${totalTask?.length} Tasks` : <Loader />}
             </div>
           </div>

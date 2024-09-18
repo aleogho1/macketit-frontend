@@ -78,7 +78,7 @@ export default function SocialLinkModal({
             <div className=' px-[26px] py-8 rounded flex-col w-11/12 justify-start items-center gap-12 inline-flex'>
               <div
                 onClick={onClose}
-                className='p-2 bg-fuchsia-400 top-[-20px] absolute z-40 -right-2 md:-right-4 cursor-pointer rounded-[100px] '
+                className='p-2 primaryBg top-[-20px] absolute z-40 -right-2 md:-right-4 cursor-pointer rounded-[100px] '
               >
                 <AiOutlineClose size={20} color='#fff' />
               </div>
@@ -131,11 +131,11 @@ export default function SocialLinkModal({
                         classNames={{
                           inputWrapper: [
                             'border-2 border-transparent rounded-none',
-                            'focus-within:!border-fuchsia-600  ',
+                            'focus-within:!border-red-500  ',
                             '!cursor-text',
                           ],
                         }}
-                        className={`grow shrink basis-0 focus:ring focus:ring-fuchsia-600 focus:border-2 focus:border-fuchsia-600  rounded text-stone-900 text-opacity-50 text-[16.83px] font-normal font-['Manrope']`}
+                        className={`grow shrink basis-0 focus:ring focus:ring-fuchsia-600 focus:border-2 focus:border-red-500  rounded text-primaryText text-opacity-50 text-[16.83px] font-normal font-['Manrope']`}
                       />
                     )}
                     rules={{
@@ -166,7 +166,7 @@ export default function SocialLinkModal({
                   <Button
                     type='submit'
                     isDisabled={isPending}
-                    className='md:w-[290px]  cursor-pointer px-6 py-6 bg-fuchsia-600 rounded-[100px] justify-center items-center gap-2 inline-flex'
+                    className='md:w-[290px]  cursor-pointer px-6 py-6 bg-primarybutton rounded-[100px] justify-center items-center gap-2 inline-flex'
                   >
                     {isPending ? <Loader /> : 'Link Account'}
                   </Button>

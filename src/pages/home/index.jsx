@@ -253,7 +253,7 @@ export default function Welcome({ onNotificationClick }) {
                       <div className='text-black text-md font-bold font-Manrope'>
                         Create an advert
                       </div>
-                      <div className=' text-stone-900 text-xs font-normal font-Manrope md:text-sm'>
+                      <div className=' text-primaryText text-xs font-normal font-Manrope md:text-sm'>
                         Get real people to post your ads on their social media
                         account.
                       </div>
@@ -289,7 +289,7 @@ export default function Welcome({ onNotificationClick }) {
                       <div className='text-black text-md font-bold font-Manrope'>
                         Engage a task
                       </div>
-                      <div className=' text-stone-900 text-xs font-normal font-Manrope md:text-sm'>
+                      <div className=' text-primaryText text-xs font-normal font-Manrope md:text-sm'>
                         Monetize Your Influence! Earn by Posting Ads on Your
                         Social Media.
                       </div>

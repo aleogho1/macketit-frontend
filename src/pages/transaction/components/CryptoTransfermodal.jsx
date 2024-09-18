@@ -16,12 +16,12 @@ export default function CryptoTransfermodal({ isOpen, onClose }) {
         <div className=' h-[373px] p-12 bg-white rounded flex-col justify-center items-center gap-12 inline-flex'>
           <div
             onClick={onClose}
-            className='p-2 bg-fuchsia-400 top-[-20px] -right-4 absolute z-40 cursor-pointer rounded-[100px] '
+            className='p-2 primaryBg top-[-20px] -right-4 absolute z-40 cursor-pointer rounded-[100px] '
           >
             <AiOutlineClose size={20} color='#fff' />
           </div>
           <div className='flex-col justify-center items-center gap-3 flex'>
-            <div className="text-stone-900 text-sm font-bold font-['Manrope']">
+            <div className="text-primaryText text-sm font-bold font-['Manrope']">
               Fund Wallet with Crypto
             </div>
             <div className="w-[253px] text-center text-black text-xs font-normal font-['Manrope']">
@@ -33,14 +33,14 @@ export default function CryptoTransfermodal({ isOpen, onClose }) {
           </div>
           <div className='self-stretch h-[52px] flex-col justify-center items-center gap-2 flex'>
             <div className='self-stretch h-[52px] flex-col justify-start items-center gap-2 flex'>
-              <div className="self-stretch text-stone-900 text-sm font-medium font-['Manrope']">
+              <div className="self-stretch text-primaryText text-sm font-medium font-['Manrope']">
                 USDT (BEP 20)
               </div>
               <div className='self-stretch h-[34px] flex-col justify-start items-start gap-[19px] flex'>
                 <div className='self-stretch justify-start items-center gap-2 inline-flex'>
                   <Snippet
                     size='sm'
-                    className="grow h-[34px] rounded-none p-2 bg-zinc-400 bg-opacity-30 border border-zinc-400 border-opacity-30 items-center gap-1  shrink basis-0 text-stone-900 text-[12.83px] font-normal font-['Manrope']"
+                    className="grow h-[34px] rounded-none p-2 bg-zinc-400 bg-opacity-30 border border-zinc-400 border-opacity-30 items-center gap-1  shrink basis-0 text-primaryText text-[12.83px] font-normal font-['Manrope']"
                     symbol=''
                     copyIcon={
                       <svg
@@ -63,7 +63,7 @@ export default function CryptoTransfermodal({ isOpen, onClose }) {
               </div>
             </div>
           </div>
-          <div className='w-[290px] cursor-pointer px-6 py-3.5 bg-fuchsia-600 rounded-[100px] justify-center items-center gap-2 inline-flex'>
+          <div className='w-[290px] cursor-pointer px-6 py-3.5 bg-primarybutton rounded-[100px] justify-center items-center gap-2 inline-flex'>
             <div className="text-center text-white text-[12.83px] font-medium font-['Manrope']">
               Continue
             </div>

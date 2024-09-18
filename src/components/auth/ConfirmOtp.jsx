@@ -139,7 +139,7 @@ export default function ConfirmOtp() {
                     onClick={() => {
                       handleResendOtp()
                     }}
-                    className="text-center cursor-pointer text-[#FF6DFB] dark:text-fuchsia-400 text-[12.83px] font-bold font-['Manrope']"
+                    className="text-center cursor-pointer text-primaryText   text-[12.83px] font-bold font-['Manrope']"
                   >
                     Send new code
                   </div>

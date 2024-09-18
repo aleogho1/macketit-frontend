@@ -90,7 +90,7 @@ export default function GenerateIgTask() {
                 />
               </svg>
             </div>
-            <div className="text-center text-fuchsia-400 text-sm font-medium font-['Manrope']">
+            <div className="text-center text-primaryText text-sm font-medium font-['Manrope']">
               Go back
             </div>
           </div>
@@ -212,10 +212,10 @@ export default function GenerateIgTask() {
           {active?.status !== 'verified' && (
             <div className='self-stretch p-6 dark:bg-black bg-zinc-400 bg-opacity-30 justify-start items-start gap-[29px] inline-flex'>
               <div className='grow shrink basis-0 flex-col justify-start items-start gap-2.5 inline-flex'>
-                <div className="text-center dark:text-white text-stone-900 text-base font-bold font-['Manrope']">
+                <div className="text-center dark:text-white text-primaryText text-base font-bold font-['Manrope']">
                   Link your Instagram Account
                 </div>
-                <div className="self-stretch dark:text-gray-400 text-stone-900 text-xs font-normal font-['Manrope']">
+                <div className="self-stretch dark:text-gray-400 text-primaryText text-xs font-normal font-['Manrope']">
                   You need to link your Instagram Accounts to MacketIT before
                   you can start earning with your Instagram Accounts . Click the
                   button below to link your Instagram Accounts now.
@@ -271,7 +271,7 @@ export default function GenerateIgTask() {
                       </radialGradient>
                     </defs>
                   </svg>
-                  <div className="text-center dark:text-white text-stone-900 text-[12.83px] font-bold font-['Manrope']">
+                  <div className="text-center dark:text-white text-primaryText text-[12.83px] font-bold font-['Manrope']">
                     Link Instagram account
                   </div>
                 </div>
@@ -309,12 +309,12 @@ export default function GenerateIgTask() {
                           classNames={{
                             tab: '!px0 mr2',
                             tabList: '!p0 bordered  py-2',
-                            cursor: ' bg-fuchsia-400',
+                            cursor: ' primaryBg',
                             selectedKey: 'text-green-400',
                             tabContent:
-                              'group-data-[selected=true]:text-fuchsia-400 ',
+                              'group-data-[selected=true]:text-primaryText ',
                           }}
-                          className="text-center  text-fuchsia-400 text-[12.83px] font-bold font-['Manrope']"
+                          className="text-center  text-primaryText text-[12.83px] font-bold font-['Manrope']"
                           color='secondary'
                         >
                           <Tab
@@ -374,7 +374,7 @@ export default function GenerateIgTask() {
                             className='dark:stroke-[#B1B1B1] stroke-[#1E1E1E] '
                           />
                         </svg>
-                        <div className="text-center dark:text-[#B1B1B1] text-stone-900 text-sm font-medium font-['Manrope']">
+                        <div className="text-center dark:text-[#B1B1B1] text-primaryText text-sm font-medium font-['Manrope']">
                           Filter
                         </div>
                       </div>
@@ -393,7 +393,7 @@ export default function GenerateIgTask() {
                             className='dark:stroke-[#B1B1B1] stroke-[#1E1E1E] '
                           />
                         </svg>
-                        <div className="text-center dark:text-[#B1B1B1] text-stone-900 text-sm font-medium font-['Manrope']">
+                        <div className="text-center dark:text-[#B1B1B1] text-primaryText text-sm font-medium font-['Manrope']">
                           Sort
                         </div>
                       </div>
@@ -604,7 +604,7 @@ export default function GenerateIgTask() {
                         ? onOpen()
                         : toast.error('No task is available')
                     }
-                    className='w-[290px] dark:bg-white px-6 cursor-pointer py-3.5 bg-fuchsia-400 rounded-[100px] justify-center items-center gap-2 inline-flex'
+                    className='w-[290px] dark:bg-white px-6 cursor-pointer py-3.5 primaryBg rounded-[100px] justify-center items-center gap-2 inline-flex'
                   >
                     <svg
                       xmlns='http://www.w3.org/2000/svg'

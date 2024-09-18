@@ -44,7 +44,7 @@ export default function GenerateShareEngageTask() {
                 />
               </svg>
             </div>
-            <div className="text-center text-fuchsia-400 text-sm font-medium font-['Manrope']">
+            <div className="text-center text-primaryText text-sm font-medium font-['Manrope']">
               Go back
             </div>
           </div>
@@ -106,10 +106,10 @@ export default function GenerateShareEngageTask() {
             </div>
             {/* <div className='self-stretch p-6 dark:bg-black bg-zinc-400 bg-opacity-30 justify-start items-start gap-[29px] inline-flex'>
               <div className='grow shrink basis-0 flex-col justify-start items-start gap-2.5 inline-flex'>
-                <div className="text-center dark:text-white text-stone-900 text-base font-bold font-['Manrope']">
+                <div className="text-center dark:text-white text-primaryText text-base font-bold font-['Manrope']">
                   Link your Sportyfy Account
                 </div>
-                <div className="self-stretch dark:text-gray-400 text-stone-900 text-xs font-normal font-['Manrope']">
+                <div className="self-stretch dark:text-gray-400 text-primaryText text-xs font-normal font-['Manrope']">
                   You need to link your  Sportyfy  Account to MacketIT before you
                   can start earning with your  Sportyfy  Account. Click the
                   button below to link your  Sportyfy  account now.
@@ -139,7 +139,7 @@ export default function GenerateShareEngageTask() {
                       </clipPath>
                     </defs>
                   </svg>
-                  <div className="text-center dark:text-white text-stone-900 text-[12.83px] font-bold font-['Manrope']">
+                  <div className="text-center dark:text-white text-primaryText text-[12.83px] font-bold font-['Manrope']">
                     Link Sportyfy account
                   </div>
                 </div>
@@ -176,12 +176,12 @@ export default function GenerateShareEngageTask() {
                       classNames={{
                         tab: '!px-0 mr-2',
                         tabList: '!p-0',
-                        cursor: ' bg-fuchsia-400',
+                        cursor: ' primaryBg',
                         selectedKey: 'text-green-400',
                         tabContent:
-                          'group-data-[selected=true]:text-fuchsia-400 ',
+                          'group-data-[selected=true]:text-primaryText ',
                       }}
-                      className="text-center  text-fuchsia-400 text-[12.83px] font-bold font-['Manrope']"
+                      className="text-center  text-primaryText text-[12.83px] font-bold font-['Manrope']"
                       color='secondary'
                     >
                       <Tab
@@ -240,7 +240,7 @@ export default function GenerateShareEngageTask() {
                       className='dark:stroke-[#B1B1B1] stroke-[#1E1E1E]'
                     />
                   </svg>
-                  <div className="text-center dark:text-[#B1B1B1] text-stone-900 text-sm font-medium font-['Manrope']">
+                  <div className="text-center dark:text-[#B1B1B1] text-primaryText text-sm font-medium font-['Manrope']">
                     Filter
                   </div>
                 </div>
@@ -259,7 +259,7 @@ export default function GenerateShareEngageTask() {
                       className='dark:stroke-[#B1B1B1] stroke-[#1E1E1E]'
                     />
                   </svg>
-                  <div className="text-center dark:text-[#B1B1B1] text-stone-900 text-sm font-medium font-['Manrope']">
+                  <div className="text-center dark:text-[#B1B1B1] text-primaryText text-sm font-medium font-['Manrope']">
                     Sort
                   </div>
                 </div>
@@ -425,7 +425,7 @@ export default function GenerateShareEngageTask() {
               </div>
               <div
                 onClick={onOpen}
-                className='w-[290px] px-6 dark:bg-white cursor-pointer py-3.5 bg-fuchsia-400 rounded-[100px] justify-center items-center gap-2 inline-flex'
+                className='w-[290px] px-6 dark:bg-white cursor-pointer py-3.5 primaryBg rounded-[100px] justify-center items-center gap-2 inline-flex'
               >
                 <svg
                   xmlns='http://www.w3.org/2000/svg'

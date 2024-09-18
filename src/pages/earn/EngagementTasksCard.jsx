@@ -15,8 +15,13 @@ export default function EngagementTasksCard() {
   const { data: profileDeatils } = useGetProfile()
   const { isOpen, onOpen, onClose } = useDisclosure()
   const appearance = useContext(AppearanceContext)
-  const socialIcons = ['instagram', 'facebook', `${appearance === 'dark' ? 'tik-tok' : 'tik-tok-lite'}`, 
-    `${appearance === 'dark' ? 'twitter' : 'x-lite'}`, `${appearance === 'dark' ? 'thread' : 'thread-lite'}`]
+  const socialIcons = [
+    'instagram',
+    'facebook',
+    `${appearance === 'dark' ? 'tik-tok' : 'tik-tok-lite'}`,
+    `${appearance === 'dark' ? 'twitter' : 'x-lite'}`,
+    `${appearance === 'dark' ? 'thread' : 'thread-lite'}`,
+  ]
 
   return (
     <>
@@ -42,11 +47,13 @@ export default function EngagementTasksCard() {
                 Platforms
               </div>
               <div className=" text-black dark:text-zinc-300 text-xs font-normal font-['Manrope']">
-                  Follow people and pages on selected social media accounts like Facebook, Instagram, TikTok, and others to earn ₦3.5 per follow. Unlock your earning potential by performing one task at a time
+                Follow people and pages on selected social media accounts like
+                Facebook, Instagram, TikTok, and others to earn ₦3.5 per follow.
+                Unlock your earning potential by performing one task at a time
               </div>
               <div className='justify-start items-start gap-2 inline-flex'>
-              {socialIcons.map((icon, index) => (
-                  <Icons type={icon} key={index} width={17} height={17}/>
+                {socialIcons.map((icon, index) => (
+                  <Icons type={icon} key={index} width={17} height={17} />
                 ))}
               </div>
               <div className='py-1.5 justify-start items-center gap-2 inline-flex'>
@@ -83,7 +90,7 @@ export default function EngagementTasksCard() {
                     toast.error('Please activate your membership')
                   }
                 }}
-                className='self-stretch p-2 bg-fuchsia-400 rounded-none rounded-t-md border border-violet-500 border-opacity-25 justify-center items-center gap-1 inline-flex'
+                className='self-stretch p-2 primaryBg rounded-none rounded-t-md border border-violet-500 border-opacity-25 justify-center items-center gap-1 inline-flex'
               >
                 <div className="text-center text-white text-[10px] font-medium font-['Manrope']">
                   Generate Task
@@ -113,11 +120,13 @@ export default function EngagementTasksCard() {
                 Like post on Different Social Media Platforms
               </div>
               <div className=" text-black dark:text-zinc-300 text-xs font-normal font-['Manrope']">
-              Like posts on social media platforms like Instagram, Facebook, TikTok, and others to earn ₦3.5 per like. Turn your daily routine into rewards!
+                Like posts on social media platforms like Instagram, Facebook,
+                TikTok, and others to earn ₦3.5 per like. Turn your daily
+                routine into rewards!
               </div>
               <div className='justify-start items-start gap-2 inline-flex'>
-              {socialIcons.map((icon, index) => (
-                  <Icons type={icon} key={index} width={17} height={17}/>
+                {socialIcons.map((icon, index) => (
+                  <Icons type={icon} key={index} width={17} height={17} />
                 ))}
               </div>
               <div className='py-1.5 justify-start items-center gap-2 inline-flex'>
@@ -154,7 +163,7 @@ export default function EngagementTasksCard() {
                     toast.error('Please activate your membership')
                   }
                 }}
-                className='self-stretch p-2 bg-fuchsia-400 rounded-none rounded-t-md border border-violet-500 border-opacity-25 justify-center items-center gap-1 inline-flex'
+                className='self-stretch p-2 primaryBg rounded-none rounded-t-md border border-violet-500 border-opacity-25 justify-center items-center gap-1 inline-flex'
               >
                 <div className="text-center text-white text-[10px] font-medium font-['Manrope']">
                   Generate Task
@@ -193,11 +202,13 @@ export default function EngagementTasksCard() {
                 Like and Follow Facebook Business Pages
               </div>
               <div className=" text-black dark:text-zinc-300 text-xs font-normal font-['Manrope']">
-              Like and follow Facebook pages for businesses and organizations to earn ₦3.5 per like and follow. Unlock your earning potential by performing one task at a time.
+                Like and follow Facebook pages for businesses and organizations
+                to earn ₦3.5 per like and follow. Unlock your earning potential
+                by performing one task at a time.
               </div>
               <div className='justify-start items-start gap-2 inline-flex'>
                 {socialIcons.map((icon, index) => (
-                  <Icons type={icon} key={index} width={17} height={17}/>
+                  <Icons type={icon} key={index} width={17} height={17} />
                 ))}
               </div>
               <div className='py-1.5 justify-start items-center gap-2 inline-flex'>
@@ -234,7 +245,7 @@ export default function EngagementTasksCard() {
                     toast.error('Please activate your membership')
                   }
                 }}
-                className='self-stretch p-2 bg-fuchsia-400 rounded-none rounded-t-md border border-violet-500 border-opacity-25 justify-center items-center gap-1 inline-flex'
+                className='self-stretch p-2 primaryBg rounded-none rounded-t-md border border-violet-500 border-opacity-25 justify-center items-center gap-1 inline-flex'
               >
                 <div className="text-center text-white text-[10px] font-medium font-['Manrope']">
                   Generate Task
@@ -267,11 +278,14 @@ export default function EngagementTasksCard() {
                 Platforms
               </div>
               <div className=" text-black dark:text-zinc-300 text-xs font-normal font-['Manrope']">
-              Post comments on personal, business, or organization pages and posts on social media platforms like X, Instagram, Facebook, TikTok, and others to earn ₦20 per comment. Hustle more, earn more.
+                Post comments on personal, business, or organization pages and
+                posts on social media platforms like X, Instagram, Facebook,
+                TikTok, and others to earn ₦20 per comment. Hustle more, earn
+                more.
               </div>
               <div className='justify-start items-start gap-2 inline-flex'>
                 {socialIcons.map((icon, index) => (
-                  <Icons type={icon} key={index} width={17} height={17}/>
+                  <Icons type={icon} key={index} width={17} height={17} />
                 ))}
               </div>
               <div className='py-1.5 justify-start items-center gap-2 inline-flex'>
@@ -308,7 +322,7 @@ export default function EngagementTasksCard() {
                     toast.error('Please activate your membership')
                   }
                 }}
-                className='self-stretch p-2 bg-fuchsia-400 rounded-none rounded-t-md border border-violet-500 border-opacity-25 justify-center items-center gap-1 inline-flex'
+                className='self-stretch p-2 primaryBg rounded-none rounded-t-md border border-violet-500 border-opacity-25 justify-center items-center gap-1 inline-flex'
               >
                 <div className="text-center text-white text-[10px] font-medium font-['Manrope']">
                   Generate Task

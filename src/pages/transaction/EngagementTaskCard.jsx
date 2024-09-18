@@ -52,7 +52,7 @@ export default function EngagementTaskCard() {
                 ₦150 per Advert post
               </div>
             </div>
-            <Button className="text-center text-white text-[10px] font-medium font-['Manrope'] bg-fuchsia-400 rounded-md border border-violet-500 border-opacity-25 justify-center items-center gap-1 inline-flex">
+            <Button className="text-center text-white text-[10px] font-medium font-['Manrope'] primaryBg rounded-md border border-violet-500 border-opacity-25 justify-center items-center gap-1 inline-flex">
               Create Advert
             </Button>
           </div>
@@ -112,7 +112,7 @@ export default function EngagementTaskCard() {
                 ₦150 per Advert post
               </div>
             </div>
-            <Button className="text-center text-white text-[10px] font-medium font-['Manrope'] bg-fuchsia-400 rounded-md border border-violet-500 border-opacity-25 justify-center items-center gap-1 inline-flex">
+            <Button className="text-center text-white text-[10px] font-medium font-['Manrope'] primaryBg rounded-md border border-violet-500 border-opacity-25 justify-center items-center gap-1 inline-flex">
               Create Advert
             </Button>
           </div>
@@ -176,7 +176,7 @@ export default function EngagementTaskCard() {
                 ₦150 per Advert post
               </div>
             </div>
-            <Button className="text-center text-white text-[10px] font-medium font-['Manrope'] bg-fuchsia-400 rounded-md border border-violet-500 border-opacity-25 justify-center items-center gap-1 inline-flex">
+            <Button className="text-center text-white text-[10px] font-medium font-['Manrope'] primaryBg rounded-md border border-violet-500 border-opacity-25 justify-center items-center gap-1 inline-flex">
               Create Advert
             </Button>
           </div>
@@ -228,7 +228,7 @@ export default function EngagementTaskCard() {
                 ₦150 per Advert post
               </div>
             </div>
-            <Button className="text-center text-white text-[10px] font-medium font-['Manrope'] bg-fuchsia-400 rounded-md border border-violet-500 border-opacity-25 justify-center items-center gap-1 inline-flex">
+            <Button className="text-center text-white text-[10px] font-medium font-['Manrope'] primaryBg rounded-md border border-violet-500 border-opacity-25 justify-center items-center gap-1 inline-flex">
               Create Advert
             </Button>
           </div>
@@ -314,7 +314,7 @@ export default function EngagementTaskCard() {
                 ₦150 per Advert post
               </div>
             </div>
-            <Button className="text-center text-white text-[10px] font-medium font-['Manrope'] bg-fuchsia-400 rounded-md border border-violet-500 border-opacity-25 justify-center items-center gap-1 inline-flex">
+            <Button className="text-center text-white text-[10px] font-medium font-['Manrope'] primaryBg rounded-md border border-violet-500 border-opacity-25 justify-center items-center gap-1 inline-flex">
               Create Advert
             </Button>
           </div>
@@ -397,7 +397,7 @@ export default function EngagementTaskCard() {
                 ₦150 per Advert post
               </div>
             </div>
-            <Button className="text-center text-white text-[10px] font-medium font-['Manrope'] bg-fuchsia-400 rounded-md border border-violet-500 border-opacity-25 justify-center items-center gap-1 inline-flex">
+            <Button className="text-center text-white text-[10px] font-medium font-['Manrope'] primaryBg rounded-md border border-violet-500 border-opacity-25 justify-center items-center gap-1 inline-flex">
               Create Advert
             </Button>
           </div>

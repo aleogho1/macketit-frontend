@@ -44,16 +44,16 @@ export default function ForgetPassword() {
     <>
       <div>
         <form onSubmit={handleSubmit(onSubmit)}>
-          <div className='min-h-screen  md:h-[1024px] py-6 relative bg-lighten dark:bg-black'>
+          <div className='min-h-screen  md:h-[1024px] py-6 relative '>
             <div className='w-[96%]  md:w-[90%] mx-auto max-h-[6rem] flex justify-between items-center'>
               <Logo />
 
-              <div className="text-center p-2 hidden  md:flex text-[12.83px] font-bold font-['Manrope']">
+              <div className="text-center text-primaryText p-2 hidden  md:flex text-[12.83px] font-bold font-['Manrope']">
                 <Button onClick={() => navigate(-1)} variant='flat bg-none'>
                   Go Back
                 </Button>
               </div>
-              <div className="text-center p-2 md:hidden  text-[12.83px] font-bold font-['Manrope']">
+              <div className="text-center p-2 md:hidden text-primaryText  text-[12.83px] font-bold font-['Manrope']">
                 <Button variant='flat bg-none  '>
                   <ChevronRight />
                 </Button>
@@ -62,7 +62,7 @@ export default function ForgetPassword() {
 
             <div className=' w-[20rem] my-8 md:w-[23rem] mx-auto  flex-col  items-center gap-6 '>
               <div className='self-stretch my-2 flex-col justify-start items-center gap-3 flex'>
-                <div className="w-full text-center  text-[64px] font-semibold font-['Manrope'] leading-[53.76px]">
+                <div className="w-full text-center  text-primaryText text-[64px] font-semibold font-['Manrope'] leading-[53.76px]">
                   Reset Your Password
                 </div>
                 <div className="w-80 text-center text-zinc-400 text-base font-normal font-['Manrope']">
@@ -85,12 +85,12 @@ export default function ForgetPassword() {
                       classNames={{
                         inputWrapper: [
                           'border-2 border-transparent',
-                          'focus-within:!border-fuchsia-600  ',
+                          'focus-within:!border-red-500  ',
                           '!cursor-text',
                         ],
                       }}
                       placeholder='Enter a valid email'
-                      className="grow shrink basis-0  rounded text-stone-900 text-opacity-50 text-[12.83px] font-normal font-['Manrope']"
+                      className="grow shrink basis-0  rounded text-primaryText text-opacity-50 text-[12.83px] font-normal font-['Manrope']"
                     />
                   )}
                   rules={{ required: true }}
@@ -99,7 +99,7 @@ export default function ForgetPassword() {
                 <Button
                   type='submit'
                   isDisabled={isPending}
-                  className="w-[290px] px-6 py-3.5 mt-4 bg-fuchsia-600 rounded-[100px] text-center text-white text-[12.83px] font-medium font-['Manrope']"
+                  className="w-[290px] px-6 py-3.5 mt-4 bg-primarybutton rounded-[100px] text-center text-white text-[12.83px] font-medium font-['Manrope']"
                 >
                   {isPending ? (
                     <svg
@@ -130,15 +130,11 @@ export default function ForgetPassword() {
               <div className='self-stretch mt-16 flex-col justify-start items-center gap-2 flex'>
                 <div
                   onClick={() => navigate('/')}
-                  className="text-center cursor-pointer py-6 text-[#CB29BE] text-xs font-normal font-['Manrope'] tracking-wide"
+                  className="text-center cursor-pointer py-6 text-primaryText text-xs font-normal font-['Manrope'] tracking-wide"
                 >
                   Back to Home
                 </div>
               </div>
-            </div>
-
-            <div className='w-[24rem] mx-auto mt-16'>
-              <div className='w-full h-0.5 bg-gradient-to-r from-[#fff]  dark:from-[#000] !via-[#FF6DFB] to-[#fff] dark:to-[#000]'></div>
             </div>
           </div>
         </form>

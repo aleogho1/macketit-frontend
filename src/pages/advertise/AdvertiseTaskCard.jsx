@@ -52,7 +52,7 @@ export default function AdvertiseTaskCard() {
             </div>
             <Button
               onClick={() => navigate('/dashboard/advertise-tw-task')}
-              className="text-center text-white text-[10px] font-medium font-['Manrope'] bg-fuchsia-400 rounded-md border border-violet-500 border-opacity-25 justify-center items-center gap-1 inline-flex"
+              className="text-center text-white text-[10px] font-medium font-['Manrope'] primaryBg rounded-md border border-violet-500 border-opacity-25 justify-center items-center gap-1 inline-flex"
             >
               Create Order
             </Button>
@@ -143,7 +143,7 @@ export default function AdvertiseTaskCard() {
             </div>
             <Button
               onClick={() => navigate('/dashboard/advertise-ig-task')}
-              className="text-center text-white text-[10px] font-medium font-['Manrope'] bg-fuchsia-400 rounded-md border border-violet-500 border-opacity-25 justify-center items-center gap-1 inline-flex"
+              className="text-center text-white text-[10px] font-medium font-['Manrope'] primaryBg rounded-md border border-violet-500 border-opacity-25 justify-center items-center gap-1 inline-flex"
             >
               Create Order
             </Button>
@@ -202,7 +202,7 @@ export default function AdvertiseTaskCard() {
             </div>
             <Button
               onClick={() => navigate('/dashboard/advertise-fb-task')}
-              className="text-center text-white text-[10px] font-medium font-['Manrope'] bg-fuchsia-400 rounded-md border border-violet-500 border-opacity-25 justify-center items-center gap-1 inline-flex"
+              className="text-center text-white text-[10px] font-medium font-['Manrope'] primaryBg rounded-md border border-violet-500 border-opacity-25 justify-center items-center gap-1 inline-flex"
             >
               Create Order
             </Button>
@@ -266,7 +266,7 @@ export default function AdvertiseTaskCard() {
             </div>
             <Button
               onClick={() => navigate('/dashboard/advertise-tk-task')}
-              className="text-center cursor-pointer text-white text-[10px] font-medium font-['Manrope'] bg-fuchsia-400 rounded-md border border-violet-500 border-opacity-25 justify-center items-center gap-1 inline-flex"
+              className="text-center cursor-pointer text-white text-[10px] font-medium font-['Manrope'] primaryBg rounded-md border border-violet-500 border-opacity-25 justify-center items-center gap-1 inline-flex"
             >
               Create Order
             </Button>
@@ -342,7 +342,7 @@ export default function AdvertiseTaskCard() {
             </div>
             <Button
               onClick={() => navigate('/dashboard/advertise-ws-task')}
-              className="text-center text-white text-[10px] font-medium font-['Manrope'] bg-fuchsia-400 rounded-md border border-violet-500 border-opacity-25 justify-center items-center gap-1 inline-flex"
+              className="text-center text-white text-[10px] font-medium font-['Manrope'] primaryBg rounded-md border border-violet-500 border-opacity-25 justify-center items-center gap-1 inline-flex"
             >
               Create Order
             </Button>
@@ -406,7 +406,7 @@ export default function AdvertiseTaskCard() {
             </div>
             <Button
               onClick={() => navigate('/dashboard/advertise-thr-task')}
-              className="text-center text-white text-[10px] font-medium font-['Manrope'] bg-fuchsia-400 rounded-md border border-violet-500 border-opacity-25 justify-center items-center gap-1 inline-flex"
+              className="text-center text-white text-[10px] font-medium font-['Manrope'] primaryBg rounded-md border border-violet-500 border-opacity-25 justify-center items-center gap-1 inline-flex"
             >
               Create Order
             </Button>

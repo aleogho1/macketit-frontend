@@ -64,7 +64,7 @@ export default function OverViewCard() {
                     strokeLinecap='round'
                   />
                 </svg>
-                <div className="text-[#FF6DFB] dark:text-fuchsia-400 text-sm font-medium font-['Manrope']">
+                <div className="text-primaryText   text-sm font-medium font-['Manrope']">
                   Export
                 </div>
               </div>
@@ -92,7 +92,7 @@ export default function OverViewCard() {
                 </svg>
               </div> */}
             </div>
-            <div className="self-stretch mx-auto md:mx-0 text-[#FF6DFB] dark:text-fuchsia-200 text-[40px] font-normal font-['Manrope']">
+            <div className="self-stretch mx-auto md:mx-0 text-primaryText dark:text-fuchsia-200 text-[40px] font-normal font-['Manrope']">
               <span>{showBalance?.currency_symbol}</span>
               {showBalance?.balance?.toLocaleString()}
             </div>

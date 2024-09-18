@@ -57,7 +57,7 @@ export default function ActivationPaymentmodal2({ isOpen, onClose }) {
             <div className=' py-8 rounded flex-col justify-start items-center gap-12 inline-flex'>
               <div
                 onClick={onClose}
-                className='p-2 bg-fuchsia-400 top-[-20px] absolute z-40 right-1 md:-right-4 cursor-pointer rounded-[100px] '
+                className='p-2 primaryBg top-[-20px] absolute z-40 right-1 md:-right-4 cursor-pointer rounded-[100px] '
               >
                 <AiOutlineClose size={20} color='#fff' />
               </div>
@@ -177,7 +177,7 @@ export default function ActivationPaymentmodal2({ isOpen, onClose }) {
                   <Button
                     type='submit'
                     isDisabled={isPending}
-                    className='md:w-[290px]  cursor-pointer px-6 py-6 bg-fuchsia-600 rounded-[100px] justify-center items-center gap-2 inline-flex'
+                    className='md:w-[290px]  cursor-pointer px-6 py-6 bg-primarybutton rounded-[100px] justify-center items-center gap-2 inline-flex'
                   >
                     {isPending ? <Loader /> : 'Click here to Pay'}
                   </Button>

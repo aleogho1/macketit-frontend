@@ -7,8 +7,13 @@ import Icons from '../../components/Icon'
 export default function EngagementTaskCard() {
   const navigate = useNavigate()
   const appearance = useContext(AppearanceContext)
-  const socialIcons = ['instagram', 'facebook', `${appearance === 'dark' ? 'tik-tok' : 'tik-tok-lite'}`, 
-    `${appearance === 'dark' ? 'twitter' : 'x-lite'}`, `${appearance === 'dark' ? 'thread' : 'thread-lite'}`]
+  const socialIcons = [
+    'instagram',
+    'facebook',
+    `${appearance === 'dark' ? 'tik-tok' : 'tik-tok-lite'}`,
+    `${appearance === 'dark' ? 'twitter' : 'x-lite'}`,
+    `${appearance === 'dark' ? 'thread' : 'thread-lite'}`,
+  ]
   return (
     <div className='flex flex-col md:grid md:grid-cols-2 gap-3'>
       <div className='self-stretch p-6 bg-gray-200 dark:bg-zinc-900 rounded-lg justify-start items-start gap-2 inline-flex'>
@@ -36,9 +41,9 @@ export default function EngagementTaskCard() {
               Tiktok, Instagram and many more.
             </div>
             <div className='justify-start items-start gap-2 inline-flex'>
-            {socialIcons.map((icon, index) => (
-                  <Icons type={icon} key={index} width={17} height={17}/>
-                ))}
+              {socialIcons.map((icon, index) => (
+                <Icons type={icon} key={index} width={17} height={17} />
+              ))}
             </div>
             <div className='py-1.5 justify-start items-center gap-2 inline-flex'>
               <div className='justify-start items-center gap-0.5 flex'>
@@ -66,7 +71,7 @@ export default function EngagementTaskCard() {
               onClick={() =>
                 navigate('/dashboard/advertise-engage-follower-task')
               }
-              className="text-center text-white text-[10px] font-medium font-['Manrope'] bg-fuchsia-400 rounded-md border border-violet-500 border-opacity-25 justify-center items-center gap-1 inline-flex"
+              className="text-center text-white text-[10px] font-medium font-['Manrope'] primaryBg rounded-md border border-violet-500 border-opacity-25 justify-center items-center gap-1 inline-flex"
             >
               Create Order
             </Button>
@@ -98,9 +103,9 @@ export default function EngagementTaskCard() {
               either on Instagram, Facebook, Twitter or any platform.
             </div>
             <div className='justify-start items-start gap-2 inline-flex'>
-            {socialIcons.map((icon, index) => (
-                  <Icons type={icon} key={index} width={17} height={17}/>
-                ))}
+              {socialIcons.map((icon, index) => (
+                <Icons type={icon} key={index} width={17} height={17} />
+              ))}
             </div>
             <div className='py-1.5 justify-start items-center gap-2 inline-flex'>
               <div className='justify-start items-center gap-0.5 flex'>
@@ -126,7 +131,7 @@ export default function EngagementTaskCard() {
             </div>
             <Button
               onClick={() => navigate('/dashboard/advertise-engage-like-task')}
-              className="text-center text-white text-[10px] font-medium font-['Manrope'] bg-fuchsia-400 rounded-md border border-violet-500 border-opacity-25 justify-center items-center gap-1 inline-flex"
+              className="text-center text-white text-[10px] font-medium font-['Manrope'] primaryBg rounded-md border border-violet-500 border-opacity-25 justify-center items-center gap-1 inline-flex"
             >
               Create Order
             </Button>
@@ -188,7 +193,7 @@ export default function EngagementTaskCard() {
               onClick={() =>
                 navigate('/dashboard/advertise-engage-follower&like-task')
               }
-              className="text-center text-white text-[10px] font-medium font-['Manrope'] bg-fuchsia-400 rounded-md border border-violet-500 border-opacity-25 justify-center items-center gap-1 inline-flex"
+              className="text-center text-white text-[10px] font-medium font-['Manrope'] primaryBg rounded-md border border-violet-500 border-opacity-25 justify-center items-center gap-1 inline-flex"
             >
               Create Order
             </Button>
@@ -224,9 +229,9 @@ export default function EngagementTaskCard() {
               platform.
             </div>
             <div className='justify-start items-start gap-2 inline-flex'>
-            {socialIcons.map((icon, index) => (
-                  <Icons type={icon} key={index} width={17} height={17}/>
-                ))}
+              {socialIcons.map((icon, index) => (
+                <Icons type={icon} key={index} width={17} height={17} />
+              ))}
             </div>
             <div className='py-1.5 justify-start items-center gap-2 inline-flex'>
               <div className='justify-start items-center gap-0.5 flex'>
@@ -254,7 +259,7 @@ export default function EngagementTaskCard() {
               onClick={() =>
                 navigate('/dashboard/advertise-engage-comment-task')
               }
-              className="text-center text-white text-[10px] font-medium font-['Manrope'] bg-fuchsia-400 rounded-md border border-violet-500 border-opacity-25 justify-center items-center gap-1 inline-flex"
+              className="text-center text-white text-[10px] font-medium font-['Manrope'] primaryBg rounded-md border border-violet-500 border-opacity-25 justify-center items-center gap-1 inline-flex"
             >
               Create Order
             </Button>

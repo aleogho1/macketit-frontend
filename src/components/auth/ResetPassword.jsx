@@ -79,10 +79,10 @@ export default function ResetPassword() {
 
             <div className=' w-[20rem] my-8 md:w-[23rem] mx-auto  flex-col  items-center gap-6 '>
               <div className='self-stretch my-2 flex-col justify-start items-center gap-3 flex'>
-                <div className="w-full text-center text-[64px] font-semibold font-['Manrope'] leading-[53.76px]">
+                <div className="w-full text-primaryText text-center text-[64px] font-semibold font-['Manrope'] leading-[53.76px]">
                   Create New Password
                 </div>
-                <div className="w-80 text-center text-zinc-400 text-base font-normal font-['Manrope']">
+                <div className="w-80 text-center text-black text-base font-normal font-['Manrope']">
                   Your new password must be different from the previous used
                   password
                 </div>
@@ -105,11 +105,11 @@ export default function ResetPassword() {
                         inputWrapper: [
                           'rounded-none py-2',
                           'border-2 border-transparent',
-                          'focus-within:!border-fuchsia-600  ',
+                          'focus-within:!border-red-500  ',
                           '!cursor-text',
                         ],
                       }}
-                      className="grow shrink basis-0  rounded text-stone-900 text-opacity-50 text-[12.83px] font-normal font-['Manrope']"
+                      className="grow shrink basis-0  rounded text-primaryText text-opacity-50 text-[12.83px] font-normal font-['Manrope']"
                       endContent={
                         <button
                           className='focus:outline-none'
@@ -182,11 +182,11 @@ export default function ResetPassword() {
                         inputWrapper: [
                           'rounded-none py-2',
                           'border-2 border-transparent',
-                          'focus-within:!border-fuchsia-600  ',
+                          'focus-within:!border-red-500  ',
                           '!cursor-text',
                         ],
                       }}
-                      className="grow shrink basis-0 rounded text-stone-900 text-opacity-50 text-[12.83px] font-normal font-['Manrope']"
+                      className="grow shrink basis-0 rounded text-primaryText text-opacity-50 text-[12.83px] font-normal font-['Manrope']"
                       endContent={
                         <button
                           className='focus:outline-none'
@@ -244,7 +244,7 @@ export default function ResetPassword() {
                 />
                 <Button
                   type='submit'
-                  className="w-[290px] px-6 py-3.5 mt-4 bg-fuchsia-600 rounded-[100px] text-center text-white text-[12.83px] font-medium font-['Manrope']"
+                  className="w-[290px] px-6 py-3.5 mt-4 bg-primarybutton rounded-[100px] text-center text-white text-[12.83px] font-medium font-['Manrope']"
                 >
                   {isPending ? (
                     <svg
@@ -275,15 +275,11 @@ export default function ResetPassword() {
               <div className='self-stretch mt-16 flex-col justify-start items-center gap-2 flex'>
                 <div
                   onClick={() => navigate('/')}
-                  className="text-center cursor-pointer py-6 text-[#CB29BE] text-xs font-normal font-['Manrope'] tracking-wide"
+                  className="text-center cursor-pointer py-6 text-primaryText text-xs font-normal font-['Manrope'] tracking-wide"
                 >
                   Back to Home
                 </div>
               </div>
-            </div>
-
-            <div className='w-[24rem] mx-auto mt-16'>
-              <div className='w-full h-0.5 bg-gradient-to-r from-[#fff]  dark:from-[#000] !via-[#FF6DFB] to-[#fff] dark:to-[#000]'></div>
             </div>
           </div>
         </form>

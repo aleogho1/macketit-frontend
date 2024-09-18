@@ -50,7 +50,7 @@ export default function PostAdvertTasksCard() {
                     toast.error('Please activate your membership')
                   }
                 }}
-                className='self-stretch p-2 bg-fuchsia-400 rounded-none rounded-t-md border border-violet-500 border-opacity-25 justify-center items-center gap-1 inline-flex'
+                className='self-stretch p-2 primaryBg rounded-none rounded-t-md border border-violet-500 border-opacity-25 justify-center items-center gap-1 inline-flex'
               >
                 <div className="text-center text-white text-[10px] font-medium font-['Manrope']">
                   Generate Task
@@ -100,7 +100,7 @@ export default function PostAdvertTasksCard() {
                     toast.error('Please activate your membership')
                   }
                 }}
-                className='self-stretch p-2 bg-fuchsia-400 rounded-none rounded-t-md border border-violet-500 border-opacity-25 justify-center items-center gap-1 inline-flex'
+                className='self-stretch p-2 primaryBg rounded-none rounded-t-md border border-violet-500 border-opacity-25 justify-center items-center gap-1 inline-flex'
               >
                 <div className="text-center text-white text-[10px] font-medium font-['Manrope']">
                   Generate Task
@@ -115,7 +115,7 @@ export default function PostAdvertTasksCard() {
           </div>
         </div>
         <div className='self-stretch lg:p-6 bg-gray-200 dark:bg-zinc-900 rounded-lg justify-start items-start gap-2 inline-flex w-full p-2'>
-        <Icons type='facebook' width={32} height={32} />
+          <Icons type='facebook' width={32} height={32} />
           <div className='grow shrink basis-0 justify-between items-start flex flex-col pb-4 gap-y-4 lg:flex-row w-11/12'>
             <div className='max-w-[484px] flex-col justify-start items-start gap-3 inline-flex lg:w-10/12'>
               <div className="  text-sm font-medium font-['Manrope']">
@@ -129,7 +129,7 @@ export default function PostAdvertTasksCard() {
               </div>
               <div className='py-1.5 justify-start items-center gap-2 inline-flex'>
                 <div className='justify-start items-center gap-0.5 flex'>
-                <Icons type='wallet' width={18} height={18} />
+                  <Icons type='wallet' width={18} height={18} />
                 </div>
                 <div className="text-[9px] lg:text-sm font-bold font-['Manrope']">
                   ₦110 per Advert Post
@@ -146,7 +146,7 @@ export default function PostAdvertTasksCard() {
                     toast.error('Please activate your membership')
                   }
                 }}
-                className='self-stretch p-2 bg-fuchsia-400 rounded-none rounded-t-md border border-violet-500 border-opacity-25 justify-center items-center gap-1 inline-flex'
+                className='self-stretch p-2 primaryBg rounded-none rounded-t-md border border-violet-500 border-opacity-25 justify-center items-center gap-1 inline-flex'
               >
                 <div className="text-center text-white text-[10px] font-medium font-['Manrope']">
                   Generate Task
@@ -161,7 +161,7 @@ export default function PostAdvertTasksCard() {
           </div>
         </div>
         <div className='self-stretch lg:p-6 bg-gray-200 dark:bg-zinc-900 rounded-lg justify-start items-start gap-2 inline-flex w-full p-2'>
-        <Icons type='tik-tok' width={32} height={32} />  
+          <Icons type='tik-tok' width={32} height={32} />
           <div className='grow shrink basis-0 justify-between items-start flex flex-col pb-4 gap-y-4 lg:flex-row w-11/12'>
             <div className='max-w-[484px] flex-col justify-start items-start gap-3 inline-flex lg:w-10/12'>
               <div className="text-[15px]  lg:text-sm font-medium font-['Manrope']">
@@ -175,7 +175,7 @@ export default function PostAdvertTasksCard() {
               </div>
               <div className='py-1.5 justify-start items-center gap-2 inline-flex w-full'>
                 <div className='justify-start items-center gap-0.5 flex'>
-                    <Icons type='wallet' width={17} height={17} />
+                  <Icons type='wallet' width={17} height={17} />
                   <div className="dark:opacity-50 text-black dark:text-zinc-400 text-sm font-medium font-['Manrope']">
                     Earning:
                   </div>
@@ -195,7 +195,7 @@ export default function PostAdvertTasksCard() {
                     toast.error('Please activate your membership')
                   }
                 }}
-                className='self-stretch p-2 bg-fuchsia-400 rounded-none rounded-t-md border border-violet-500 border-opacity-25 justify-center items-center gap-1 inline-flex'
+                className='self-stretch p-2 primaryBg rounded-none rounded-t-md border border-violet-500 border-opacity-25 justify-center items-center gap-1 inline-flex'
               >
                 <div className="text-center text-white text-[10px] font-medium font-['Manrope']">
                   Generate Task
@@ -211,7 +211,7 @@ export default function PostAdvertTasksCard() {
         </div>
 
         <div className='self-stretch lg:p-6 bg-gray-200 dark:bg-zinc-900 rounded-lg justify-start items-start gap-2 inline-flex p-2'>
-        <Icons type='whatsapp' width={32} height={32} />
+          <Icons type='whatsapp' width={32} height={32} />
           <div className='grow shrink basis-0 h[99px] justify-between items-start flex flex-col pb-4 gap-y-4 lg:flex-row w-11/12'>
             <div className='max-w-[484px] flex-col justify-start items-start gap-3 inline-flex lg:w-10/12'>
               <div className=" text-[15px] lg:text-sm font-medium font-['Manrope']">
@@ -224,7 +224,7 @@ export default function PostAdvertTasksCard() {
               </div>
               <div className='py-1.5 justify-start items-center gap-2 inline-flex w-full'>
                 <div className='justify-start items-center gap-0.5 flex'>
-                <Icons type='wallet' width={17} height={17} />
+                  <Icons type='wallet' width={17} height={17} />
                   <div className="dark:opacity-50 text-black dark:text-zinc-400 text-sm font-medium font-['Manrope']">
                     Earning:
                   </div>
@@ -244,7 +244,7 @@ export default function PostAdvertTasksCard() {
                     toast.error('Please activate your membership')
                   }
                 }}
-                className='self-stretch p-2 bg-fuchsia-400 rounded-none rounded-t-md border border-violet-500 border-opacity-25 justify-center items-center gap-1 inline-flex'
+                className='self-stretch p-2 primaryBg rounded-none rounded-t-md border border-violet-500 border-opacity-25 justify-center items-center gap-1 inline-flex'
               >
                 <div className="text-center text-white text-[10px] font-medium font-['Manrope']">
                   Generate Task
@@ -260,7 +260,7 @@ export default function PostAdvertTasksCard() {
         </div>
 
         <div className='self-stretch lg:p-6 bg-gray-200 dark:bg-zinc-900 rounded-lg justify-start items-start gap-2 inline-flex p-2'>
-        <Icons type='threads' width={32} height={32} />
+          <Icons type='threads' width={32} height={32} />
           <div className='grow shrink basis-0 justify-between items-start flex flex-col pb-4 gap-y-4 lg:flex-row w-11/12'>
             <div className='max-w-[484px] flex-col justify-start items-start gap-3 inline-flex'>
               <div className=" text-[15px] lg:text-sm font-medium font-['Manrope']">
@@ -274,7 +274,7 @@ export default function PostAdvertTasksCard() {
               </div>
               <div className='py-1.5 justify-start items-center gap-2 inline-flex w-full'>
                 <div className='justify-start items-center gap-0.5 flex'>
-                <Icons type='wallet' width={17} height={17} />
+                  <Icons type='wallet' width={17} height={17} />
                   <div className="dark:opacity-50 text-black dark:text-zinc-400 text-sm font-medium font-['Manrope']">
                     Earning:
                   </div>
@@ -294,7 +294,7 @@ export default function PostAdvertTasksCard() {
                     toast.error('Please activate your membership')
                   }
                 }}
-                className='self-stretch p-2 bg-fuchsia-400 rounded-none rounded-t-md border border-violet-500 border-opacity-25 justify-center items-center gap-1 inline-flex'
+                className='self-stretch p-2 primaryBg rounded-none rounded-t-md border border-violet-500 border-opacity-25 justify-center items-center gap-1 inline-flex'
               >
                 <div className="text-center text-white text-[10px] font-medium font-['Manrope']">
                   Generate Task

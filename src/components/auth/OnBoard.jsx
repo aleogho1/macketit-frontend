@@ -118,10 +118,10 @@ export default function OnBoard() {
           <div className=' min-h-screen h[1024px] h-[1054px] relative '>
             <div className=' w-[20rem] md:w-[23rem] left-[10%] md:left-[40%] top-[189px] absolute flex-col justify-start items-center gap-6 inline-flex'>
               <div className='flex-col justify-start items-center gap-6 flex'>
-                <div className="w-80 text-center text-[32px] font-semibold font-['Manrope'] leading-[26.88px]">
+                <div className="w-80 text-center text-primaryText text-[32px] font-semibold font-['Manrope'] leading-[26.88px]">
                   Welcome onboard!
                 </div>
-                <div className="self-stretch text-center text-zinc-400 text-base font-normal font-['Manrope']">
+                <div className="self-stretch text-center text-black text-base font-normal font-['Manrope']">
                   Hi {userData?.email}, we are excited to have you onboard!
                   Finish up your profile set up.
                 </div>
@@ -137,7 +137,7 @@ export default function OnBoard() {
                         />
                       </div>
                     ) : (
-                      <div className='w-[66px] h-[66px] cursor-pointer left-0 top-0 absolute bg-fuchsia-600 bg-opacity-40 rounded-[10px]' />
+                      <div className='w-[66px] h-[66px] cursor-pointer left-0 top-0 absolute bg-primarybutton bg-opacity-40 rounded-[10px]' />
                     )}
                     {/* Invisible input field */}
 
@@ -199,7 +199,7 @@ export default function OnBoard() {
                             'dark:group-data-[focused=true]:bg-default/60',
                             '!cursor-text',
                             'border-2 border-transparent',
-                            'focus-within:!border-fuchsia-600  ',
+                            'focus-within:!border-red-500  ',
                             '!cursor-text',
                           ],
                         }}
@@ -240,13 +240,13 @@ export default function OnBoard() {
                               trigger: [
                                 'bg-zinc-700 bg-opacity-10',
                                 'dark:bg-white dark:bg-opacity-10',
-                                'focus:border-fuchsia-600',
+                                'focus:border-red-500',
                                 'dark:hover:bg-default/70',
                                 'group-data-[focused=true]:bg-default-200/50',
                                 'dark:group-data-[focused=true]:bg-default/60',
                                 '!cursor-text',
                                 'border-2 border-transparent',
-                                'focus-within:!border-fuchsia-600  ',
+                                'focus-within:!border-red-500  ',
                                 '!cursor-text',
                               ],
                             }}
@@ -292,7 +292,7 @@ export default function OnBoard() {
                                 'dark:group-data-[focused=true]:bg-default/60',
                                 '!cursor-text',
                                 'border-2 border-transparent',
-                                'focus-within:!border-fuchsia-600  ',
+                                'focus-within:!border-red-500  ',
                                 '!cursor-text',
                               ],
                             }}
@@ -338,7 +338,7 @@ export default function OnBoard() {
                                 'dark:group-data-[focused=true]:bg-default/60',
                                 '!cursor-text',
                                 'border-2 border-transparent',
-                                'focus-within:!border-fuchsia-600  ',
+                                'focus-within:!border-red-500  ',
                                 '!cursor-text',
                               ],
                             }}
@@ -393,7 +393,7 @@ export default function OnBoard() {
                               'dark:group-data-[focused=true]:bg-default/60',
                               '!cursor-text',
                               'border-2 border-transparent',
-                              'focus-within:!border-fuchsia-600  ',
+                              'focus-within:!border-red-500  ',
                             ],
                           }}
                           className=" rounded  text-zinc-400 text-[12.83px] font-normal font-['Manrope']"
@@ -442,7 +442,7 @@ export default function OnBoard() {
                             'dark:group-data-[focused=true]:bg-default/60',
                             '!cursor-text',
                             'border-2 border-transparent',
-                            'focus-within:!border-fuchsia-600  ',
+                            'focus-within:!border-red-500  ',
                             '!cursor-text',
                           ],
                         }}
@@ -490,7 +490,7 @@ export default function OnBoard() {
                               'dark:group-data-[focused=true]:bg-default/60',
                               '!cursor-text',
                               'border-2 border-transparent',
-                              'focus-within:!border-fuchsia-600  ',
+                              'focus-within:!border-red-500  ',
                               '!cursor-text',
                             ],
                           }}
@@ -539,7 +539,7 @@ export default function OnBoard() {
                                 'dark:group-data-[focused=true]:bg-default/60',
                                 '!cursor-text',
                                 'border-2 border-transparent',
-                                'focus-within:!border-fuchsia-600  ',
+                                'focus-within:!border-red-500  ',
                                 '!cursor-text',
                               ],
                             }}
@@ -559,7 +559,7 @@ export default function OnBoard() {
                 <Button
                   type='submit'
                   isDisabled={isPending}
-                  className="w-[290px] px-6 py-6 text-center text-white text-[12.83px] font-medium font-['Manrope'] bg-fuchsia-600 rounded-[100px] justify-center items-center gap-2 inline-flex"
+                  className="w-[290px] px-6 py-6 text-center text-white text-[12.83px] font-medium font-['Manrope'] bg-primarybutton rounded-[100px] justify-center items-center gap-2 inline-flex"
                 >
                   {isPending ? (
                     <svg
@@ -595,7 +595,7 @@ export default function OnBoard() {
                     onClick={() => {
                       navigate(`/dashboard/home`)
                     }}
-                    className="text-center cursor-pointer p-2 text-[#FF6DFB] dark:text-fuchsia-400 text-[12.83px] font-bold font-['Manrope']"
+                    className="text-center cursor-pointer p-2 text-primaryText   text-[12.83px] font-bold font-['Manrope']"
                   >
                     Skip
                   </div>
