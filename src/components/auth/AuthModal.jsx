@@ -87,7 +87,7 @@ export default function AuthModal({ isOpen, onClose }) {
                 }}
                 className=" w-[18rem] md:w-[20rem] text-center text-white text-[12.83px] font-medium font-['Manrope'] px-6 py-3 bg-primarybutton rounded-[100px] justify-center items-center gap-2 inline-flex"
               >
-                Continue
+                Proceed
               </Button>
             </div>
           </div>

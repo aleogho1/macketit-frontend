@@ -31,14 +31,14 @@ const VatModal = ({ isOpen, onClose }) => {
             <p className='text-[#B1B1B1] font-sm text-center'>
               Please note that V.A.T charges of 1.5% would be deducted on every
               withdrawal transaction, to proceed with this term click on the
-              continue button below
+              Proceed button below
             </p>
             <div className='flex items-center gap-x-4'>
               <Button
                 className='bg-[#4CAF50] w-32 text-white'
                 onClick={onOpenWithdraw}
               >
-                Continue
+                Proceed
               </Button>
               <Button className='bg-[#FF543E] w-32' onClick={onClose}>
                 Cancel
