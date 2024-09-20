@@ -150,6 +150,7 @@ export default function Login() {
                     type='email'
                     classNames={{
                       inputWrapper: [
+                        'bg-zinc-700 bg-opacity-10',
                         'border-2 border-transparent',
                         'focus-within:!border-red-500  ',
                         '!cursor-text',
@@ -200,6 +201,7 @@ export default function Login() {
                     }
                     classNames={{
                       inputWrapper: [
+                        'bg-zinc-700 bg-opacity-10',
                         'border-2 border-transparent',
                         'focus-within:!border-red-500  ',
                         '!cursor-text',
@@ -226,7 +228,7 @@ export default function Login() {
                 isDisabled={isPending}
                 className="w-[290px] px-6 py-3.5  bg-primarybutton rounded-[100px] text-center text-white text-[16.83px] font-medium font-['Manrope']"
               >
-                {isPending ? <Loader /> : 'Continue'}
+                {isPending ? <Loader /> : 'Proceed'}
               </Button>
             </div>
             <div className='self-stretch  flex-col justify-start items-center gap-2 flex'>

@@ -65,7 +65,7 @@ export default function CryptoTransfermodal({ isOpen, onClose }) {
           </div>
           <div className='w-[290px] cursor-pointer px-6 py-3.5 bg-primarybutton rounded-[100px] justify-center items-center gap-2 inline-flex'>
             <div className="text-center text-white text-[12.83px] font-medium font-['Manrope']">
-              Continue
+              Proceed
             </div>
           </div>
         </div>

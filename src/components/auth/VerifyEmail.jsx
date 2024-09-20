@@ -127,6 +127,7 @@ export default function VerifyEmail() {
                         'border-2 border-transparent',
                         'focus-within:!border-red-500  ',
                         '!cursor-text',
+                        'bg-zinc-700 bg-opacity-10',
                       ],
                     }}
                   />
@@ -156,6 +157,7 @@ export default function VerifyEmail() {
                           'border-2 border-transparent',
                           'focus-within:!border-red-500  ',
                           '!cursor-text',
+                          'bg-zinc-700 bg-opacity-10',
                         ],
                       }}
                     />
@@ -167,7 +169,7 @@ export default function VerifyEmail() {
                 type='submit'
                 className="w-[290px] px-6 py-3.5 bg-primarybutton rounded-[100px] text-center text-white text-[12.83px] font-medium font-['Manrope']"
               >
-                {isPending ? <Loader /> : 'Continue'}
+                {isPending ? <Loader /> : 'Proceed'}
               </Button>
             </div>
             <div className='self-stretch  flex-col justify-start items-center gap-2 flex'>

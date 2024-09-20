@@ -25,6 +25,7 @@ import {
   useCreateAdvertPaymentWallet,
 } from '../../../api/advertApi'
 import { useNavigate } from 'react-router-dom'
+import Loader from '../../Loader'
 
 export default function CreateIgEngageTask() {
   const { isOpen, onOpen, onClose } = useDisclosure()
@@ -594,7 +595,7 @@ export default function CreateIgEngageTask() {
                       className='w-[290px]  cursor-pointer px-6 py-6 bg-primarybutton rounded-[100px] justify-center items-center gap-2 inline-flex'
                     >
                       <div className="text-center text-white text-[12.83px] font-medium font-['Manrope']">
-                        {isPending ? 'Submiting....' : 'Submit and Pay'}
+                        {isPending ? <Loader /> : 'Submit and Pay'}
                       </div>
                     </Button>
                   </div>

@@ -128,6 +128,9 @@ export default function ConfirmOtp() {
                     },
                   })}
                   placeholder='Enter OTP'
+                  classNames={{
+                    inputWrapper: ['bg-zinc-700 bg-opacity-10'],
+                  }}
                 />
               </div>
               <div className='justify-start items-center inline-flex my-12'>
